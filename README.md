@@ -1,4 +1,4 @@
-# biticoin
+﻿# biticoin
 simple moneda cripto
 En ScroogeCoin (Conferencia 1), la autoridad central Scrooge recibe transacciones de usuarios.
  Implementará la lógica utilizada por Scrooge para procesar las transacciones y producir el libro mayor. 
@@ -237,6 +237,8 @@ Public class TxHandler {
 
 your implementation of handleTxs() should return a mutually valid transaction set of maximal size (one that can’t be enlarged simply by adding more transactions). It need not compute a set of maximum size (one for which there is no larger mutually valid transaction set).
 Based on the transactions it has chosen to accept, handleTxs() should also update its internal UTXOPool to reflect the current set of unspent transaction outputs, so that future calls to handleTxs() and isValidTx() are able to correctly process/validate transactions that claim outputs from transactions that were accepted in a previous call to handleTxs().
+
+
 Extra Credit: Create a second file called MaxFeeTxHandler.java whose handleTxs() method finds a set of transactions with maximum total transaction fees -- i.e. maximize the sum over all transactions in the set of (sum of input values - sum of output values)).
 
 
