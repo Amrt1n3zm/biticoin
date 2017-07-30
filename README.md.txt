@@ -1,5 +1,9 @@
-﻿# biticoin
+
+
+# biticoin
 simple moneda cripto
+
+http://bitcoinbook.cs.princeton.edu/ 
 
 En ScroogeCoin , la autoridad central Scrooge recibe transacciones de usuarios.
 
