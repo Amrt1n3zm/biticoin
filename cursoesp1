@@ -1,15 +1,47 @@
 Decentralizacion
-centralizacion Vs descentralizacion
-consenso distribuido
-consenso sin identidades , la cadena de bloques block chain
-incentivos y prueba de trabajo.
-unnir todos estos conceptos.
+1 centralizacion Vs descentralizacion
+2 consenso distribuido
+3 consenso sin identidades , la cadena de bloques block chain
+4 incentivos y prueba de trabajo.
+5 unir todos estos conceptos.
 
+1 centralizacion Vs descentralizacion.
 
 se comparan lod paradigmas de centralizado frente a  descentralizado ,teniendo en cuenta que nada es puramente centralizado 
 sino una aproximacion , por ejemplo los servicios de email son un protocolo descentralizado pero se acceden via servicios de
 webmail y estos si son centralizados. no es O Todo O nada. 
 5 preguntas :
-quien mantiene la cadena 
-quien tiene autoridad para validar las transaciones o movimientos altas en la cadena.
-quien crea nuevs bitcoins...
+
+1 quien mantiene la cadena 
+
+2 quien tiene autoridad para validar las transaciones o movimientos altas en la cadena.
+
+3 quien crea nuevos bitcoins como se generan y que representan ,como funciona su proceso de generacion
+
+4 quien determina como cambian las reglas del suystema , como evolucionan las propuestas  de cambio y que genrean soft y hard forks.
+
+5 como los bitcoins genreados son evaluados como adquieren su valor dentro del mercado de intercambio.
+
+este protocolo soporta . 
+
+intercambiadores como servicio ,
+
+software de monederos o carteras ,wallets. 
+
+proveedores de servicios
+
+estos son los COMPONENTES DE LA DESCENTRALIZACION.
+empecemos con las tres primeras, para entender lo que queremos definir como descentralizacion
+
+a peer to peer network : abierta a todos y con requerimientos minimos
+miles de nodos sincronizados donde cualquiera con un pc puede participar en los procesos de validacion y verificacion
+de transaciones asi como minar por medio de la participacion en el concurso de prueba de trabajao que variara con el tiempo y que veremos mas adelante.
+
+b minado: abierta a todos pero inevitables concentraciones de poder debido a la relacion directa con los recursos a consumir alta centralizacion o concentracion de poder en este ecosistema , no deseable .
+
+c actualizaciones del core o nucleo del sistema bitcoincore: los creadores del codigo y la comunidad de desarrolladores 
+ concentran un gran poder de decisiones. cambios reglas conceptualamente cualqueira aque rune un nodo no puede cambiar nada, 
+
+
+
+2 consenso distribuido:
