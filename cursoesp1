@@ -2449,6 +2449,1602 @@ your laptop needs to do for example this
 is simply a humongous and infeasible
 48:30
 number and because of this only some
+
+
+11:42
+transacciones pendientes que tiene
+11:44
+oído hablar de así recordar que para estos
+11:46
+el consenso de las transacciones aún no ha sido
+11:48
+sucedió y así casi por definición
+11:50
+cada nodo puede tener un
+11:52
+versión diferente de la sobresaliente
+11:54
+transacciones de las que se ha oído hablar de la
+11:56
+la red peer-to-peer no es perfecta, por lo que
+11:57
+es posible que algún nodo haya oído hablar de un
+11:58
+transacción pero no otros nodos así dados
+12:01
+que tenemos la configuración de lo que podría
+12:03
+suceder es que tienes la secuencia de
+12:06
+bloques que todo el mundo ha acordado un
+12:08
+bloque es sólo una serie de transacciones
+12:11
+y ahora hay estos digamos estos
+12:14
+tres nodos en el sistema, cada uno de los cuales
+12:16
+propone que cada uno de los cuales tiene una entrada el
+12:18
+conjunto de transacciones pendientes que
+12:20
+se oye hablar de él y ejecutan
+12:22
+juntos algún protocolo de consenso y para
+12:26
+el protocolo de consenso para que le suceda
+12:28
+puede seleccionar cualquier bloque válido incluso si es
+12:31
+un bloque que fue propuesto por un solo
+12:32
+y para que un bloque sea válido todo
+12:35
+estas transacciones tienen que tener el
+12:36
+firmas criptográficas correctas, etc., para que usted
+12:40
+podría seleccionar cualquiera de estos bloques válidos
+12:42
+y el protocolo de consenso seguiría siendo
+12:45
+estar bien si algunas transacciones de alguna manera
+12:47
+no llegó a este particular
+12:48
+bloque que se elige como resultado de
+12:50
+un protocolo de consenso que podría esperar
+12:52
+y entrar en el siguiente bloque, así que tal vez
+12:54
+este bloque verde se selecciona ahora que
+12:57
+se agrega a la cadena de bloques de consenso
+12:59
+y luego el protocolo procede y
+13:00
+rutas así que si tomaste las tradicionales
+13:03
+teoría del consenso distribuido y
+13:05
+aplicado que a Bitcoin este es el tipo
+13:07
+del sistema con el que podría terminar ahora
+13:10
+esto tiene algunas similitudes con cómo
+13:12
+Bitcoin funciona, pero no es exactamente cómo
+13:14
+Bitcoin funciona y por qué es eso y el
+13:16
+la razón de esto es simple hacer cosas
+13:18
+de esta manera es una técnica realmente difícil
+13:20
+problema por una variedad de razones allí
+13:22
+son algunos obvios, los nodos podrían bloquearse
+13:25
+y los nodos pueden ser totalmente maliciosos
+13:27
+pero también porque la red es altamente
+13:30
+imperfecto es un sistema peer-to-peer no
+13:32
+todos los pares de nodos están conectados a cada uno
+13:34
+otro
+13:35
+podría haber errores en la red
+13:36
+debido a la mala conectividad a internet
+13:38
+y así sucesivamente y finalmente va a
+13:41
+tener mucha latencia en el sistema
+13:43
+porque todas estas cosas suceden
+13:45
+internet ni siquiera están dentro de un
+13:46
+un solo centro de datos o algo así como
+13:48
+eso y una consecuencia particular de
+13:52
+esta latencia alta es que no hay
+13:54
+noción de tiempo global ¿qué hace esto?
+13:56
+significa y por qué es esto importante que significa
+13:58
+que no todos los nodos pueden estar de acuerdo con un
+14:02
+ordenación de eventos simplemente basada en
+14:04
+observar marcas de tiempo simplemente no lo hace
+14:06
+trabajar así, así que no es posible
+14:08
+diseña tu protocolo diciendo cosas
+14:10
+como tomar el nodo que envió el primero
+14:13
+en el paso uno y tener ese nodo
+14:15
+haz algo en el paso dos que simplemente no puedes
+14:17
+trabajo así
+14:17
+porque no todos los nodos estarán de acuerdo
+14:20
+qué mensaje se envió primero en el cuadro de diálogo
+14:22
+primer paso del protocolo por lo que este
+14:24
+realmente pone serias limitaciones a lo que
+14:27
+tipos de algoritmos que realmente puedes poner
+14:29
+en sus protocolos de consenso y en
+14:31
+hecho debido a estas limitaciones mucho
+14:34
+de la literatura distribuida
+14:35
+el consenso es algo pesimista y
+14:37
+muchos resultados de imposibilidad han sido
+14:39
+probado que solo voy a nombrar un par
+14:41
+de estos en caso de que quieras mirarlos
+14:43
+arriba pero no voy a entrar en demasiados detalles
+14:45
+un resultado de imposibilidad que es muy
+14:47
+bien conocido y bastante simple de
+14:48
+entender se llama el bizantino
+14:50
+problema general y mucho más sutil
+14:52
+uno conocido por los nombres de los autores
+14:55
+quien lo demostró por primera vez se llama el Pescador
+14:57
+Lynch Patterson y los posibles resultados
+14:59
+bajo algunas condiciones que incluyen el
+15:02
+nodos que actúan de manera determinista
+15:03
+lo que demostraron es que el consenso es
+15:05
+imposible incluso con un solo defecto
+15:08
+proceso así a pesar de estas imposibilidades
+15:10
+resultados hay algunos bien conocidos
+15:12
+protocolos y Paxos es probablemente uno de
+15:15
+el más conocido y lo que hace Paxos es
+15:17
+hace ciertos compromisos lo que hace
+15:20
+lo que te da es que nunca produce un
+15:22
+resultado inconsistente que sería
+15:23
+realmente malo pero acepta la compensación
+15:26
+que bajo ciertas condiciones aunque
+15:28
+raros el protocolo puede atascarse y
+15:30
+no pudo hacer ningún progreso, pero aquí está
+15:33
+lo interesante
+15:34
+estos resultados de imposibilidad fueron usted
+15:37
+saber que fueron probados en un
+15:38
+modelo que estaban destinados a estudiar
+15:40
+bases de datos distribuidas y este modelo
+15:41
+no se traslada tan bien - esto es un
+15:45
+establecer que Bitcoin opera bajo así
+15:47
+lo que estos resultados realmente nos dicen más
+15:49
+sobre ellos
+15:49
+modelar entonces sobre el problema de hecho y
+15:53
+lo que hace bitcoin es que viola un
+15:56
+muchas de las suposiciones que entran en
+15:58
+estos modelos y por eso
+15:59
+El consenso en Bitcoin irónicamente funciona
+16:02
+mejor en la práctica que en la teoría y
+16:04
+lo que esto realmente significa es que el
+16:06
+teoría que fue desarrollada para un
+16:08
+diferente conjunto de problemas necesita atrapar
+16:10
+arriba para poder decir realmente
+16:12
+cosas interesantes sobre Bitcoin pero
+16:14
+sin embargo, esa teoría es bastante
+16:15
+importante porque por ejemplo puede
+16:18
+ayúdanos a predecir ataques imprevistos y
+16:20
+realmente ser capaz de llegar a ser fuerte
+16:23
+garantías sobre la naturaleza del consenso
+16:25
+y la seguridad en Bitcoin, así que ¿qué son
+16:29
+estos diferentes supuestos lo que son
+16:30
+algunas cosas que hace Bitcoin
+16:31
+diferentemente bien en primer lugar que todo
+16:33
+introduce la idea de incentivos y
+16:35
+esto es muy diferente de cualquier anterior
+16:38
+sistema para el consenso distribuido y
+16:40
+esto solo es posible en Bitcoin porque
+16:42
+es una moneda y puedes usar eso
+16:44
+moneda para dar incentivos a la
+16:46
+participantes por actuar honestamente y así
+16:50
+Bitcoin no resuelve del todo el
+16:51
+problema de consenso distribuido en un
+16:53
+sentido general pero lo resuelve en el
+16:55
+contexto del sistema monetario el otro
+16:57
+lo que hace diferente es que
+16:59
+realmente abraza la noción de
+17:00
+aleatoriedad y lo que quiero decir con eso es
+17:02
+una de las cosas que hace es que hace
+17:04
+lejos con la noción de un
+17:06
+punto de partida y punto final para
+17:07
+el consenso, en cambio, el consenso ocurre sobre
+17:11
+un largo período de tiempo de aproximadamente una hora en
+17:13
+el sistema práctico y pero incluso en el
+17:15
+al final de ese tiempo no eres cien
+17:16
+porcentaje seguro de que una transacción o un
+17:19
+bloque que te interesa ha hecho
+17:20
+en su lugar, en la cadena de bloques de consenso
+17:23
+a medida que pasa el tiempo, su probabilidad aumenta
+17:26
+cada vez más alto y la probabilidad
+17:28
+que te equivocas al hacer un
+17:29
+la suposición sobre una transacción disminuye
+17:32
+exponencialmente así que ese es el tipo de
+17:35
+garantía inherentemente probabilística de que
+17:37
+Bitcoin te da y por eso es
+17:39
+capaz de sortear completamente estos
+17:41
+tradicionalmente en tradicional
+17:43
+resultados de imposibilidad en distribuido
+17:44
+protocolos de consenso
+17:46
+tú
+17:50
+así que profundicemos ahora en lo técnico
+17:52
+detalles del algoritmo de consenso de bitcoins
+17:54
+y mientras miramos eso,
+17:57
+Debe tener en cuenta que Bitcoin lo hace
+17:58
+todo esto sin que los nodos tengan ninguna
+18:01
+identidades persistentes a largo plazo y esto
+18:03
+es una vez más una diferencia de cómo
+18:05
+consenso de distribución tradicional
+18:07
+algoritmos operados y si las notas lo hicieron
+18:09
+tener identidades haría que las cosas fueran un
+18:11
+mucho más fácil por un par de razones uno
+18:13
+es una razón pragmática que te permitiría
+18:15
+para poner en su protocolo cosas como
+18:17
+ahora el nodo con el número más bajo
+18:20
+ID debe dar algún paso o algo así
+18:22
+así que eso es un simple pragmático
+18:24
+razón que ya si los noes son
+18:26
+completamente anónimo se vuelve más difícil de
+18:27
+no hace más que una razón mucho más seria para
+18:31
+nodos para tener identidades en cuanto a seguridad
+18:33
+porque si se identificaron nodos y
+18:35
+no eran triviales para crear nuevos nodos
+18:37
+identidades de nodo ident entonces podríamos hacer
+18:40
+suposiciones como digamos que menos
+18:42
+que el 50% de los nodos son maliciosos y
+18:44
+podríamos derivar propiedades de seguridad
+18:45
+de ello, por ambas razones, el
+18:49
+El protocolo de consenso en Bitcoin es un poco
+18:51
+más difícil, pero ¿por qué es exactamente el Bitcoin?
+18:54
+los nodos no tienen identidades bien, es
+18:56
+por un par de razones
+18:57
+una es que si estás en un descentralizado
+18:59
+modelo en un sistema peer-to-peer hay
+19:01
+no hay autoridad central para dar identidades
+19:05
+a los nodos y compruebe que no lo son
+19:06
+crear nuevos nodos a voluntad y de hecho
+19:10
+el término técnico para esto es un Sybil
+19:11
+atacar
+19:12
+Las Sybil son solo copias de nodos que un
+19:14
+adversario malintencionado puede crear para mirar
+19:16
+como que hay un montón de diferentes
+19:18
+participantes cuando en realidad todos aquellos
+19:19
+pseudo participantes son realmente
+19:21
+controlado por el mismo adversario el
+19:24
+otra razón es que el seudónimo
+19:26
+es inherentemente un objetivo de Bitcoin, incluso si
+19:28
+era posible o fácil de establecer
+19:30
+identidades para todos los nodos o todos
+19:32
+participantes no necesariamente lo haríamos
+19:34
+quiero hacer eso para que bitcoin no dé
+19:37
+su fuerte anonimato garantiza fuera de
+19:39
+la caja y eso es lo diferente
+19:41
+las transacciones que realice probablemente puedan
+19:43
+estar unidos entre sí pero al mismo tiempo
+19:45
+nadie te está obligando a poner tu verdadero
+19:48
+identidad de vida como su nombre o IP
+19:51
+dirección o algo así
+19:52
+con el fin de participar en el
+19:54
+red peer-to-peer y en el
+19:55
+blockchain y eso es importante
+19:56
+así que lo que podemos hacer en su lugar es nosotros
+20:02
+puede hacer una suposición más débil
+20:04
+y quiero que des un salto de
+20:06
+fe conmigo aquí que este más débil
+20:08
+la suposición es algo que va
+20:11
+para ser factible y voy a hacer
+20:12
+esta suposición aquí y más adelante le muestran
+20:14
+cómo se logra esto realmente y
+20:16
+lo que es esta suposición más débil es que
+20:18
+vamos a suponer que hay algunos
+20:20
+capacidad de alguna manera para elegir un nodo aleatorio en
+20:22
+el sistema y una buena analogía motivadora
+20:25
+para esto es una lotería o una rifa o
+20:28
+cualquier número de sistemas de la vida real
+20:30
+estamos rastreando y verificando personas y
+20:32
+dándoles identidades y verificando
+20:34
+esas identidades son bastante difíciles y por lo tanto
+20:36
+lo que hacemos en esos contextos es que podríamos
+20:37
+darles tokens o boletos o algo así
+20:40
+de ese tipo y que luego nos permite
+20:42
+Más tarde, elija un ID de token aleatorio y llame
+20:44
+sobre esa persona, así que vamos a hacer
+20:47
+algo similar con respecto a estos
+20:48
+Bitcoin notas y asumir aún más para el
+20:51
+momento que esta generación de tokens y
+20:53
+el algoritmo de distribución tiene suficiente inteligencia
+20:55
+para que si el adversario lo va a intentar
+20:58
+para crear muchos nodos Sybil juntos
+21:00
+todos esos símbolos solo obtienen un token
+21:02
+por lo que el adversario no es capaz de multiplicarse
+21:04
+su poder de esa manera, así que hagamos esto
+21:07
+suposición por ahora y veamos qué
+21:09
+se hace posible si hacemos esto
+21:11
+suposición aquí está la idea clave de lo que
+21:14
+se hace posible bajo este supuesto
+21:16
+de selección aleatoria de nodos es algo
+21:19
+llamado consenso implícito por lo que es
+21:22
+consenso implícito en cada ronda y
+21:24
+va a haber varias rondas
+21:26
+cada ejecución corresponde a una
+21:27
+Bloque en la cadena de bloques en cada ronda a
+21:30
+el nodo aleatorio está seleccionado de alguna manera
+21:31
+mágicamente por el momento y este nodo
+21:34
+llega a proponer el siguiente bloque en el
+21:35
+cadena no hay algoritmo de consenso
+21:37
+no hay votación este nodo simplemente
+21:39
+propone unilateralmente lo que el próximo
+21:41
+bloque y la cadena de bloques va a ser
+21:43
+pero ¿qué pasa si ese nodo es malicioso bien?
+21:46
+hay un proceso para esto, pero es un
+21:49
+implícito uno otro nodo implícitamente
+21:51
+aceptar o rechazar ese bloqueo y cómo
+21:54
+lo hacen si aceptan ese bloque
+21:56
+señalarán que la aceptación
+21:58
+extendiendo el inicio de la cadena de bloques
+22:01
+de ese bloque o si lo rechazan
+22:03
+bloquearán extenderán la cadena por
+22:05
+ignorar ese bloque y comenzar desde
+22:07
+cualquiera que fuera el último bloque anterior
+22:10
+en la cadena de bloques y técnicamente cómo es
+22:13
+que implementado recuerda que cada bloque
+22:15
+contiene un hash del bloque que
+22:18
+y este es el mecanismo técnico que
+22:21
+permite necesidades para indicar qué bloque es
+22:23
+que se están extendiendo así dado esto
+22:27
+esto es lo que el consenso general
+22:29
+Algoritmo en Bitcoin va a mirar
+22:31
+como ahora, esto está un poco simplificado
+22:33
+y la razón por la que se simplifica es de nuevo
+22:35
+que estoy asumiendo una especie de magia
+22:37
+proceso de selección de nodos aleatorios, pero excepto
+22:40
+para esa simplificación esto es bonito
+22:42
+cerca de cómo funciona realmente Bitcoin
+22:44
+así que cada vez que Alice quiere pagarle a Bob ella
+22:47
+creará una transacción y ella
+22:49
+difundirlo a todos los nodos y a cualquier
+22:52
+uno de estos nodos está constantemente
+22:53
+escuchar la red y recopilar
+22:55
+una lista de transacciones pendientes que
+22:57
+aún no han llegado a la cadena de bloques
+22:59
+en algún momento uno de estos nodos es
+23:02
+va a ser llamado al azar a
+23:03
+proponer el siguiente bloque al que va a
+23:05
+redondea todos los destacados
+23:07
+transacciones de las que se ha oído hablar y
+23:08
+proponer que bloque ahora presumiblemente que
+23:12
+node fue honesto, pero también podría ser un
+23:14
+nodo malicioso o un nodo defectuoso y
+23:16
+proponer un bloque que contenga algunos
+23:18
+transacciones no válidas no válidas
+23:20
+las transacciones son aquellas que no tienen
+23:23
+la firma criptográfica correcta o donde el
+23:26
+la transacción ya se ha gastado en otros
+23:27
+palabras un intento de doble gasto por lo que si
+23:30
+que sucede otros nodos van a
+23:33
+señalar su aceptación o rechazo de
+23:35
+el bloque como vimos en la última diapositiva por
+23:37
+ya sea incluyendo el hash de este último
+23:39
+bloquear en su siguiente bloque o ignorar
+23:42
+este bloque e incluyendo el hash de
+23:44
+cualquiera que fuera el bloque anterior que
+23:46
+consideran que es válido todo bien
+23:49
+así que ahora tratemos de entender por qué esto
+23:51
+El algoritmo de consenso funciona y la forma en que
+23:53
+me gusta entender que esto es en lugar de
+23:55
+preguntando por qué funciona esto, tratemos de preguntar
+23:57
+¿cómo puede un adversario malintencionado intentar
+24:00
+subvertir este proceso, así que veamos
+24:03
+que por un segundo así que aquí tenemos un
+24:05
+par de bloques en la cadena de bloques
+24:07
+supongamos que esto se extiende a la izquierda a
+24:09
+largo camino de regreso hasta lo que es
+24:11
+llamado el bloque Génesis pero aquí estoy
+24:13
+solo te muestra un par de bloques en
+24:15
+la cadena de bloques y ese puntero que tú
+24:16
+ver por encima hay un bloque que hace referencia a
+24:20
+¿cuál es el bloque anterior que es?
+24:21
+se extiende incluyendo un hash de que
+24:24
+bloque anterior dentro de su propio contenido
+24:26
+así que vamos a atacar a Tamil Isha
+24:29
+llámala Alicia qué podría intentar hacer
+24:32
+¿puede simplemente robar bitcoins que pertenecen?
+24:35
+a otro usuario en una dirección diferente
+24:36
+que ella no controla ahora, incluso si es
+24:40
+es ahora el turno de Alicia de proponer el próximo
+24:43
+bloque en esta cadena que no puede robar
+24:45
+otros usuarios bitcoins por qué porque ella
+24:48
+no pueden falsificar sus firmas por lo tanto tiempo
+24:50
+como la criptografía subyacente es sólida, ella es
+24:52
+no puede simplemente robar bitcoins
+24:54
+otra cosa que podría tratar de hacer es si
+24:57
+ella realmente odia a algún otro usuario
+24:59
+Bob entonces ella puede mirar la dirección de Bob
+25:01
+y ella puede decidir que cualquier transacción
+25:04
+originando la dirección de Bob ella
+25:06
+simplemente no incluirlos en ningún bloque
+25:08
+que ella propone subir al
+25:10
+blockchain en otras palabras, ella está negando
+25:13
+servicio a Bob por lo que este es un ataque válido
+25:15
+que puede intentar montar pero por suerte
+25:18
+no es más que un poco
+25:19
+molestia porque si el bloqueo de Bob no
+25:22
+conviértelo en el siguiente bloque que alicia
+25:23
+propone que solo esperará otra cuadra
+25:26
+hasta que un nodo honesto tenga la oportunidad de
+25:28
+proponer un bloque y luego su transacción
+25:30
+entrará en ese bloque, así que eso no es
+25:32
+realmente un buen ataque tampoco, así que el único
+25:34
+uno que realmente se quedó con qué
+25:36
+un nodo malintencionado puede intentar hacer aquí es
+25:38
+llamado un ataque de doble gasto, así que cómo
+25:41
+¿podría un ataque de doble gasto funcionar para
+25:43
+entender que supongamos que alicia
+25:45
+es cliente de algún comerciante en línea o
+25:49
+un sitio web dirigido por bob que proporciona algunos
+25:52
+servicio en línea a cambio de pago
+25:54
+en bitcoins digamos que nos permite
+25:56
+descargar de algún software, así que así es como
+25:58
+un ataque de doble gasto podría funcionar
+26:00
+Alice va al sitio web de Bob y decide
+26:04
+para comprar este artículo lo paga con
+26:06
+bitcoins y lo que eso significa en
+26:08
+términos técnicos es que ella va a
+26:10
+crear una transacción de Bitcoin a partir de ella
+26:13
+dirección - La dirección de Bob que ella transmite
+26:16
+a la red y digamos que
+26:18
+algún nodo honesto crea el siguiente bloque
+26:21
+escucha esta transacción e incluye
+26:24
+está en ese bloque, así que lo que está pasando
+26:27
+aquí está este bloque que fue
+26:29
+creado por un nodo honesto que contiene
+26:31
+una transacción que representa un pago
+26:34
+de Alicia al comerciante Bob por C
+26:36
+subíndice a Me refiero a una moneda que pertenece a
+26:39
+Alice y eso ahora está siendo enviado a
+26:41
+La dirección de Bob vamos a acercarnos a esto y a un
+26:44
+un poco más técnico
+26:45
+Cola de una transacción como vimos anteriormente como
+26:48
+una estructura de datos que contiene Alice's
+26:51
+firma aquí y una instrucción para pagar
+26:53
+a la clave pública de Bob y también a un hash
+26:56
+¿qué es este hash, este hash representa un
+26:58
+puntero a la transacción donde Alice
+27:01
+de hecho recibió esa moneda de alguien
+27:03
+else y eso debe ser un puntero a un
+27:05
+transacción que se incluyó en algunos
+27:08
+bloque anterior en la cadena de consenso por lo que
+27:10
+visualmente se va a ver algo
+27:11
+como este, hagamos una pausa por un segundo aquí
+27:15
+porque hay algo sutil en marcha
+27:17
+en hay al menos dos diferentes
+27:19
+tipos de punteros en este diagrama que
+27:21
+Te he demostrado que de hecho hay un tercero
+27:23
+uno correspondiente a los árboles de Merkel, pero
+27:24
+no vamos a ver eso en el
+27:26
+momento presente pero estos dos tipos de
+27:29
+los punteros a los que me refiero son bloques que
+27:33
+incluir un hash del bloque anterior
+27:34
+que están extendiendo y transacciones
+27:37
+que incluyen un puntero a lo que sea el
+27:40
+transacción anterior que donde la moneda
+27:42
+vino de derecha, así que esta es la situación
+27:45
+y este bloque fue generado ahora por un
+27:50
+nodo honesto y ahora supongamos que
+27:52
+la próxima vez que se llame a una nota aleatoria
+27:55
+ese nodo es un nodo malintencionado controlado
+27:59
+por Alice derecho así que esta es la cadena de bloques
+28:01
+tal como está ahora mismo, bob ya lo ha hecho
+28:03
+miré esta cadena de bloques decidí que
+28:05
+alice le ha pagado y ha permitido a Alice
+28:08
+para descargar el software o lo que sea
+28:10
+es que ella estaba comprando en su sitio web
+28:12
+Así que en lo que respecta a Bob, él es
+28:15
+satisfecho de que la transacción se haya completado
+28:16
+Alice ahora ha recibido sus bienes en
+28:19
+cambiar por el pago ahora lo que podría
+28:21
+Suceder es si Alicia ahora llega a proponer
+28:24
+el siguiente bloque podría proponer un bloque
+28:26
+que parece que esto ignora por completo
+28:29
+este bloque válido aquí y en su lugar
+28:32
+contiene un puntero al bloque anterior
+28:34
+y además va a contener un
+28:38
+transacción que contiene una transferencia de
+28:41
+monedas de las monedas de Alicia a otro
+28:43
+abordar un número primo que también está controlado
+28:45
+por Alice por lo que este es un doble clásico
+28:49
+patrón de gasto lo que está sucediendo aquí es
+28:51
+Alice ahora crea una nueva transacción que
+28:55
+transfiere esa moneda en lugar de a Bob's
+28:57
+dirección a otra dirección
+28:59
+por ella y visualmente se va a ver
+29:01
+como este, este es un lugar completamente diferente
+29:02
+transacción también con el puntero hash
+29:04
+volver a la misma transacción
+29:06
+referido a derecho anterior, por lo que esto es
+29:09
+qué intento de un doble gasto
+29:11
+me gusta y cómo sabemos si este doble
+29:14
+el intento de gasto va a tener éxito o no
+29:16
+bueno, eso depende de si este verde
+29:19
+transacción aquí o esta transacción roja
+29:21
+va a terminar finalmente en el
+29:23
+cadena de consenso a largo plazo, así que qué
+29:26
+determina que eso está determinado por
+29:28
+el hecho de que los nodos honestos son siempre
+29:31
+siguiendo la política de ampliación de la
+29:33
+rama válida más larga, así que ahora cuál de
+29:36
+esta es la rama válida más larga que tiene
+29:38
+podría mirar esto y decir AHA el primero
+29:40
+una es la rama válida más larga, no la
+29:42
+segundo porque es un doble gastado
+29:43
+intento, pero aquí hay un punto muy sutil
+29:46
+que quiero que aprecies de sort
+29:48
+desde un punto de vista moral esto
+29:50
+transacción en verde en la transacción
+29:51
+el rojo puede verse muy diferente porque
+29:54
+basado en la explicación que he dado
+29:57
+tú el primero es un intento de Alice
+29:59
+para pagarle a Bob, mientras que el segundo es un
+30:01
+intento de Alice de defraudar a Bob y pagar
+30:04
+monedas de vuelta a sí misma pero de un
+30:06
+punto de vista tecnológico estos dos
+30:08
+las transacciones son completamente idénticas
+30:10
+los nodos que están analizando esto
+30:12
+realmente no tengo forma de saber cuál es
+30:14
+la transacción legítima y el putting
+30:16
+legítimo en las citas aéreas porque es un
+30:18
+el juicio moral que le aplicamos es
+30:20
+no es una distinción técnica versus cuál
+30:23
+uno es el intento de duplicarlo.
+30:24
+podría ser fácilmente al revés
+30:26
+ahora los nodos a menudo siguen una heurística de
+30:30
+extendiendo el bloque que primero
+30:31
+oído hablar de la red peer-to-peer
+30:33
+pero no es una regla sólida y en cualquier
+30:35
+caso debido a la latencia de red que
+30:37
+podría ser fácilmente al revés, así que
+30:41
+ahora hay al menos alguna posibilidad de que
+30:43
+el siguiente nodo que llega a proponer un
+30:45
+el bloque extenderá este bloque en lugar de
+30:47
+este o podría ser que incluso si
+30:49
+es un nodo honesto que Alice podría intentar
+30:51
+sobornar ese nodo o intentar subvertir el
+30:53
+procesar de diversas maneras para
+30:55
+cualquier razón sin ir demasiado
+30:57
+en los detalles digamos que el siguiente
+30:59
+el nodo extiende el bloque con el rojo
+31:01
+transacción en lugar de la verde
+31:03
+lo que esto significa es que en este punto
+31:06
+el siguiente nodo honesto es mucho más probable
+31:08
+para extender este bloque en lugar de este
+31:10
+porque ahora esto se ha convertido en el largo
+31:12
+cadena valo así que digamos que después de uno
+31:16
+más bloque la situación se ve así
+31:17
+ahora está empezando a parecer bastante probable
+31:19
+que este doble giro ha tenido éxito en
+31:21
+de hecho lo que podría suceder es que esto termine
+31:24
+subir la cadena de consenso a largo plazo y
+31:26
+este bloque es completamente ignorado por
+31:29
+la red y ahora se denomina
+31:31
+bloque huérfano y este es un ejemplo de un
+31:34
+doble gasto exitoso, así que ahora vamos a
+31:36
+mira toda esta situación de Bob
+31:38
+el punto de vista de los comerciantes y
+31:40
+comprender cómo Bob puede proteger
+31:42
+él mismo de este ataque de doble gasto
+31:43
+realmente va a ser una parte clave de
+31:45
+entendiendo la seguridad de Bitcoin, así que vamos a
+31:47
+mira lo que pasó aquí de nuevo tenemos
+31:50
+un par de bloques en la cadena de bloques y
+31:52
+en este punto
+31:54
+Alice transmite una transacción que
+31:56
+representa su pago a Bob y así Bob
+31:58
+va a oír hablar de ello en el
+32:00
+red peer-to-peer aquí mismo, incluso
+32:02
+antes de que se cree el siguiente bloque y
+32:04
+para que Bob pueda hacer algo aún más
+32:07
+temerario que lo que hizo en el
+32:09
+luz previa que es que tan pronto como
+32:11
+se entera de la transacción en el
+32:12
+red peer-to-peer puede completar el
+32:14
+transacción en el sitio web y permitir
+32:16
+Alice para descargar lo que sea
+32:18
+descarga que se denomina cero
+32:20
+transacción de confirmación o podría
+32:24
+espere hasta que la transacción obtenga uno
+32:26
+confirmación en la cadena de bloques que
+32:28
+significa que al menos algún nodo tiene
+32:32
+ha creado un bloque y ha propuesto esto
+32:35
+transacción y que ha entrado en el
+32:37
+blockchain pero como vimos anteriormente incluso
+32:40
+después de una confirmación podría haber un
+32:42
+intentar un doble gasto, digamos
+32:44
+que esto realmente sucede si como en el
+32:47
+diapositiva anterior el intento de doble gasto
+32:49
+lo que Bob debería hacer es
+32:51
+darse cuenta de que el bloque que él pensaba
+32:53
+representada Alicia pagándole tiene ahora
+32:56
+ha quedado huérfana y ella lo es y por lo tanto él debería
+32:57
+en su lugar, abandone la transacción si es así
+33:01
+sucede que a pesar de este doble gasto
+33:02
+intente el siguiente bloque que se genera
+33:05
+resulta extender el bloque que es
+33:08
+interesado en ahora ve que su
+33:11
+la transacción tiene dos confirmaciones en el
+33:13
+blockchain ahora obtiene un poco más
+33:16
+confianza en que su transacción va a marchar
+33:18
+para terminar en el consenso a largo plazo
+33:19
+cadena así que digamos que hay una más y
+33:22
+ahora hay tres confirmaciones en
+33:24
+general
+33:25
+cuantas más confirmaciones tenga su transacción
+33:27
+obtiene cuanto mayor sea la probabilidad de que
+33:29
+va a terminar a largo plazo
+33:31
+cadena de consenso porque si recuerdas
+33:33
+el comportamiento honesto de los nodos que lo harán
+33:35
+extender siempre la rama válida más larga
+33:38
+que ven la posibilidad de que este
+33:40
+va a ponerse al día con esto por más tiempo
+33:42
+la rama es ahora muy minúscula, especialmente
+33:45
+si sólo una minoría de los nodos son
+33:47
+malicioso porque normalmente es el único
+33:50
+razón por la que este intento de doble tramo
+33:52
+el bloque se extendería en este punto es
+33:54
+si el siguiente nodo que se va a elegir aleatoriamente
+33:56
+era un nodo malicioso y entonces necesitaría
+33:58
+otro nodo malintencionado y luego otro
+33:59
+para que la rama más corta se convierta en
+34:01
+la rama más larga en general la doble
+34:06
+la probabilidad de span disminuye exponencialmente
+34:09
+con el número de confirmaciones así que si
+34:12
+la transacción que te interesa tiene
+34:14
+recibió K confirmaciones y luego el
+34:16
+probabilidad de que esta otra transacción
+34:17
+va a terminar a largo plazo
+34:19
+la cadena de consenso baja exponencialmente
+34:21
+en función de K en el más común
+34:24
+heurística que se utiliza en el Bitcoin
+34:26
+ecosystem is that you wait for six
+34:28
+confirmations there is nothing really
+34:30
+special about the number six it's just a
+34:32
+good trade-off between the amount of
+34:34
+time you have to wait and your guarantee
+34:36
+that the transaction you're interested
+34:38
+in ends up on the consensus watching so
+34:42
+let's recap what we saw here protection
+34:46
+against invalid transactions that is
+34:48
+protection against a malicious node
+34:49
+simply making up a transaction to steal
+34:51
+someone's bitcoins is entirely
+34:53
+cryptographic but it is enforced by
+34:56
+consensus which means that if a node
+34:59
+does attempt that then the only reason
+35:01
+that that transaction won't end up in
+35:03
+the long term consensus chain is because
+35:05
+a majority of the nodes are honest and
+35:06
+will treat that transaction as invalid
+35:08
+on the other hand protection against
+35:11
+double spending is purely about
+35:12
+consensus
+35:13
+cryptography has nothing to say about
+35:15
+this and true transactions that
+35:17
+represent a double spending attempt kind
+35:20
+of look identical from the perspective
+35:22
+of signatures and so on but it's the
+35:24
+consensus that determines which one will
+35:26
+end up on the long term consensus chain
+35:28
+and finally you're never 100% sure that
+35:31
+a transaction you're interested in is on
+35:33
+the consensus branch but this
+35:35
+exponential probability guarantee is
+35:37
+pretty good after about six transaction
+35:39
+there's virtually no chance that that
+35:41
+you're going to go wrong
+35:48
+so in the previous section we got a
+35:51
+basic look at bitcoins consensus
+35:53
+algorithm and a good intuition for why
+35:56
+we believe that it's secure but recall
+35:58
+that at the beginning of the lecture I
+36:00
+told you that bitcoins decentralization
+36:02
+is partly a technical mechanism and
+36:04
+partly clever incentive engineering
+36:06
+so far we've mostly looked at the
+36:08
+technical mechanism now let's talk about
+36:10
+the incentive engineering that happens
+36:12
+in Bitcoin I asked you to take a leap of
+36:16
+faith with me earlier in assuming that
+36:18
+we're able to pick a random node and
+36:20
+perhaps more problematically that at
+36:23
+al menos el 50% de las veces este proceso lo hará
+36:25
+elija un nodo honesto, pero por supuesto esto
+36:27
+la asunción de la honestidad es bastante
+36:28
+problemático especialmente si hay
+36:30
+incentivos financieros para que los participantes
+36:32
+subvertir esto, entonces, ¿por qué esperaríamos
+36:34
+cualquier nodo para ser honestos realmente así que lo que nosotros
+36:36
+quiero preguntar es si podemos dar a los nodos un
+36:39
+incentivo para comportarse honestamente, hagamos
+36:41
+mira esto con respecto a la imagen
+36:43
+hemos estado viendo que este es el
+36:45
+cadena de consenso a largo plazo y este bloque
+36:47
+contiene un intento de duplicar el gasto que tenemos
+36:50
+¿podemos preguntar podemos penalizar de alguna manera el nodo?
+36:52
+que creó este bloque pero esto es
+36:55
+problemático por varias razones
+36:56
+incluyendo el hecho de que los nodos no tienen
+36:58
+identidades y por lo tanto no hay forma de ir
+37:00
+después de ellos para penalizarlos, así que en su lugar
+37:02
+demos la vuelta a la pregunta y preguntemos
+37:04
+¿podemos recompensar a los nodos que crearon todo?
+37:07
+estos bloques que terminaron en el largo
+37:09
+cadena de consenso de términos bien de nuevo algo así como
+37:12
+el mismo problema que no tenemos no
+37:13
+identidades para que no podamos enviarles dinero en efectivo
+37:16
+sus domicilios si tan solo hubiera
+37:18
+algún tipo de moneda digital que nosotros
+37:20
+puede utilizar para incentivarlos un
+37:21
+descentralizado tal vez usted probablemente
+37:24
+ver a dónde estoy llegando, en otras palabras.
+37:26
+vamos a usar bitcoins para
+37:29
+incentivar los nodos que los crearon
+37:32
+bloques entonces, ¿cómo vamos a hacer eso?
+37:33
+bueno hasta ahora todo lo que he dicho es
+37:36
+solo un algoritmo abstracto para lograr
+37:39
+consenso distribuido ahora vamos a
+37:41
+salir de ese modelo lo que voy
+37:42
+decir ahora es específico del hecho de que
+37:44
+lo que estamos logrando a través de esto
+37:46
+el proceso de consenso distribuido es, de hecho,
+37:48
+una moneda y vamos a
+37:49
+incentivar estos nodos pagándoles
+37:52
+en unidades de esta moneda, así que ¿cómo lo hacemos?
+37:56
+hacer que de hecho hay dos separados
+37:58
+mecanismos de incentivos en Bitcoin y el
+38:00
+la primera es
+38:01
+llamado la sala de bloqueo, así que ¿cuál es el
+38:03
+bloquear recompensa es solo esto de acuerdo con
+38:06
+las reglas de Bitcoin el nodo que
+38:08
+crea cada bloque, llega a incluir un
+38:11
+transacción especial en ese bloque y
+38:12
+esa transacción especial es una moneda
+38:15
+transacción de creación y este nodo puede
+38:18
+elija también la dirección del destinatario de
+38:20
+esta transacción, por supuesto, ese nodo
+38:22
+normalmente elegirá una dirección
+38:24
+perteneciendo a sí mismo como receptor de
+38:26
+esta transacción de creación de monedas por lo tanto
+38:28
+pagarse a sí mismo es algo que puedes pensar
+38:30
+de ella como pago a cambio de la
+38:32
+servicio de crear ese bloque para continuar
+38:35
+a la cadena de consenso de hecho el valor
+38:39
+de esta transacción de creación de monedas tiene un
+38:42
+propiedad interesante es crítica a los 25
+38:45
+bitcoins pero en realidad tiene cada cuatro
+38:48
+años que ahora estamos en el segundo período para
+38:51
+los primeros cuatro años de bitcoins
+38:52
+existencia era 50 bitcoins ahora son 25
+38:54
+y va a seguir teniendo esto tiene
+38:57
+algunas consecuencias interesantes que vendremos
+38:58
+volver a eso en la siguiente diapositiva, pero dejemos
+39:00
+te pregunto esto aparece en base a lo que
+39:02
+He dicho aquí que este nodo obtiene el
+39:05
+bloquear la recompensa independientemente de si
+39:08
+propone un bloque con sólo válido
+39:10
+transacciones o se comporta maliciosamente
+39:12
+entonces, ¿cómo estamos realmente proporcionando cualquier
+39:15
+incentivos para un comportamiento honesto a través de esto
+39:17
+bloquear recompensa pero pensé en pensar en
+39:20
+así, ¿cómo será el tipo nevado de
+39:22
+conseguir recoger su recompensa que sólo
+39:25
+suceder si este bloque termina en el largo
+39:28
+rama de consenso de términos porque esa es la
+39:30
+único caso en el que esta creación de moneda
+39:34
+la transacción se considerará válida
+39:35
+porque la transacción de creación de monedas es
+39:37
+no es especial, es como cualquier otro
+39:39
+transacción solo es válida si finaliza
+39:41
+arriba en la cadena de consenso, así que ese es el
+39:43
+mecanismo de incentivos aquí es muy
+39:44
+sutil pero es un truco muy prolijo y así
+39:47
+incentiva a los nodos a comportarse honestamente
+39:49
+o como mínimo incentiva
+39:51
+nodos para comportarse de una manera que piensen
+39:54
+otros nodos van a estar de acuerdo con en
+39:57
+crear los siguientes bloques de la
+39:59
+blockchain, así que ese es el primero en su lugar
+40:03
+de mecanismo volvamos a esto
+40:04
+punto ahora este extraño tipo de tener
+40:08
+fenómeno que vemos aquí y esto puede
+40:12
+estar mejor ilustrado gráficamente aquí estoy
+40:14
+going to show you
+40:15
+graph of time on the x-axis versus the
+40:19
+total number of bitcoins in circulation
+40:20
+and this over here was the first period
+40:24
+where each block resulted in 50 new
+40:27
+bitcoins being created and roughly at
+40:30
+the end of last year that block reward
+40:31
+halves from 50 to 25 and you can see
+40:34
+that every four years extending well
+40:36
+into the future the slope of this curve
+40:38
+is going to keep having and this is a
+40:41
+geometric series and you might know that
+40:43
+it means that there is a finite sum and
+40:45
+in fact there is a total finite supply
+40:47
+of bitcoins and if you add up all these
+40:49
+numbers it works out to 21 million based
+40:52
+on the rate of new block creation which
+40:54
+I'm going to get to in a second also
+40:56
+worth noting is that this is the only
+40:58
+way in which new bitcoins are created
+40:59
+there is no other coin generation
+41:02
+mechanism and that's why this is a final
+41:04
+and total number as a rule Sandow at
+41:06
+least
+41:06
+for how many bitcoins there can ever be
+41:09
+and this new block creation reward is
+41:12
+actually going to run out in 2040 as
+41:14
+things stand now so that sounds a bit
+41:17
+extraño ¿eso significa que el sistema
+41:20
+dejará de funcionar en 2040 y se convertirá en
+41:22
+inseguro porque los nodos ya no tienen
+41:25
+el incentivo para comportarse honestamente bien
+41:27
+no del todo porque este es solo el primero
+41:29
+de dos mecanismos de incentivos existe
+41:31
+otro mecanismo de incentivo llamado
+41:33
+la tarifa de transacción y qué es u
 48:34
 nodes even bother to compete in this
 48:37
