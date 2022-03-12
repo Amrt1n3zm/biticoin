@@ -2108,321 +2108,1414 @@ general
 ‎comienza a agotarse, se volverá más‎
 42:27
 
-
-
-
-42:37
-already starting to happen now
-42:39
-but precisely how the system will evolve
-42:41
-it really depends on a lot of game
-42:43
-theory which hasn't been fully worked
-42:45
-out yet so that's an interesting area of
-42:47
-open research in Bitcoin so now we've
-42:50
-acquired an understanding of how the
-42:52
-nodes that create these blocks are
-42:53
-incentivized to act honestly or follow
-42:56
-the protocol and so if we address a few
-42:58
-more of these remaining problems we'll
-43:00
-be all set to have a really good
-43:02
+40:12
+estar mejor ilustrado gráficamente aquí estoy
+40:14
+going to show you
+40:15
+graph of time on the x-axis versus the
+40:19
+total number of bitcoins in circulation
+40:20
+and this over here was the first period
+40:24
+where each block resulted in 50 new
+40:27
+bitcoins being created and roughly at
+40:30
+the end of last year that block reward
+40:31
+halves from 50 to 25 and you can see
+40:34
+that every four years extending well
+40:36
+into the future the slope of this curve
+40:38
+is going to keep having and this is a
+40:41
+geometric series and you might know that
+40:43
+it means that there is a finite sum and
+40:45
+in fact there is a total finite supply
+40:47
+of bitcoins and if you add up all these
+40:49
+numbers it works out to 21 million based
+40:52
+on the rate of new block creation which
+40:54
+I'm going to get to in a second also
+40:56
+worth noting is that this is the only
+40:58
+way in which new bitcoins are created
+40:59
+there is no other coin generation
+41:02
+mechanism and that's why this is a final
+41:04
+and total number as a rule Sandow at
+41:06
+least
+41:06
+for how many bitcoins there can ever be
+41:09
+and this new block creation reward is
+41:12
+actually going to run out in 2040 as
+41:14
+things stand now so that sounds a bit
+41:17
+extraño ¿eso significa que el sistema
+41:20
+dejará de funcionar en 2040 y se convertirá en
+41:22
+inseguro porque los nodos ya no tienen
+41:25
+el incentivo para comportarse honestamente bien
+41:27
+no del todo porque este es solo el primero
+41:29
+de dos mecanismos de incentivos existe
+41:31
+otro mecanismo de incentivo llamado
+41:33
+la tarifa de transacción y qué es u
+48:34
+nodes even bother to compete in this
+48:37
+block creation process and this is what
+48:39
+is known as Bitcoin mining basically the
+48:41
+process of repeatedly trying and solving
+48:43
+these hash puzzles and we call these
+48:45
+nodes miners and because of how capital
+48:49
+incentive this process is this goes back
+48:51
+to what I said at the beginning that
+48:52
+even though technically anybody can be a
+48:54
+miner there's been a lot of
+48:56
+concentration of power or concentration
+48:58
+of participation in the mining ecosystem
+49:01
+so that's the first property of these
+49:04
+proof-of-work puzzles
+49:07
+the second property is that we want this
+49:10
+cost to be parameterize Abul it's not a
+49:12
+cost that that is fixed over all time
+49:14
+and the way that that's accomplished is
+49:16
+that all the nodes in the Bitcoin
+49:17
+peer-to-peer network will automatically
+49:20
+recalculate the target that is the size
+49:22
+of the target space as a fraction of the
+49:25
+output space every two weeks and they do
+49:27
+it in such a way that they maintain this
+49:29
+invariant which is that the average time
+49:32
+between any two successive walks produce
+49:34
+globally in the overall Bitcoin network
+49:37
+is about ten minutes so let's think
+49:40
+about what this means what this means is
+49:43
+that if you're a miner and you've
+49:44
+invested a certain fixed amount of
+49:46
+hardware into Bitcoin mining but the
+49:50
+overall mining ecosystem is growing more
+49:52
+miners are coming in where they're
+49:54
+deploying faster and faster hardware
+49:55
+that means that over a two-week period
+49:58
+slightly more blocks are going to be
+50:00
+found and expected and so nodes will
+50:03
+automatically readjust the target and so
+50:06
+the amount of work that you have to do
+50:08
+to be able to find a block is going to
+50:10
+increase so if you put in a fixed amount
+50:12
+of hardware investments the rate at
+50:15
+which you find blocks is actually
+50:17
+dependent upon what other miners are
+50:19
+doing so there's a very nice formula to
+50:21
+capture this which is that the
+50:23
+probability that any given miner alice
+50:25
+is going to win the next block is
+50:27
+equivalent to the fraction of global
+50:30
+hash power that she controls which means
+50:33
+that if she has mining Hardware that's
+50:35
+about 0.1 percent of total hash power
+50:38
+she will compute roughly one in every
+50:40
+thousand blocks so why does this
+50:43
+readjustment happen why do we want this
+50:45
+want to maintain this ten-minute
+50:46
+invariant well the reason is simple if
+50:49
+walks were to come very close together
+50:51
+then there would be a lot of
+50:53
+inefficiency and we would lose the
+50:55
+optimization benefits of being able to
+50:57
+put a lot of transactions as it
+50:59
+currently stands several hundred
+51:01
+transactions in a single block if you
+51:03
+went down from ten minutes to five
+51:04
+minutes it would probably be okay
+51:06
+and there are a lot of discussions about
+51:07
+if we're doing an altcoin now what is
+51:10
+the block latency that we should have
+51:12
+but everybody agrees that the block
+51:14
+latency should be a fixed amount it
+51:16
+cannot be allowed to go down without
+51:18
+and that's why you have this automatic
+51:21
+target recalculation property now
+51:26
+because of the way that this cost
+51:29
+function and proof-of-work is set up it
+51:31
+allows us to reformulate our security
+51:34
+assumption here's where we finally
+51:36
+depart from the leap of faith that I
+51:37
+asked you to take several slides ago
+51:39
+instead of saying that somehow the
+51:41
+majority of nodes are honest in a
+51:44
+context where nodes don't even have
+51:45
+identities and not being clear about
+51:47
+what that means we can now state crisply
+51:49
+that a lot of attacks on Bitcoin are
+51:51
+infeasible if the majority of miners
+51:54
+waited by hash power are following the
+51:56
+protocol or are honest and the reason
+51:59
+for that is if a majority of miners
+52:01
+waited by hash power or honest because
+52:03
+of this competition for proposing the
+52:05
+next block this will automatically
+52:07
+ensure that there is at least a 50%
+52:09
+chance that the next block to be
+52:11
+proposed at any point is coming from an
+52:13
+honest node instead of a malicious one
+52:17
+let's now look at the consequences of
+52:20
+the fact that solving hash puzzles is
+52:23
+probabilistic why is it probabilistic
+52:25
+because nobody can predict which nons is
+52:28
+going to result in solving the hash
+52:30
+puzzle the only way to do it is to try
+52:32
+nonsense one by one and hope that one
+52:34
+succeeds right and so this process is
+52:37
+called mathematically Bernoulli trials I
+52:40
+want to I won't go into detail on that
+52:41
+but you can look it up but typically
+52:44
+nodes try so many nonces that a discrete
+52:48
+probability process called Bernoulli
+52:50
+trials can be well approximated by a
+52:52
+continuous probability process called a
+52:55
+Poisson process and the end result of
+52:59
+all of that is that the distribution the
+53:02
+probability density function of the time
+53:05
+to find the next block by any node in
+53:07
+the network globally looks something
+53:09
+like this it's called an exponential
+53:11
+distribution but really the upshot is
+53:13
+that there is some small probability
+53:14
+that if a block has been found now the
+53:17
+next block is going to be found very
+53:18
+soon or within a few seconds or within a
+53:20
+minute and there's also some small
+53:23
+probability that it will take a long
+53:25
+time maybe an hour to find the next
+53:27
+block but overall the network
+53:29
+automatically adjust the difficulty so
+53:31
+that
+53:32
+the inter blog time is maintained at an
+53:34
+average long-term of 10 minutes right so
+53:39
+this is a graph that shows how
+53:41
+frequently blocks are going to be
+53:43
+created by the entire network not caring
+53:45
+about which minor this is coming from if
+53:48
+you're a minor specifically interested
+53:50
+in how quickly you're finding blocks
+53:52
+what does this probability density
+53:54
+function look like well it's going to
+53:55
+have the same shape but it's just going
+53:58
+to have a different scale on the x-axis
+53:59
+again it can be represented by a nice
+54:02
+equation for a specific minor the mean
+54:05
+time to find a block given that you've
+54:07
+just found a block is going to be ten
+54:09
+minutes divided by the fraction of hash
+54:12
+power that you control so again if you
+54:14
+have 0.1% of the total network hash
+54:16
+power you're going to find blocks once
+54:18
+every 10,000 minutes which is several
+54:21
+days and so not only is your mean time
+54:24
+between blocks going to be very high the
+54:26
+variance of the time between blocks
+54:27
+found by you is also going to be very
+54:29
+high and this has some important
+54:31
+consequences that we're going to be
+54:33
+looking at in later lectures so now
+54:36
+let's turn to the third important
+54:38
+probability of this proof-of-work
+54:40
+function which is that it's actually a
+54:42
+trivial to verify that in a node has
+54:45
+computed proof-of-work correctly what
+54:47
+does that mean even if it takes a node
+54:49
+on average 10 to the 20 tries to find a
+54:53
+nonce that succeeds in finding the right
+54:57
+property of the hash function that nonce
+54:59
+must be published as part of the block
+55:01
+so it's trivial for any other node to
+55:04
+look at the block contents hash them all
+55:06
+together and verify that the output is
+55:09
+less than the target so this is an
+55:12
+important property because once again it
+55:14
+allows you to get rid of centralization
+55:15
+you don't need any centralized Authority
+55:18
+verifying that miners are doing their
+55:20
+job correctly any node or any miner can
+55:23
+instantly verify that a block found by
+55:26
+another miner satisfies this proof of
+55:28
+work property and thereby they can be
+55:30
+sure that this miner put in a lot of
+55:32
+computing power into finding that block
+55:39
+let's now look at mining economics
+55:42
+because we've said that it's quite
+55:43
+expensive for miners to be an operation
+55:46
+because finding a single block takes
+55:48
+computing about ten to the twenty hashes
+55:50
+at the same time we've also seen that
+55:52
+the block reward is about 25 bitcoins
+55:54
+which is quite a lot of money so it
+55:56
+really boils down to an economics
+55:57
+question of whether or not it's
+55:59
+profitable for a miner to mine but we
+56:02
+can write down a simple equation that
+56:04
+represents what does what the inputs
+56:07
+into this decision are fundamentally the
+56:09
+mining reward that the miner gets is in
+56:11
+terms of the block reward and
+56:13
+transaction fees the miner asks himself
+56:15
+whether that's bigger than or less than
+56:17
+their total expenditure which is the
+56:19
+hardware and electricity cost in fact
+56:21
+Bitcoin mining is so expensive in terms
+56:23
+of electricity that that becomes a
+56:25
+significant portion of the cost and not
+56:27
+just the upfront cost of the hardware
+56:28
+and if the rewards are greater than the
+56:31
+costs and the Minor Prophets if not the
+56:33
+miner incurs loss but there are some
+56:36
+complications to this simple equation
+56:37
+the first is that as you may have
+56:39
+noticed the hardware cost is a fixed
+56:41
+cost it's an upfront cost whereas the
+56:43
+electricity cost is a variable cost that
+56:46
+is incurred over time another
+56:49
+complication is that remember that a
+56:51
+reward that the miner gets depends upon
+56:53
+the rate at which they find blocks which
+56:55
+depends on not just the power of their
+56:57
+hardware but in fact more accurately as
+56:59
+the ratio of the power of their hardware
+57:02
+as a fraction of the total global hash
+57:04
+rate so that makes it more complicated
+57:07
+as well another complication is note
+57:11
+that the costs that the miner incurs are
+57:13
+in terms of dollars or whatever currency
+57:15
+that they're using whereas they're
+57:18
+rewarded in terms of bitcoins that are
+57:19
+created or bitcoins that are transaction
+57:22
+fees so this equation is really going to
+57:25
+depend on what the exchange rate of
+57:26
+Bitcoin is doing at any given time and
+57:29
+finally so far we've assumed that the
+57:31
+miner is interested in honestly
+57:33
+following the protocol but it could be
+57:35
+the case that the miner could deploy
+57:36
+some other mining strategy instead of
+57:38
+always finding the next block that
+57:41
+extends the longest valid branch and so
+57:44
+this equation doesn't capture all the
+57:47
+nuances of the different strategies of
+57:49
+the miner
+57:49
+employ so even though we can write down
+57:51
+the simple equation actually analyzing
+57:53
+what it makes sense for miners to do as
+57:55
+a complicated game theory problem and we
+57:58
+don't have simple answers to that okay
+58:00
+so now we've obtained a pretty good
+58:02
 understanding of how Bitcoin achieves
-43:03
-decentralization
-43:04
-what are these remaining problems well
-43:06
-one of them the first major one is the
-43:08
-leap of faith that I asked you to take
-43:09
-which is that somehow we can pick a
-43:11
-random node and the second is that we've
-43:14
-created a new problem by giving nodes
-43:16
-these block rewards and incentives which
-43:18
-is that you could easily get into a
-43:20
-free-for-all where everybody wants to
-43:21
-run a Bitcoin node in the hope of
-43:23
-capturing some of these rewards and a
-43:26
-third one is an even trickier version of
-43:28
-this problem which is that an adversary
-43:30
-might create a whole different number of
-43:33
-civil nodes in order to really try to
-43:36
-subvert this consensus process so number
-43:38
-three is sort of a trickier version of
-43:40
-number two
-43:41
-it turns out that all of these problems
-43:43
-are related and all of them have the
-43:45
-same solution and that solution is
-43:47
-called proof of work so what is proof of
-43:49
-work here's the key idea instead of
-43:53
-picking a random node we do something a
-43:56
-little bit different which is we
-43:58
-approximate selecting a random node by
-44:00
-instead selecting nodes and proportion
-44:02
-to a resource that we hope that nobody
-44:04
-can monopolize what does that mean well
-44:07
-if that resource that we're talking
-44:09
-about is computing power then it's a
-44:11
-proof of work system where we somehow
-44:13
-select nodes in proportion to their
-44:15
-competing power alternately it could be
-44:19
-in proportion to ownership of the
-44:20
-currency and this is a legitimate
-44:22
-alternate model it's not used in Bitcoin
-44:24
-but it's been proposed and it's used in
-44:26
-a lot of alternatives to Bitcoin and
-44:27
-that's called proof of stake which we'll
-44:30
-see in a later lecture but let's come
-44:32
-back to proof of work let's try to get a
-44:34
-better idea of what this means selecting
-44:37
-nodes in proportion to their computing
-44:39
-power another way to understand this
-44:41
-is that we're allowing nodes to compete
-44:43
-with each other by using their computing
-44:47
-power and that will result in nodes
-44:49
-automatically being picked in that
-44:51
-proportion so those are two equivalent
-44:54
-ways to view proof-of-work you can also
-44:57
-think of a third way which is that we're
-44:59
-making it moderately hard that through
-45:01
-proof-of-work to create new identities
-45:03
-so it's a sort of attacks on identity
-45:06
-creation and on the Sybil attack this
-45:09
-may all appear a bit vague so let me
-45:11
-actually go ahead and show you what is
-45:13
-the exact proof-of-work system that's
-45:15
-used in Bitcoin and that's going to make
-45:16
-things a lot clearer so here it is it's
-45:20
-called hash puzzles and what this means
-45:23
-is that in order to create a block the
-45:26
-node that proposes that block is
-45:28
-required to find a number a nonce such
-45:31
-that when you put together in the block
-45:34
-the nonce the previous hash and the list
-45:37
-of transactions that comprise that block
-45:39
-and take the hash of this whole long
-45:42
-string then that hash output should be a
-45:46
-number that is very small that falls
-45:48
-into this small target space here in
-45:50
-relation to this very large space that
-45:52
-is the output space of that hash
-45:54
-function let's look at it one more time
-45:57
-as we looked at it earlier normally a
-45:59
-block contains a series of transactions
-46:01
-that you're proposing in addition a
-46:03
-block also contains a pointer to the
-46:05
-previous block as we saw and a pointer
-46:07
-is just a string in this context but in
-46:10
-addition here we're requiring that a
-46:12
-block also contain a nonce and why is
-46:15
-this and the idea is that we want to
-46:17
-make it moderately difficult to in fact
-46:20
-find nonce that satisfies this required
-46:23
-property which is that hashing the whole
-46:25
-block together including that nonce is
-46:27
-going to result in a particular type of
-46:30
-output and so we believe that if the
-46:33
-hash function is secure then the only
-46:36
-way to succeed in solving this hash
-46:37
-puzzle is to just try enough nonsense
-46:39
-one by one until you get lucky so
-46:42
-specifically if this target space were
-46:45
-just 1% of the overall output space you
-46:47
-would have to try about a hundred nonces
-46:49
-before you got lucky and if this hash
-46:52
-function were to behave essentially
-46:54
-random
-46:54
-the only one in a hundred nonces will
-46:57
-result in an output that falls within
-46:59
-this target space in fact the size of
-47:02
-this targets phase is not nearly as high
-47:04
-as one percent of the output space it's
-47:05
-much much smaller than that which we'll
-47:08
-get to in a second but fundamentally
-47:11
-this is the computational problem that a
-47:14
-node is required to solve in order to
-47:16
-produce the block now this notion of
-47:20
-hash puzzles in proof of work completely
-47:22
-does away with the requirement for
-47:25
-somebody somehow to pick a random node
-47:27
-instead nodes are simply all the time
-47:30
-independently competing to solve these
-47:32
-hash puzzles and once in a while one of
-47:36
-them will get lucky and will find a
-47:38
-random nonce that satisfies this
-47:40
-property and that node then gets to
-47:43
-propose the next block that's how it's
-47:46
-completely decentralized there is nobody
-47:48
-deciding which node it is that gets to
-47:50
-propose the next block so let's look at
-47:53
-it in a little bit more detail now there
-47:55
-are three properties that I want to show
-47:57
-you essential properties of this
-47:59
-proof-of-work function of this hash
-48:01
-puzzle and the first is that it needs to
-48:04
-be quite difficult to compute I said
-48:05
-moderately difficult but what I mean by
-48:07
-moderately difficult as of today and
-48:09
-you'll see why it varies with time it's
-48:11
-about ten to the twenty hashes for a
-48:13
-block that you need to compute so the
-48:16
-size of the target space is only one
-48:18
-over ten to the twenty of the size of
-48:20
-the output space of this hash function
-48:22
-all right so it's in if you look at it
-48:25
-in terms of the amount of computing that
-48:27
-your laptop needs to do for example this
-48:29
-is simply a humongous and infeasible
-48:30
-number and because of this only some
+58:04
+decentralization let's put it all
+58:06
+together now and do a little bit of a
+58:08
+recap and understand some high-level
+58:10
+points in order to get an even better
+58:11
+understanding so what I'm going to do is
+58:15
+I'm going to do a very quick recap of
+58:17
+several of the major aspects of Bitcoin
+58:19
+that we've learned so far let's start
+58:22
+from identities as we've learned there
+58:24
+are no real-world identities required to
+58:26
+participate in the Bitcoin protocol any
+58:27
+user can create a pseudonymous key pair
+58:30
+at any moment any number of them and
+58:33
+when Alice and Bob want to make a
+58:35
+transaction when Alice for example wants
+58:37
+to know what address Bob wants to get
+58:39
+paid at that's not part of the Bitcoin
+58:41
+protocol that needs to be through some
+58:44
+other process for example on Bob the
+58:46
+merchants website so given these
+58:49
+pseudonymous key pairs as identities
+58:52
+transactions are basically messages that
+58:56
+are broadcast to the Bitcoin
+58:57
+peer-to-peer network that are
+58:59
+instructions to transfer a coin from one
+59:04
+address to another and the coin really
+59:06
+is just a tree and chain of transactions
+59:08
+to the extent that we can call anything
+59:10
+in Bitcoin an actual coin and this is
+59:12
+something we'll see in much more detail
+59:14
+in future lectures and so this
+59:16
+peer-to-peer network that we have looked
+59:18
+at its goal is to propagate all new
+59:22
+transactions to all the Bitcoin peer
+59:24
+nodes as well as new blocks to the
+59:26
+Bitcoin peer nodes but it's just going
+59:28
+to do sort of the best effort that it
+59:30
+can the real security of the system
+59:32
+doesn't come from the perfection of the
+59:34
+peer-to-peer network in fact the
+59:35
+underlying assumption that the network
+59:37
+is in fact quite unreliable but instead
+59:40
+where the security comes from is from
+59:42
+the blockchain and the consensus
+59:44
+protocol that we spent a lot of time
+59:46
+looking at so what it means for your
+59:49
+transaction to be in the blockchain is
+59:51
+that it achieves a lot of confirmations
+59:53
+it's not a fixed number six is a
+59:56
+commonly used heuristic but the more
+59:58
+confirmations your transaction is
+60:00
+received the more blocks
+60:02
+found that extend the block that
+60:04
+contained your transaction the more
+60:06
+certain you can be that your transaction
+60:07
+was part of the consensus change and now
+60:10
+often there are going to be a variety of
+60:12
+orphan blocks these are blocks that
+60:15
+don't make it into the consensus chain
+60:17
+this could represent an invalid
+60:19
+transaction or a double spent attempt it
+60:21
+could simply represent the fact that
+60:23
+there is latency in the network and two
+60:25
+miners competing to solve this
+60:27
+proof-of-work puzzle simply ended up
+60:29
+finding new blocks within just a few
+60:32
+seconds of each other and so both of
+60:34
+these blocks were broadcast nearly
+60:36
+simultaneously onto the network so
+60:39
+another subtle point here is that if
+60:41
+Alice and Bob are two different miners
+60:42
+and Alice has hundred times as much
+60:44
+computing power is Bob what that means
+60:47
+is not that Alice will always win the
+60:49
+race against Bob to find the next block
+60:51
+but instead Alice and Bob have a ratio a
+60:55
+probability ratio of finding the next
+60:56
+block and the proportion hundred to one
+60:58
+so in the long term Bob will find an
+61:02
+average one percent of the blocks that
+61:03
+Alice does so those are some of the
+61:06
+basics of block shade and consensus and
+61:08
+where the security of the system really
+61:10
+comes from and finally we looked at hash
+61:12
+puzzles in mining miners are special
+61:14
+type of nodes that bother to compete in
+61:17
+this game of creating new blocks and
+61:19
+they're rewarded for their efforts in
+61:21
+terms of bitcoins and we expect that
+61:23
+miners are going to be typically
+61:25
+somewhere near the economic equilibrium
+61:26
+of the expenditure that they incur in
+61:29
+terms of hardware and electricity being
+61:31
+somewhere equal to the rewards that they
+61:36
+obtain in terms of the new block
+61:37
+creation reward and the transaction fee
+61:39
+based rewards so that's a broad recap of
+61:43
+the system let me show you an appointed
+61:46
+way how deeply this notion of
+61:48
+distributed consensus permeates Bitcoin
+61:50
+now in a traditional currency there is
+61:54
+consensus does come into play in a
+61:56
+certain limited extent which is we have
+61:58
+a consensus process around what is the
+62:01
+exchange rate of the currency you can
+62:02
+make a rough analogy to consensus and
+62:04
+distributed systems and that is
+62:06
+certainly true in Bitcoin as well we
+62:09
+need consensus around the value of the
+62:11
+exchange rate of Bitcoin but consensus
+62:13
+goes much deeper and bit
+62:15
+coin than another say fiat currencies in
+62:17
+fact you need consensus around state
+62:20
+which is what the blockchain
+62:21
+accomplishes that is a record of which
+62:23
+transactions are valid or which
+62:24
+transactions have even happened so even
+62:27
+the idea of how many bitcoins you own is
+62:30
+subject to consensus what it means when
+62:33
+I say I own a certain amount or number
+62:35
+of bitcoins is that I mean that the
+62:38
+Bitcoin peer-to-peer network as recorded
+62:41
+in the blockchain considers me the sum
+62:44
+total of all my addresses to own a
+62:46
+certain number of bitcoins that is sort
+62:48
+of the ultimate nature of truth in
+62:49
+Bitcoin so ownership of bitcoins is
+62:51
+nothing more than other nodes thinking
+62:54
+that I own a certain number of bitcoins
+62:56
+and finally we need consensus about the
+62:59
+rules of the system because occasionally
+63:01
+the rules of the system have to change
+63:03
+there are things called hot soft Forks
+63:05
+and hard Forks and we're going to see a
+63:07
+little bit more detail of this in later
+63:09
+lectures now I want to show you another
+63:14
+subtle idea which is very tricky and
+63:16
+it's this very neat idea of
+63:19
+bootstrapping that I really found
+63:21
+intriguing the first time I encountered
+63:22
+it and so I want to share this with you
+63:24
+so what do I mean by bootstrapping I
+63:27
+mean the tricky interplay between three
+63:29
+things in Bitcoin and what are these
+63:31
+three things let's start from the notion
+63:33
+of security of the blockchain so
+63:35
+obviously we want the blockchain to be
+63:38
+secure for Bitcoin to have to be a
+63:40
+viable currency but what is necessary
+63:43
+for for the blockchain to be secure what
+63:46
+this means is that an adversary
+63:48
+shouldn't be able to overwhelm the
+63:50
+consensus process shouldn't be able to
+63:52
+create a lot of nodes and take over 50%
+63:55
+or more of the new block creation but
+63:58
+when will that be true what is it
+64:00
+prerequisite for that a prerequisite for
+64:02
+that is having a healthy mining
+64:04
+ecosystem made up of largely honest
+64:08
+protocol following notes so that's a
+64:10
+prerequisite for security of the
+64:11
+blockchain but what's a prerequisite for
+64:14
+that when can we be sure that a lot of
+64:16
+miners will put a lot of computing power
+64:18
+into participating in this hash
+64:21
+puzzle-solving competition well they're
+64:23
+only going to do that if the exchange
+64:24
+rate of Bitcoin is pretty high why is
+64:28
+that because
+64:29
+they receive rewards denominated in
+64:31
+bitcoins whereas their expenditures and
+64:32
+dollars so the more the value of the
+64:34
+currency goes up the more incentivize
+64:36
+these miners are going to be but what
+64:39
+ensures a high and stable value of the
+64:42
+currency that can only happen if users
+64:45
+in general people who want to buy
+64:47
+bitcoins have trust in the security of
+64:49
+the blockchain because if they believe
+64:51
+that the network could be overwhelmed at
+64:53
+any moment by an attacker then bitcoin
+64:55
+is not going to have a lot of values
+64:57
+occurrence II so you have this
+64:59
+interlocking interdependence between
+65:01
+these three things all right so the
+65:03
+existence of each of these is predicated
+65:05
+on the existence of another so one might
+65:09
+flip that around and imagine at the
+65:11
+beginning at during bitcoins creation
+65:13
+when none of these three things existed
+65:15
+when there were no miners other than
+65:17
+what we believe to be Nakamoto himself
+65:21
+or whoever the Creator was running the
+65:23
+mining software and when Bitcoin didn't
+65:26
+have a lot of value as a currency and
+65:28
+when the blockchain was in fact insecure
+65:30
+because there was not a lot of mining
+65:31
+going on and so anybody could easily
+65:33
+overwhelm this process how do you go
+65:35
+from there not having any of these three
+65:37
+properties to going all three to having
+65:40
+all three of them and that is what I
+65:42
+mean by bootstrapping and it's this very
+65:44
+tricky process of how all of these three
+65:47
+characteristics were acquired by the
+65:49
+Bitcoin system in an interdependent
+65:51
+manner with each other and this was of
+65:53
+course fueled by a lot of media
+65:56
+attention as well because the more
+65:57
+people hear about Bitcoin the more
+65:59
+they're going to get interested in
+66:00
+mining and the more they get interested
+66:02
+in mining the more confidence people
+66:04
+will have in the security of the
+66:05
+blockchain because there's now more
+66:07
+mining activity going on and so on and
+66:09
+so forth and so Bitcoin went from having
+66:13
+none of these properties to now having
+66:14
+in some large measure all three of these
+66:17
+properties and that's the interesting
+66:19
+bootstrapping feature of Bitcoin and
+66:20
+every new alts coin that wants to
+66:22
+succeed also has to somehow solve this
+66:26
+problem of pulling itself up by its
+66:28
+bootstraps okay let me leave you now
+66:32
+with one final thing which is that in
+66:35
+order to understand our consensus and
+66:38
+what its responsible for and what it's
+66:40
+not responsible for a
+66:42
+way to do that is to ask ourselves what
+66:45
+would happen if consensus failed and
+66:47
+there were in fact a 51% attacker
+66:49
+somehow who controls 51% or more of the
+66:53
+mining power in the Bitcoin network so
+66:56
+let's see what happens in that case and
+66:57
+let's list a whole variety of things
+67:00
+possible bad things that we think might
+67:03
+happen and let's ask ourselves which of
+67:05
+these are possible for a 51% attacker
+67:08
+first of all can this attacker steal
+67:11
+coins from an existing address
+67:13
+well you might guess that the answer is
+67:15
+no because stealing from an existing
+67:17
+address is not possible unless you
+67:18
+subvert the cryptography it's not enough
+67:20
+to subvert the consensus process this is
+67:23
+a bit tricky let's follow through this
+67:25
+line of argument let's say that this 51%
+67:28
+attacker creates an invalid block that
+67:31
+contains an invalid transaction that
+67:32
+represents stealing bitcoins from an
+67:35
+existing address that the attacker
+67:36
+doesn't control and transferring them to
+67:38
+his own address
+67:39
+now this attacker can pretend that
+67:42
+that's a valid transaction and pretend
+67:43
+that that's a valid block and keep
+67:45
+building upon this block and even
+67:47
+succeed in making that the the longest
+67:51
+branch but the other honest nodes are
+67:53
+simply not going to accept this invalid
+67:56
+block and are going to keep mining based
+67:58
+on the last valid block that they found
+68:00
+in the network so what will happen is
+68:02
+that there will be what we call a fork
+68:05
+in the chain now imagine this from the
+68:07
+point of view of the attacker trying to
+68:09
+spend these invalid coins and send them
+68:12
+to some merchants Bob and buy something
+68:14
+in exchange now Bob will presumably be
+68:16
+running a Bitcoin node himself and that
+68:18
+will be an honest node and that node is
+68:20
+going to say oh this might be the
+68:21
+longest branch but it's not a valid
+68:23
+branch because it contains an invalid
+68:25
+transaction because the crypto the
+68:27
+signatures doesn't check out and so it's
+68:29
+going to simply ignore this longest
+68:31
+branch because it's an invalid branch
+68:33
+and because of that subverting consensus
+68:36
+is not enough you have to subvert
+68:37
+cryptography in to steal coins from an
+68:39
+existing address so we conclude that
+68:41
+this attack is not possible for a 51%
+68:43
+attacker by the way in saying all of
+68:47
+this I should note that this is all
+68:48
+somewhat hypothetical somewhat a thought
+68:50
+experiment because if there were in fact
+68:52
+actual signs of a 51% attack
+68:55
+it will probably happen is that the
+68:57
+developers will notice this and will try
+68:59
+to react to it and we'll update the
+69:01
+Bitcoin software and we might expect
+69:03
+that the rules of the system of the p2p
+69:05
+network might change in some form to
+69:08
+make this attack more difficult to
+69:10
+launch but we can't quite predict that
+69:12
+so we're working in a simplified model
+69:13
+where 51% attack happens but other than
+69:16
+that there are no changes or tweaks to
+69:18
+the rules of the system okay let's move
+69:21
+on
+69:22
+can the attackers suppress some
+69:23
+transactions let's say there is some
+69:25
+user say Carol whom the attacker really
+69:28
+doesn't like and the attacker knows some
+69:30
+of Carol's addresses and wants to make
+69:32
+sure that no coins belonging to any of
+69:34
+those addresses can possibly be spent is
+69:37
+that possible well let's think about
+69:40
+this
+69:40
+the attacker since he controls the
+69:44
+consensus process of the blockchain can
+69:47
+simply refuse to create any new blocks
+69:50
+that contain transactions from that from
+69:53
+one of Carol's addresses and can in fact
+69:55
+also refuse to build upon blocks that
+69:57
+contain such transactions and the
+69:59
+attacker will be successful at that
+70:01
+however the attacker cannot prevent
+70:04
+these transactions from even broadcast
+70:07
+to the peer-to-peer network because the
+70:09
+peer-to-peer network doesn't depend on
+70:11
+the blockchain doesn't depend on
+70:12
+consensus and we're assuming that the
+70:14
+attacker doesn't fully control the
+70:15
+network so the transactions are still
+70:17
+going to find a way to reach the
+70:19
+majority of notes so even if the
+70:21
+attacker tries this attack it will be
+70:23
+very clear that that attack is happening
+70:25
+because the peer-to-peer network will
+70:27
+still receive these transactions okay
+70:31
+what about this one can the attacker
+70:32
+change the block reward can the attacker
+70:34
+start pretending that the block reward
+70:36
+is instead of 25 bitcoins 100 bitcoins
+70:39
+or something like that well this sort of
+70:41
+corresponds to changing the rules of the
+70:43
+system and because of a reasoning
+70:45
+similar to what we applied for stealing
+70:47
+bitcoins from an existing address this
+70:49
+is also not possible because the
+70:51
+attacker doesn't control the copies of
+70:54
+the Bitcoin software that all of the
+70:56
+honest nodes are running so that's also
+70:58
+not possible finally let's ask ourselves
+71:01
+if the attacker can somehow destroy
+71:02
+confidence in Bitcoin well let's imagine
+71:05
+what would happen if there were
+71:08
+variety of double spending temps and not
+71:12
+at behavior of not extending the longest
+71:14
+valid branch and others had she
+71:16
+attempted attacks then people are going
+71:18
+to look at this and decide that bitcoin
+71:21
+is no longer acting as a decentralized
+71:23
+ledger that they can trust and so people
+71:25
+will simply lose confidence in the
+71:27
+currency and we might expect that the
+71:29
+exchange rate of Bitcoin is going to
+71:30
+plummet in fact if there is a 51%
+71:33
+attacker and this is known even if the
+71:36
+attacker is not necessarily trying to
+71:37
+launch any attacks it's possible that
+71:39
+this might happen
+71:40
+so this we can classify as not only
+71:42
+possible but in fact likely that a 51%
+71:45
+attack of any sort will simply destroy
+71:47
+confidence in the currency and this last
+71:49
+one is in fact the main practical threat
+71:51
+if a 51% attack were ever to materialize
+71:54
+none of these others really considering
+71:57
+the amount of expenditure that the
+72:00
+adversary would have to put into
+72:01
+attacking Bitcoin and achieving a 51%
+72:03
+majority really makes sense from a
+72:05
+financial point of view to try any of
+72:07
+these other attacks great so now
+72:10
+hopefully you've obtained a really good
+72:13
+understanding of how decentralization is
+72:15
+achieved in Bitcoin and I'm just stood
+72:17
+identities understood transactions
+72:19
+understood the peer-to-peer network
+72:20
+understood the blockchain and consensus
+72:23
+understand hash puzzles and mining so
+72:25
+you should be in a really good point now
+72:26
+and a good launching point for
+72:28
+understanding a lot more of the subtle
+72:29
+details and nuances of Bitcoin which
+72:32
+we're going to start seeing in the next
+72:33
+few lectures so the next lecture is
+72:35
+going to be by Joe Bono
+72:37
+where he will address a lot of questions
+72:39
+that take off from the point where we
+72:42
+have left off in this lecture the first
+72:44
+is how do we get from consensus to
+72:46
+currency so this is an assumption that
+72:48
+I've already made in this lecture not
+72:50
+only are we solving a distributed
+72:52
+consensus problem but also we're
+72:53
+treating the result of distributed
+72:55
+consensus as the currency now in order
+72:57
+to incentivize participants but a lot of
+73:00
+details are are missing what exactly
+73:02
+does it mean to be paid in Bitcoin how
+73:04
+does that happen
+73:05
+how are those transactions represented
+73:07
+and so on we're going to look at that
+73:08
+we're going to look at what else can we
+73:10
+do with consensus I hinted at this a
+73:12
+little bit but it turns out that Bitcoin
+73:15
+offers a lot in addition to just doing
+73:16
+consensus it has a whole scripting
+73:18
+language so there are a lot of
+73:20
+interesting things to see there and so
+73:22
+Joe is going to take it from there in
+73:23
+the next lecture thank you
+73:37
+
 
 
 11:42
@@ -5471,7 +6564,7 @@ acmqueue | july-august 2017 4
 How can you build a ledger for use in an environment 
 like the Internet where participants may not trust each 
 other? Let’s start with the easy part: the choice of data 
-structure. There are a few desirable properties. The ledger 
+structure. There are  a few desirable properties. The ledger 
 should be immutable or, more precisely, append only: you 
 should be able to add new transactions but not remove, 
 modify, or reorder existing ones. There should also be 
