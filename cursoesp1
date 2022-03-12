@@ -12,6 +12,24 @@ sino una aproximacion , por ejemplo los servicios de email son un protocolo desc
 webmail y estos si son centralizados. no es O Todo O nada. 
 5 preguntas :
 
+the technical aspects  . los aspectos tecnicos de la descentralizacion de bitcoin 
+
+
+1 quien mantiene la cadena 
+
+2 quien tiene autoridad para validar las transaciones o movimientos altas en la cadena.
+
+3 quien crea nuevos bitcoins como se generan y que representan ,como funciona su proceso de generacion
+
+4 quien determina como cambian las reglas del suystema , como evolucionan las propuestas  de cambio y que genrean soft y hard forks.
+
+5 como los bitcoins genreados son evaluados como adquieren su valor dentro del mercado de intercambio. 
+
+
+estos son los COMPONENTES DE LA DESCENTRALIZACION.
+empecemos con las tres primeras, para entender lo que queremos definir como descentralizacion
+
+
 1 quien mantiene la cadena 
 
 2 quien tiene autoridad para validar las transaciones o movimientos altas en la cadena.
@@ -62,8 +80,10 @@ c actualizaciones del core o nucleo del sistema bitcoincore: los creadores del c
 composicion de las 3 primeras.
 bitcoin exchanges wallet service y correos servicos de desarrolo hibridos desdecntralizado centralizado.
 
-nivel tecnico consenso desitribuido la clave de cambio es una clase de portocolos protocolos bases ya usados en 
+nivel tecnico consenso distribuido la clave de cambio es una clase de portocolos protocolos bases ya usados en 
 decadas de investigacion para llegar a los protocolos de consenso.
+
+
 por ejemplo google o facebook cuentan con una gran cantidad de servidorees ofreciendo servicos de modo centralizado
 como una base de datos masiva distribuida.
 registra los cambios  independientes .servers con copias redundantes.
@@ -76,6 +96,26 @@ ejemplo base de datos dns ip distribuido.
 public key an email .
 
 transferencias entre cuentas stock trades
+
+
+
+
+
+
+
+
+
+05:02
+consensus so what am I talking about here at a technical level the key challenge that you have to solve to
+build a distributed ecash system is called distributed consensus and this is
+
+a class of protocols that's been studied for decades in the in the computer science literature so but intuitively
+you can think of it as our goal being to decentralize cruge coin which is the
+hypothetical currency that we saw in the first lecture so as I said there's
+decades of research in computer science traditional motivating application for
+this is reliability and distributed systems what do I mean by that imagineon these consensus protocols and the
+
+
 
 ¿por qué protocolos de consenso?
 
@@ -111,80 +151,8 @@ tx tx
 tx tx
 
 
+you're in charge of the backend for a company like Google or Facebook these companies typically have thousands or
 
-the technical aspects  . los aspectos tecnicos de la descentralizacion de bitcoin 
-02:08
-break this down into at least five .dividamos el asunto en al menos 5 partes.
- 
-who maintains this ledger of transactions
-
-who has authority over which transactions are valid 
-who creates new bitcoins and in fact other questions
-
-like who determines how the rules of the system change and how do bitcoins
-acquire exchange value 
-
-1 quien mantiene la cadena 
-
-2 quien tiene autoridad para validar las transaciones o movimientos altas en la cadena.
-
-3 quien crea nuevos bitcoins como se generan y que representan ,como funciona su proceso de generacion
-
-4 quien determina como cambian las reglas del suystema , como evolucionan las propuestas  de cambio y que genrean soft y hard forks.
-
-5 como los bitcoins genreados son evaluados como adquieren su valor dentro del mercado de intercambio. 
-
-so these are all components of decentralization of the
-Bitcoin
-estos son los COMPONENTES DE LA DESCENTRALIZACION.
-empecemos con las tres primeras, para entender lo que queremos definir como descentralizacion
-
-
-
-
-
-
-05:02
-consensus so what am I talking about
-05:04
-here at a technical level the key
-05:06
-challenge that you have to solve to
-05:08
-build a distributed ecash system is
-05:10
-called distributed consensus and this is
-05:13
-a class of protocols that's been studied
-05:15
-for decades in the in the computer
-05:17
-science literature so but intuitively
-05:19
-you can think of it as our goal being to
-05:22
-decentralize cruge coin which is the
-05:24
-hypothetical currency that we saw in the
-05:26
-first lecture so as I said there's
-05:29
-decades of research in computer science
-05:30
-on these consensus protocols and the
-05:33
-traditional motivating application for
-05:35
-this is reliability and distributed
-05:37
-systems what do I mean by that imagine
-05:40
-you're in charge of the backend for a
-05:42
-company like Google or Facebook these
-05:43
-companies typically have thousands or
-05:45
 even millions of servers which form a
 05:47
 massive distributed database that
@@ -380,6 +348,8 @@ system
 right so what I mean when I say that
 09:11
 bitcoin is a peer-to-peer system is that
+
+
 09:14
 when Alice wants to pay Bob
 09:16
