@@ -491,31 +491,15 @@ tx tx
 
 11:42
 outstanding transactions that it has
-11:44
 heard about so recall that for these
-11:46
 transactions consensus has not yet
-11:48
 happened and so almost by definition
-11:50
 each node might have a slightly
-11:52
-different version of the outstanding
-11:54
-transactions that it's heard about the
-11:56
-peer-to-peer network is not perfect so
-11:57
-some node may have heard about a
-11:58
-transaction but not other nodes so given
-12:01
-that we have the set up what could
-12:03
-happen is that you have the sequence of
-12:06
-blocks that everybody has agreed upon a
-12:08
+different version of the outstanding transactions that it's heard about the peer-to-peer network is not perfect so
+
+some node may have heard about a transaction but not other nodes so given that we have the set up what could
+happen is that you have the sequence of blocks that everybody has agreed upon a
+
 block is just a series of transactions
 12:11
 and now there are these let's say these
