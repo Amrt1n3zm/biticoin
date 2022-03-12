@@ -655,323 +655,324 @@ tx tx
 14:55
 ‎quien lo demostró por primera vez se llama el Pescador‎
 14:57
-
-
-
-14:57
-Lynch Patterson and possibility results
+‎Lynch Patterson y los posibles resultados‎
 14:59
-under some conditions which include the
+‎bajo algunas condiciones que incluyen el‎
 15:02
-nodes acting in a deterministic manner
+‎nodos que actúan de manera determinista‎
 15:03
-what they proved is that consensus is
+‎lo que demostraron es que el consenso es‎
 15:05
-impossible even with a single faulty
+‎imposible incluso con un solo defecto‎
 15:08
-process so despite these impossibility
+‎proceso así a pesar de estas imposibilidades‎
 15:10
-results there are a few well-known
+‎resultados hay algunos bien conocidos‎
 15:12
-protocols and Paxos is probably one of
+‎protocolos y Paxos es probablemente uno de‎
 15:15
-the better known and what Paxos does is
+‎el más conocido y lo que hace Paxos es‎
 15:17
-it makes certain compromises what it
+‎hace ciertos compromisos lo que hace‎
 15:20
-gives you is that it never produces an
+‎lo que te da es que nunca produce un‎
 15:22
-inconsistent result which would be
+‎resultado inconsistente que sería‎
 15:23
-really bad but it accepts the trade-off
+‎realmente malo pero acepta la compensación‎
 15:26
-that under certain conditions albeit
+‎que bajo ciertas condiciones aunque‎
 15:28
-rare ones the protocol can get stuck and
+‎raros el protocolo puede atascarse y‎
 15:30
-failed to make any progress but here's
+‎no pudo hacer ningún progreso, pero aquí está‎
 15:33
-the interesting thing
+‎lo interesante‎
 15:34
-these impossibility results were you
+‎estos resultados de imposibilidad fueron usted‎
 15:37
-know they were proved in a different
+‎saber que fueron probados en un‎
 15:38
-model they were intended to study
+‎modelo que estaban destinados a estudiar‎
 15:40
-distributed databases and this model
+‎bases de datos distribuidas y este modelo‎
 15:41
-doesn't carry over that well - this is a
+‎no se traslada tan bien - esto es un‎
 15:45
-setting that Bitcoin operates under so
+‎establecer que Bitcoin opera bajo así‎
 15:47
-what these results really tell us more
+‎lo que estos resultados realmente nos dicen más‎
 15:49
-about them
+‎sobre ellos‎
 15:49
-model then about the problem in fact and
+‎modelar entonces sobre el problema de hecho y‎
 15:53
-what bitcoin does is that it violates a
+‎lo que hace bitcoin es que viola un‎
 15:56
-lot of the assumptions that go into
+‎muchas de las suposiciones que entran en‎
 15:58
-these models and because of that
+‎estos modelos y por eso‎
 15:59
-consensus in Bitcoin ironically works
+‎El consenso en Bitcoin irónicamente funciona‎
 16:02
-better in practice than in theory and
+‎mejor en la práctica que en la teoría y‎
 16:04
-what this really means is that the
+‎lo que esto realmente significa es que el‎
 16:06
-theory that was developed for a
+‎teoría que fue desarrollada para un‎
 16:08
-different set of problems needs to catch
+‎diferente conjunto de problemas necesita atrapar‎
 16:10
-up in order to be able to say really
+‎arriba para poder decir realmente‎
 16:12
-interesting things about Bitcoin but
+‎cosas interesantes sobre Bitcoin pero‎
 16:14
-nevertheless that theory is quite
+‎sin embargo, esa teoría es bastante‎
 16:15
-important because for example it can
+‎importante porque por ejemplo puede‎
 16:18
-help us predict unforeseen attacks and
+‎ayúdanos a predecir ataques imprevistos y‎
 16:20
-really be able to come to strong
+‎realmente ser capaz de llegar a ser fuerte‎
 16:23
-guarantees on the nature of consensus
+‎garantías sobre la naturaleza del consenso‎
 16:25
-and security in Bitcoin so what are
+‎y la seguridad en Bitcoin, así que ¿qué son‎
 16:29
-these different assumptions what are
+‎estos diferentes supuestos lo que son‎
 16:30
-some things that Bitcoin does
+‎algunas cosas que hace Bitcoin‎
 16:31
-differently well first of all it
+‎diferentemente bien en primer lugar que todo‎
 16:33
-introduces the idea of incentives and
+‎introduce la idea de incentivos y‎
 16:35
-this is very different from any previous
+‎esto es muy diferente de cualquier anterior‎
 16:38
-system for distributed consensus and
+‎sistema para el consenso distribuido y‎
 16:40
-this is only possible in Bitcoin because
+‎esto solo es posible en Bitcoin porque‎
 16:42
-it is a currency and you can use that
+‎es una moneda y puedes usar eso‎
 16:44
-currency to give incentives to the
+‎moneda para dar incentivos a la‎
 16:46
-participants for acting honestly and so
+‎participantes por actuar honestamente y así‎
 16:50
-Bitcoin doesn't quite solve the
+‎Bitcoin no resuelve del todo el‎
 16:51
-distributed consensus problem in a
+‎problema de consenso distribuido en un‎
 16:53
-general sense but it solves it in the
+‎sentido general pero lo resuelve en el‎
 16:55
-context of the currency system the other
+‎contexto del sistema monetario el otro‎
 16:57
-thing that it does differently is that
+‎lo que hace diferente es que‎
 16:59
-it really embraces the notion of
+‎realmente abraza la noción de‎
 17:00
-randomness and what I mean by that is
+‎aleatoriedad y lo que quiero decir con eso es‎
 17:02
-one of the things it does is it does
+‎una de las cosas que hace es que hace‎
 17:04
-away with the notion of a specific
+‎lejos con la noción de un‎
 17:06
-starting point and ending point for
+‎punto de partida y punto final para‎
 17:07
-consensus instead consensus happens over
+‎el consenso, en cambio, el consenso ocurre sobre‎
 17:11
-a long period of time about an hour in
+‎un largo período de tiempo de aproximadamente una hora en‎
 17:13
-the practical system and but even at the
+‎el sistema práctico y pero incluso en el‎
 17:15
-end of that time you're not a hundred
+‎al final de ese tiempo no eres cien‎
 17:16
-percent sure that a transaction or a
+‎porcentaje seguro de que una transacción o un‎
 17:19
-block that you're interested in has made
+‎bloque que te interesa ha hecho‎
 17:20
-it into the consensus blockchain instead
+‎en su lugar, en la cadena de bloques de consenso‎
 17:23
-as time goes on your probability goes up
+‎a medida que pasa el tiempo, su probabilidad aumenta‎
 17:26
-higher and higher and the probability
+‎cada vez más alto y la probabilidad‎
 17:28
-that you're wrong in making an
+‎que te equivocas al hacer un‎
 17:29
-assumption about a transaction goes down
+‎la suposición sobre una transacción disminuye‎
 17:32
-exponentially so that's the kind of
+‎exponencialmente así que ese es el tipo de‎
 17:35
-inherently probabilistic guarantee that
+‎garantía inherentemente probabilística de que‎
 17:37
-Bitcoin gives you and that's why it's
+‎Bitcoin te da y por eso es‎
 17:39
-able to completely get around these
+‎capaz de sortear completamente estos‎
 17:41
-traditionally in traditional
+‎tradicionalmente en tradicional‎
 17:43
-impossibility results on distributed
+‎resultados de imposibilidad en distribuido‎
 17:44
-consensus protocols
+‎protocolos de consenso‎
 17:46
-you
+‎tú‎
 17:50
-so let's now dig into the technical
+‎así que profundicemos ahora en lo técnico‎
 17:52
-details of bitcoins consensus algorithm
+‎detalles del algoritmo de consenso de bitcoins‎
 17:54
-and while we're looking at that we
+‎y mientras miramos eso,‎
 17:57
-should keep in mind that Bitcoin does
+‎Debe tener en cuenta que Bitcoin lo hace‎
 17:58
-all of this without nodes having any
+‎todo esto sin que los nodos tengan ninguna‎
 18:01
-persistent long-term identities and this
+‎identidades persistentes a largo plazo y esto‎
 18:03
-is yet again a difference from how
+‎es una vez más una diferencia de cómo‎
 18:05
-traditional distribute consensus
+‎consenso de distribución tradicional‎
 18:07
-algorithms operated and if notes did
+‎algoritmos operados y si las notas lo hicieron‎
 18:09
-have identities it would make things a
+‎tener identidades haría que las cosas fueran un‎
 18:11
-lot easier for a couple of reasons one
+‎mucho más fácil por un par de razones uno‎
 18:13
-is a pragmatic reason it would allow you
+‎es una razón pragmática que te permitiría‎
 18:15
-to put into your protocol things like
+‎para poner en su protocolo cosas como‎
 18:17
-now the node with the lowest numerical
+‎ahora el nodo con el número más bajo‎
 18:20
-ID should take some step or something
+‎ID debe dar algún paso o algo así‎
 18:22
-like that so that's a simple pragmatic
+‎así que eso es un simple pragmático‎
 18:24
-reason which already if noes are
+‎razón que ya si los noes son‎
 18:26
-completely anonymous becomes harder to
+‎completamente anónimo se vuelve más difícil de‎
 18:27
-do but a much more serious reason for
+‎no hace más que una razón mucho más seria para‎
 18:31
-nodes to have identities as for security
+‎nodos para tener identidades en cuanto a seguridad‎
 18:33
-because if nodes were identified and it
+‎porque si se identificaron nodos y‎
 18:35
-weren't trivial to create new nodes
+‎no eran triviales para crear nuevos nodos‎
 18:37
-ident node identities then we could make
+‎identidades de nodo ident entonces podríamos hacer‎
 18:40
-assumptions like let's say that less
+‎suposiciones como digamos que menos‎
 18:42
-than 50% of the nodes are malicious and
+‎que el 50% de los nodos son maliciosos y‎
 18:44
-we could derive security properties out
+‎podríamos derivar propiedades de seguridad‎
 18:45
-of that so for both of these reasons the
+‎de ello, por ambas razones, el‎
 18:49
-consensus protocol in Bitcoin is a bit
+‎El protocolo de consenso en Bitcoin es un poco‎
 18:51
-harder but why is it exactly the Bitcoin
+‎más difícil, pero ¿por qué es exactamente el Bitcoin?‎
 18:54
-nodes don't have identities well it's
+‎los nodos no tienen identidades bien, es‎
 18:56
-for a couple of reasons
+‎por un par de razones‎
 18:57
-one is that if you're in a decentralized
+‎una es que si estás en un descentralizado‎
 18:59
-model in a peer-to-peer system there is
+‎modelo en un sistema peer-to-peer hay‎
 19:01
-no central authority to give identities
+‎no hay autoridad central para dar identidades‎
 19:05
-to nodes and verify that they're not
+‎a los nodos y compruebe que no lo son‎
 19:06
-creating new nodes at will and in fact
+‎crear nuevos nodos a voluntad y de hecho‎
 19:10
-the technical term for this is a Sybil
+‎el término técnico para esto es un Sybil‎
 19:11
-attack
+‎atacar‎
 19:12
-Sybil's are just copies of nodes that a
+‎Las Sybil son solo copias de nodos que un‎
 19:14
-malicious adversary can create to look
+‎adversario malintencionado puede crear para mirar‎
 19:16
-like there are a lot of different
+‎como que hay un montón de diferentes‎
 19:18
-participants when in fact all those
+‎participantes cuando en realidad todos aquellos‎
 19:19
-pseudo participants are really
+‎pseudo participantes son realmente‎
 19:21
-controlled by the same adversary the
+‎controlado por el mismo adversario el‎
 19:24
-other reason is that pseudonymity
+‎otra razón es que el seudónimo‎
 19:26
-is inherently a goal of Bitcoin even if
+‎es inherentemente un objetivo de Bitcoin, incluso si‎
 19:28
-it were possible or easy to establish
+‎era posible o fácil de establecer‎
 19:30
-identities for all nodes or all
+‎identidades para todos los nodos o todos‎
 19:32
-participants we wouldn't necessarily
+‎participantes no necesariamente lo haríamos‎
 19:34
-want to do that so bitcoin doesn't give
+‎quiero hacer eso para que bitcoin no dé‎
 19:37
-you strong anonymity guarantees out of
+‎su fuerte anonimato garantiza fuera de‎
 19:39
-the box and that's the different
+‎la caja y eso es lo diferente‎
 19:41
-transactions that you make can probably
+‎las transacciones que realice probablemente puedan‎
 19:43
-be linked together but at the same time
+‎estar unidos entre sí pero al mismo tiempo‎
 19:45
-nobody is forcing you to put your real
+‎nadie te está obligando a poner tu verdadero‎
 19:48
-life identity like your name or IP
+‎identidad de vida como su nombre o IP‎
 19:51
-address or anything like that
+‎dirección o algo así‎
 19:52
-in order to participate in the
+‎con el fin de participar en el‎
 19:54
-peer-to-peer network and in the
+‎red peer-to-peer y en el‎
 19:55
-blockchain and that's an important
+‎blockchain y eso es importante‎
 19:56
-property so what we can do instead is we
+‎así que lo que podemos hacer en su lugar es nosotros‎
 20:02
-can make a weaker assumption
+‎puede hacer una suposición más débil‎
 20:04
-and I kind of want you to take a leap of
+‎y quiero que des un salto de‎
 20:06
-faith with me here that this weaker
+‎fe conmigo aquí que este más débil‎
 20:08
-assumption is something that it's going
+‎la suposición es algo que va‎
 20:11
-to be feasible and I'm going to make
+‎para ser factible y voy a hacer‎
 20:12
-this assumption here and later show you
+‎esta suposición aquí y más adelante le muestran‎
 20:14
-how this is actually accomplished and
+‎cómo se logra esto realmente y‎
 20:16
-what this weaker assumption is is that
+‎lo que es esta suposición más débil es que‎
 20:18
-we're going to assume that there is some
+‎vamos a suponer que hay algunos‎
 20:20
-ability somehow to pick a random node in
+‎capacidad de alguna manera para elegir un nodo aleatorio en‎
 20:22
-the system and a good motivating analogy
+‎el sistema y una buena analogía motivadora‎
 20:25
-for this it's a lottery or a raffle or
+‎para esto es una lotería o una rifa o‎
 20:28
-any number of real-life systems
+‎cualquier número de sistemas de la vida real‎
 20:30
-we're tracking and verifying people and
+‎estamos rastreando y verificando personas y‎
 20:32
-giving them identities and verifying
+‎dándoles identidades y verificando‎
+20:34
+
+
+
+
 20:34
 those identities is pretty hard and so
 20:36
