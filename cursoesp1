@@ -150,342 +150,345 @@ tx tx
 ...
 tx tx
 
+‎usted está a cargo del backend para una empresa como Google o Facebook, estas compañías suelen tener miles o‎
 
-you're in charge of the backend for a company like Google or Facebook these companies typically have thousands or
-
-even millions of servers which form a
+‎incluso millones de servidores que forman un‎
 05:47
-massive distributed database that
+‎base de datos distribuida masiva que‎
 05:49
-records all of the actions that happen
+‎registra todas las acciones que ocurren‎
 05:51
-on the system like users comments and
+‎en el sistema, como comentarios de los usuarios y‎
 05:53
-likes and posts and so on so when a new
+‎me gusta y publicaciones y así sucesivamente cuando un nuevo‎
 05:56
-comment let's say comes in the way it'll
+‎comentario digamos que viene en la forma en que lo hará‎
 05:59
-be recorded is that there might be ten
+‎se registra es que podría haber diez‎
 06:01
-or fifteen different nodes in that
+‎o quince nodos diferentes en eso‎
 06:03
-massive back-end that might contain
+‎back-end masivo que podría contener‎
 06:05
-copies of this action now what the
+‎copias de esta acción ahora lo que el‎
 06:07
-server needs to make sure is that that
+‎el servidor debe asegurarse de que‎
 06:10
-comment either gets recorded in all
+‎el comentario se registra en todos‎
 06:11
-copies of that database or none of them
+‎copias de esa base de datos o ninguna de ellas‎
 06:13
-if for some reason because some of these
+‎si por alguna razón porque algunos de estos‎
 06:16
-nodes might be faulty the action gets
+‎los nodos pueden estar defectuosos en la acción‎
 06:18
-recorded in none of the databases it's
+‎registrado en ninguna de las bases de datos que está‎
 06:20
-ok you can go back to the user and say
+‎ok, puede volver al usuario y decir‎
 06:22
-there was a problem saving your post
+‎ha habido un problema al guardar tu publicación‎
 06:23
-would you please try again on the other
+‎¿podría intentarlo de nuevo en el otro?‎
 06:25
-hand if some of the copies of the
+‎mano si algunas de las copias de la‎
 06:27
-database saved it and others didn't then
+‎la base de datos lo guardó y otros no lo hicieron entonces‎
 06:30
-you'd be in a lot of trouble because
+‎estarías en muchos problemas porque‎
 06:31
-you'd have an inconsistent database so
+‎tendría una base de datos inconsistente, por lo que‎
 06:33
-this is the key problem that motivated
+‎este es el problema clave que motivó‎
 06:34
-the traditional research on distributed
+‎la investigación tradicional sobre la distribución‎
 06:37
-consensus and you can sort of see the
+‎consenso y se puede ver el‎
 06:39
-similarities to Bitcoin here but we're
+‎similitudes con Bitcoin aquí, pero estamos‎
 06:41
-going to talk in a bit more detail about
+‎vamos a hablar con un poco más de detalle sobre‎
 06:42
-the similarities and differences so that
+‎las similitudes y diferencias para que‎
 06:45
-was the traditional motivating
+‎fue la motivación tradicional‎
 06:47
-application but we can also imagine that
+‎aplicación pero también podemos imaginar que‎
 06:49
-if we achieved a distributed consensus
+‎si logramos un consenso distribuido‎
 06:52
-protocol and we were able to use that to
+‎protocolo y pudimos usar eso para‎
 06:55
-build a massive
+‎construir un masivo‎
 06:56
-full-scale distributed key-value store
+‎almacén de clave-valor distribuido a gran escala‎
 06:58
-that maps arbitrary keys or names to
+‎que asigna claves o nombres arbitrarios a‎
 07:01
-arbitrary values then that will enable a
+‎valores arbitrarios entonces que habilitarán un‎
 07:03
-lot of applications for example a
+‎muchas aplicaciones, por ejemplo, un‎
 07:05
-distributed domain name system which is
+‎sistema de nombres de dominio distribuido que es‎
 07:07
-simply a mapping between human
+‎simplemente un mapeo entre humanos‎
 07:09
-understandable domain names to IP
+‎nombres de dominio comprensibles para IP‎
 07:11
-addresses or a public key directory
+‎direcciones o un directorio de clave pública‎
 07:13
-which is a mapping between user email
+‎que es una asignación entre el correo electrónico del usuario‎
 07:16
-addresses let's say to their public keys
+‎direcciones digamos a sus claves públicas‎
 07:18
-or even things like stock trades because
+‎o incluso cosas como operaciones bursátiles porque‎
 07:21
-this distributed database instead of
+‎esta base de datos distribuida en lugar de‎
 07:23
-keeping track of who's paid whom how
+‎realizar un seguimiento de quién ha pagado a quién y cómo‎
 07:25
-much money would keep track of who's
+‎mucho dinero haría un seguimiento de quién es‎
 07:27
-transferred what units of which stock to
+‎transfirió qué unidades de qué stock a‎
 07:30
-whom and the cool thing about this is
+‎quién y lo bueno de esto es‎
 07:32
-that now that Bitcoin has solved the
+‎que ahora que Bitcoin ha resuelto el‎
 07:35
-distributed consensus problem in a
+‎problema de consenso distribuido en un‎
 07:37
-certain sense that we'll try to
+‎cierto sentido de que intentaremos‎
 07:38
-understand in this lecture we can also
+‎entender en esta conferencia que también podemos‎
 07:40
-go ahead and try to think about
+‎sigue adelante y trata de pensar en‎
 07:42
-solutions to all of these other related
+‎soluciones a todos estos otros relacionados‎
 07:44
-problems and in fact there are many
+‎problemas y de hecho hay muchos‎
 07:46
-altcoins in altcoins we'll have several
+‎altcoins en altcoins tendremos varios‎
 07:49
-more lectures about altcoins but very
+‎más conferencias sobre altcoins pero muy‎
 07:51
-briefly altcoins
+‎brevemente altcoins‎
 07:52
-are systems built on Bitcoin like
+‎son sistemas construidos en Bitcoin como‎
 07:55
-principles to achieve perhaps slightly
+‎principios a alcanzar quizás ligeramente‎
 07:56
-different goals sometimes currency
+‎diferentes objetivos a veces moneda‎
 07:58
-systems sometimes not currency systems
+‎sistemas a veces no sistemas monetarios‎
 08:00
-such as one of these applications and so
+‎como una de estas aplicaciones y así‎
 08:02
-given that we can solve distributed
+‎dado que podemos resolver distribuidos‎
 08:05
-consensus now and given that we can
+‎consenso ahora y dado que podemos‎
 08:07
-build a global distributed key-value
+‎crear una clave-valor distribuida global‎
 08:08
-store it enables a lot of these other
+‎almacenar permite una gran cantidad de estos otros‎
 08:10
-cool applications okay let's go to a
+‎aplicaciones geniales bien vamos a un‎
 08:14
-technical definition now the technical
+‎definición técnica ahora la técnica‎
 08:16
-definition of distributed consensus is
+‎la definición de consenso distribuido es‎
 08:18
-really quite simple imagine that there
+‎realmente bastante simple imagina que hay‎
 08:20
-is a fixed number n of nodes or
+‎es un número fijo n de nodos o‎
 08:22
-processes and each of these nodes has
+‎y cada uno de estos nodos tiene‎
 08:25
-some input value and then a consensus
+‎algún valor de entrada y, a continuación, un consenso‎
 08:29
-protocol happens and the two
+‎el protocolo sucede y los dos‎
 08:31
-requirements on this consensus protocol
+‎requisitos sobre este protocolo de consenso‎
 08:33
-are that the protocol should terminate
+‎es que el protocolo debe terminar‎
 08:35
-and all correct nodes should decide on
+‎y todos los nodos correctos deben decidir sobre‎
 08:37
-some value the consensus value right
+‎algunos valoran el valor de consenso correcto‎
 08:40
-and I say correct nodes because some of
+‎y digo nodos correctos porque algunos de‎
 08:41
-the nodes might be faulty or even
+‎los nodos pueden estar defectuosos o incluso‎
 08:43
-outright malicious and the second
+‎totalmente malicioso y el segundo‎
 08:45
-requirement is that this value that they
+‎requisito es que este valor que ellos‎
 08:47
-agree upon cannot be an arbitrary value
+‎acordar no puede ser un valor arbitrario‎
 08:49
-but it should be a value that was
+‎pero debería ser un valor que fuera‎
 08:52
-proposed as input by at least one of
+‎propuesto como insumo por al menos uno de‎
 08:54
-these correct nodes so it's really that
+‎estos nodos correctos, por lo que es realmente que‎
 08:57
-simple
+‎sencillo‎
 08:57
-but let's try to see what this might
+‎pero tratemos de ver qué podría hacer esto‎
 08:59
-mean in the context of Bitcoin so to
+‎significa en el contexto de Bitcoin para‎
 09:02
-understand how distributed consensus
+‎comprender cómo se distribuye el consenso‎
 09:04
-could work in Bitcoin let's start with a
+‎podría funcionar en Bitcoin comencemos con un‎
 09:07
-reminder that Bitcoin is a peer-to-peer
+‎recordatorio de que Bitcoin es un peer-to-peer‎
 09:09
-system
+‎sistema‎
 09:09
-right so what I mean when I say that
+‎Correcto, así que a qué me refiero cuando digo que‎
 09:11
-bitcoin is a peer-to-peer system is that
+‎bitcoin es un sistema peer-to-peer es que‎
 
 
 09:14
-when Alice wants to pay Bob
+‎cuando Alice quiere pagarle a Bob‎
 09:16
-what she does is she's going to
+‎lo que hace es que va a‎
 09:18
-broadcast a transaction to all of the
+‎difundir una transacción a todos los‎
 09:20
-Bitcoin nodes that comprise the
+‎Nodos de Bitcoin que comprenden el‎
 09:22
-peer-to-peer network and you can see
+‎red peer-to-peer y puede ver‎
 09:24
-here the structure of the transaction
+‎aquí la estructura de la transacción‎
 09:25
-this is similar to goofy coin that we
+‎esto es similar a la moneda tonta que nosotros‎
 09:28
-saw in the first lecture and what a
+‎vio en la primera conferencia y qué‎
 09:30
-transaction is going to have is it's
+‎la transacción va a tener es‎
 09:32
-going to have Alice's signature which
+‎va a tener la firma de Alice que‎
 09:34
-the other nodes need in order to know
+‎los otros nodos necesitan para saber‎
 09:36
-that it really in fact came from Alice
+‎que realmente vino de Alicia‎
 09:38
-it's going to have Bob's public key
+‎va a tener la clave pública de Bob‎
 09:40
-which also acts as his address at which
+‎que también actúa como su dirección en la que‎
 09:43
-he wants to receive bitcoins
+‎quiere recibir bitcoins‎
 09:45
-and further it contains a hash what is
+‎y además contiene un hash lo que es‎
 09:48
-this hash recall this notion of hash
+‎este hash recuerda esta noción de hash‎
 09:51
-pointers that we saw in the first
+‎punteros que vimos en el primero‎
 09:52
-lecture so this hash is a way for Alice
+‎Conferencia para que este hash sea un camino para Alice‎
 09:55
-to link together this transaction or
+‎para vincular esta transacción o‎
 09:58
-this coin to her receipt of this coin
+‎esta moneda a su recibo de esta moneda‎
 10:01
-from someone else previously right so
+‎de otra persona anteriormente derecho así que‎
 10:04
-those are the things that are contained
+‎esas son las cosas que están contenidas‎
 10:06
-in this data structure that we call a
+‎en esta estructura de datos que llamamos‎
 10:07
-transaction and she's going to broadcast
+‎transacción y ella va a transmitir‎
 10:09
-that to all of the Bitcoin peer-to-peer
+‎eso a todos los Bitcoin peer-to-peer‎
 10:11
-nodes and notice something funny here
+‎nodos y notar algo gracioso aquí‎
 10:14
-Bob's computer is nowhere in this
+‎La computadora de Bob no está en ninguna parte de esto.‎
 10:16
-picture now Bob if he wants to be
+‎imagínate ahora Bob si quiere ser‎
 10:19
-notified that this transaction did in
+‎notificó que esta transacción se realizó en‎
 10:21
-fact happen and that he got paid he
+‎hecho que sucedió y que le pagaron que‎
 10:23
-might want to run a Bitcoin node that's
+‎es posible que desee ejecutar un nodo de Bitcoin que sea‎
 10:24
-one of these peer-to-peer nodes in order
+‎uno de estos nodos punto a punto en orden‎
 10:27
-to listen in on the network and be sure
+‎para escuchar en la red y asegurarse‎
 10:29
-that he's received that transaction but
+‎que ha recibido esa transacción pero‎
 10:31
-his listening is not in fact necessary
+‎de hecho, su escucha no es necesaria‎
 10:32
-for him to receive the funds the
+‎para que reciba los fondos el‎
 10:35
-bitcoins will be his whether or not he's
+‎bitcoins será suyo si es o no‎
 10:37
-running a node on the network so given
+‎ejecutar un nodo en la red así dado‎
 10:39
-this peer-to-peer system what is it
+‎este sistema peer-to-peer ¿qué es?‎
 10:41
-exactly that the nodes might want to
+‎exactamente que los nodos podrían querer‎
 10:43
-reach consensus on well given that a
+‎llegar a un consenso sobre el bien dado que un‎
 10:46
-variety of users are broadcasting these
+‎variedad de usuarios están transmitiendo estos‎
 10:48
-transactions to the network what
+‎transacciones a la red qué‎
 10:50
-everybody wants to reach consensus on is
+‎todo el mundo quiere llegar a un consenso sobre su‎
 10:51
-exactly which transactions were
+‎exactamente qué transacciones fueron‎
 10:53
-broadcasted and the order in which these
+‎emitidos y el orden en que estos‎
 10:56
-transactions happened right so what does
+‎las transacciones ocurrieron correctamente, así que ¿qué hace‎
 10:59
-that mean specifically how consensus
+‎que significan específicamente cómo el consenso‎
 11:02
-could work in Bitcoin is that at any
+‎podría funcionar en Bitcoin es que en cualquier‎
 11:04
-given time all the nodes in the
+‎dado el tiempo todos los nodos en el‎
 11:06
-peer-to-peer network would have a
+‎la red punto a punto tendría un‎
 11:08
-sequence of blocks of transactions that
+‎secuencia de bloques de transacciones que‎
 11:10
-they've reached consensus on so recall
+‎han llegado a un consenso sobre el retiro‎
 11:13
-that in Scrooge coin for optimization
+‎que en Scrooge moneda para la optimización‎
 11:15
-purposes for efficiency we put
+‎propósitos para la eficiencia que ponemos‎
 11:17
-transactions into blocks and we link
+‎transacciones en bloques y enlazamos‎
 11:19
-these blocks together on a blockchain
+‎estos bloques juntos en una cadena de bloques‎
 11:21
-so we're utilizing a similar principle
+‎así que estamos utilizando un principio similar‎
 11:23
-here we could do consensus on
+‎aquí podríamos hacer consenso sobre‎
 11:25
-transactions one by one that would be
+‎transacciones una por una que serían‎
 11:26
-okay it would just be an efficient so
+‎de acuerdo, sería un eficiente, así que‎
 11:29
-instead we do consensus on a block by
+‎en su lugar, hacemos consenso sobre un bloque por‎
 11:31
-block basis so at any given point all
+‎base de bloques, por lo que en cualquier punto dado todos‎
 11:34
-these nodes in the peer-to-peer network
+‎estos nodos de la red punto a punto‎
 11:36
-would have the sequence of blocks that
+‎tendría la secuencia de bloques que‎
 11:37
-they've agreed upon already and each
+‎ya se han puesto de acuerdo y cada uno‎
 11:40
-node would then have a set of
+‎nodo tendría entonces un conjunto de‎
+11:42
+‎transacción pendiente‎
+
+
 11:42
 outstanding transactions that it has
 11:44
