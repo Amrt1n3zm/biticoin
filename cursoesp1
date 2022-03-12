@@ -1487,576 +1487,629 @@ tx tx
 ‎pero no es una regla sólida y en cualquier‎
 30:35
 ‎caso debido a la red‎
-
-
-
-30:43
-the next node that gets to propose a
+‎el siguiente nodo que llega a proponer un‎
 30:45
-block will extend this block instead of
+‎el bloque extenderá este bloque en lugar de‎
 30:47
-this one or it could be that even if
+‎este o podría ser que incluso si‎
 30:49
-it's an honest node Alice could try to
+‎es un nodo honesto que Alice podría intentar‎
 30:51
-bribe that node or try to subvert the
+‎sobornar ese nodo o intentar subvertir el‎
 30:53
-process in a variety of ways so for
+‎procesar de diversas maneras para‎
 30:55
-whatever reason without going too much
+‎cualquier razón sin ir demasiado‎
 30:57
-into the details let's say that the next
+‎en los detalles digamos que el siguiente‎
 30:59
-node extends the block with the red
+‎el nodo extiende el bloque con el rojo‎
 31:01
-transaction instead of the green one
+‎transacción en lugar de la verde‎
 31:03
-what this means is that at this point
+‎lo que esto significa es que en este punto‎
 31:06
-the next honest node is much more likely
+‎el siguiente nodo honesto es mucho más probable‎
 31:08
-to extend this block instead of this one
+‎para extender este bloque en lugar de este‎
 31:10
-because now this has become the long
+‎porque ahora esto se ha convertido en el largo‎
 31:12
-valo chain so let's say that after one
+‎cadena valo así que digamos que después de uno‎
 31:16
-more block the situation looks like this
+‎más bloque la situación se ve así‎
 31:17
-now it's starting to look pretty likely
+‎ahora está empezando a parecer bastante probable‎
 31:19
-that this double spin has succeeded in
+‎que este doble giro ha tenido éxito en‎
 31:21
-fact what might happen is that this ends
+‎de hecho lo que podría suceder es que esto termine‎
 31:24
-up the long term consensus chain and
+‎subir la cadena de consenso a largo plazo y‎
 31:26
-this block gets completely ignored by
+‎este bloque es completamente ignorado por‎
 31:29
-the network and this is now called an
+‎la red y ahora se denomina‎
 31:31
-orphan block and this is an example of a
+‎bloque huérfano y este es un ejemplo de un‎
 31:34
-successful double spend so now let's
+‎doble gasto exitoso, así que ahora vamos a‎
 31:36
-look at this whole situation from Bob
+‎mira toda esta situación de Bob‎
 31:38
-the merchants point of view and
+‎el punto de vista de los comerciantes y‎
 31:40
-understanding how Bob can protect
+‎comprender cómo Bob puede proteger‎
 31:42
-himself from this double spending attack
+‎él mismo de este ataque de doble gasto‎
 31:43
-it's really going to be a key part of
+‎realmente va a ser una parte clave de‎
 31:45
-understanding Bitcoin security so let's
+‎entendiendo la seguridad de Bitcoin, así que vamos a‎
 31:47
-look at what happened here again we have
+‎mira lo que pasó aquí de nuevo tenemos‎
 31:50
-a couple of blocks in the blockchain and
+‎un par de bloques en la cadena de bloques y‎
 31:52
-at this point
+‎en este punto‎
 31:54
-Alice broadcasts a transaction that
+‎Alice transmite una transacción que‎
 31:56
-represents her payment to Bob and so Bob
+‎representa su pago a Bob y así Bob‎
 31:58
-is going to hear about it on the
+‎va a oír hablar de ello en el‎
 32:00
-peer-to-peer network right here even
+‎red peer-to-peer aquí mismo, incluso‎
 32:02
-before the next block gets created and
+‎antes de que se cree el siguiente bloque y‎
 32:04
-so Bob can do something even more
+‎para que Bob pueda hacer algo aún más‎
 32:07
-foolhardy that what he did in the
+‎temerario que lo que hizo en el‎
 32:09
-previous light which is that as soon as
+‎luz previa que es que tan pronto como‎
 32:11
-he hears about the transaction on the
+‎se entera de la transacción en el‎
 32:12
-peer-to-peer network he can complete the
+‎red peer-to-peer puede completar el‎
 32:14
-transaction on the website and allow
+‎transacción en el sitio web y permitir‎
 32:16
-Alice to download whatever she is
+‎Alice para descargar lo que sea‎
 32:18
-downloading that's called a zero
+‎descarga que se denomina cero‎
 32:20
-confirmation transaction or he could
+‎transacción de confirmación o podría‎
 32:24
-wait until the transaction gets one
+‎espere hasta que la transacción obtenga uno‎
 32:26
-confirmation in the blockchain which
+‎confirmación en la cadena de bloques que‎
 32:28
-means that at least some node has
+‎significa que al menos algún nodo tiene‎
 32:32
-created a block and has proposed this
+‎ha creado un bloque y ha propuesto esto‎
 32:35
-transaction and that has gone into the
+‎transacción y que ha entrado en el‎
 32:37
-blockchain but as we saw earlier even
+‎blockchain pero como vimos anteriormente incluso‎
 32:40
-after one confirmation there could be an
+‎después de una confirmación podría haber un‎
 32:42
-attempt at a double spend so let's say
+‎intentar un doble gasto, digamos‎
 32:44
-that this actually happens if as in the
+‎que esto realmente sucede si como en el‎
 32:47
-previous slide the double spend attempt
+‎diapositiva anterior el intento de doble gasto‎
 32:49
-succeeds what Bob should do is to
+‎lo que Bob debería hacer es‎
 32:51
-realize that the block that he thought
+‎darse cuenta de que el bloque que él pensaba‎
 32:53
-represented Alice paying him has now
+‎representada Alicia pagándole tiene ahora‎
 32:56
-been orphaned and she's and so he should
+‎ha quedado huérfana y ella lo es y por lo tanto él debería‎
 32:57
-abandon the transaction instead if it so
+‎en su lugar, abandone la transacción si es así‎
 33:01
-happens that despite this double spent
+‎sucede que a pesar de este doble gasto‎
 33:02
-attempt the next block that's generated
+‎intente el siguiente bloque que se genera‎
 33:05
-turns out to extend the block that he's
+‎resulta extender el bloque que es‎
 33:08
-interested in now he sees that his
+‎interesado en ahora ve que su‎
 33:11
-transaction has two confirmations in the
+‎la transacción tiene dos confirmaciones en el‎
 33:13
-blockchain now he gets a little bit more
+‎blockchain ahora obtiene un poco más‎
 33:16
-confidence that his transaction is going
+‎confianza en que su transacción va a marchar‎
 33:18
-to end up on the long-term consensus
+‎para terminar en el consenso a largo plazo‎
 33:19
-chain so let's say there's one more and
+‎cadena así que digamos que hay una más y‎
 33:22
-now there are three confirmations in
+‎ahora hay tres confirmaciones en‎
 33:24
 general
 33:25
-the more confirmations your transaction
+‎cuantas más confirmaciones tenga su transacción‎
 33:27
-gets the higher the probability that it
+‎obtiene cuanto mayor sea la probabilidad de que‎
 33:29
-is going to end up on the long-term
+‎va a terminar a largo plazo‎
 33:31
-consensus chain because if you recall
+‎cadena de consenso porque si recuerdas‎
 33:33
-the honest nodes behavior that they will
+‎el comportamiento honesto de los nodos que lo harán‎
 33:35
-always extend the longest valid branch
+‎extender siempre la rama válida más larga‎
 33:38
-that they see the chance that this one
+‎que ven la posibilidad de que este‎
 33:40
-is going to catch up to this longer
+‎va a ponerse al día con esto por más tiempo‎
 33:42
-branch is now very minuscule especially
+‎la rama es ahora muy minúscula, especialmente‎
 33:45
-if only a minority of the nodes are
+‎si sólo una minoría de los nodos son‎
 33:47
-malicious because it typically the only
+‎malicioso porque normalmente es el único‎
 33:50
-reason that this double span attempt
+‎razón por la que este intento de doble tramo‎
 33:52
-block would be extended at this point is
+‎el bloque se extendería en este punto es‎
 33:54
-if the next node to be picked randomly
+‎si el siguiente nodo que se va a elegir aleatoriamente‎
 33:56
-was a malicious node and then you'd need
+‎era un nodo malicioso y entonces necesitaría‎
 33:58
-another malicious node and then another
+‎otro nodo malintencionado y luego otro‎
 33:59
-for the shorter branch to then become
+‎para que la rama más corta se convierta en‎
 34:01
-the longer branch in general the double
+‎la rama más larga en general la doble‎
 34:06
-span probability decreases exponentially
+‎la probabilidad de span disminuye exponencialmente‎
 34:09
-with the number of confirmations so if
+‎con el número de confirmaciones así que si‎
 34:12
-the transaction you're interested in has
+‎la transacción que te interesa tiene‎
 34:14
-received K confirmations then the
+‎recibió K confirmaciones y luego el‎
 34:16
-probability that this other transaction
+‎probabilidad de que esta otra transacción‎
 34:17
-is going to end up on the long term
+‎va a terminar a largo plazo‎
 34:19
-consensus chain goes down exponentially
+‎la cadena de consenso baja exponencialmente‎
 34:21
-as a function of K in the most common
+‎en función de K en el más común‎
 34:24
-heuristic that's used in the Bitcoin
+‎heurística que se utiliza en el Bitcoin‎
 34:26
-ecosystem is that you wait for six
+‎ecosistema es que esperas seis‎
 34:28
-confirmations there is nothing really
+‎confirmaciones no hay nada realmente‎
 34:30
-special about the number six it's just a
+‎especial sobre el número seis es sólo un‎
 34:32
-good trade-off between the amount of
+‎buena compensación entre la cantidad de‎
 34:34
-time you have to wait and your guarantee
+‎tiempo que tienes que esperar y tu garantía‎
 34:36
-that the transaction you're interested
+‎que la transacción que le interesa‎
 34:38
-in ends up on the consensus watching so
+‎en termina en el consenso observando así que‎
 34:42
-let's recap what we saw here protection
+‎recapitulemos lo que vimos aquí protección‎
 34:46
-against invalid transactions that is
+‎contra transacciones no válidas que es‎
 34:48
-protection against a malicious node
+‎protección contra un nodo malintencionado‎
 34:49
-simply making up a transaction to steal
+‎simplemente inventando una transacción para robar‎
 34:51
-someone's bitcoins is entirely
+‎los bitcoins de alguien son completamente‎
 34:53
-cryptographic but it is enforced by
+‎criptográfico pero es aplicado por‎
 34:56
-consensus which means that if a node
+‎consenso que significa que si un nodo‎
 34:59
-does attempt that then the only reason
+‎intenta que entonces la única razón‎
 35:01
-that that transaction won't end up in
+‎que esa transacción no terminará en‎
 35:03
-the long term consensus chain is because
+‎la cadena de consenso a largo plazo se debe a que‎
 35:05
-a majority of the nodes are honest and
+‎la mayoría de los nodos son honestos y‎
 35:06
-will treat that transaction as invalid
+‎tratará esa transacción como no válida‎
 35:08
-on the other hand protection against
+‎por otro lado, la protección contra‎
 35:11
-double spending is purely about
+‎el doble gasto se trata puramente de‎
 35:12
-consensus
+‎consenso‎
 35:13
-cryptography has nothing to say about
+‎la criptografía no tiene nada que decir‎
 35:15
-this and true transactions that
+‎esto y las transacciones verdaderas que‎
 35:17
-represent a double spending attempt kind
+‎representan un tipo de intento de doble gasto‎
 35:20
-of look identical from the perspective
+‎de aspecto idéntico desde la perspectiva‎
 35:22
-of signatures and so on but it's the
+‎de firmas y demás, pero es el‎
 35:24
-consensus that determines which one will
+‎consenso que determina cuál‎
 35:26
-end up on the long term consensus chain
+‎terminar en la cadena de consenso a largo plazo‎
 35:28
-and finally you're never 100% sure that
+‎y finalmente nunca estás 100% seguro de que‎
 35:31
-a transaction you're interested in is on
+‎una transacción que te interesa está en‎
 35:33
-the consensus branch but this
+‎la rama de consenso, pero esta‎
 35:35
-exponential probability guarantee is
+‎la garantía de probabilidad exponencial es‎
 35:37
-pretty good after about six transaction
+‎bastante bueno después de unas seis transacciones‎
 35:39
-there's virtually no chance that that
+‎prácticamente no hay posibilidad de que eso‎
 35:41
-you're going to go wrong
+‎te vas a equivocar‎
 35:48
-so in the previous section we got a
+‎así que en la sección anterior obtuvimos un‎
 35:51
-basic look at bitcoins consensus
+‎mirada básica al consenso de bitcoins‎
 35:53
-algorithm and a good intuition for why
+‎algoritmo y una buena intuición de por qué‎
 35:56
-we believe that it's secure but recall
+‎creemos que es seguro, pero recordamos‎
 35:58
-that at the beginning of the lecture I
+‎que al inicio de la conferencia I‎
 36:00
-told you that bitcoins decentralization
+‎te dijo que la descentralización de bitcoins‎
 36:02
-is partly a technical mechanism and
+‎es en parte un mecanismo técnico y‎
 36:04
-partly clever incentive engineering
+‎ingeniería de incentivos parcialmente inteligente‎
 36:06
-so far we've mostly looked at the
+‎hasta ahora hemos mirado principalmente el‎
 36:08
-technical mechanism now let's talk about
+‎mecanismo técnico ahora hablemos de‎
 36:10
-the incentive engineering that happens
+‎la ingeniería de incentivos que sucede‎
 36:12
-in Bitcoin I asked you to take a leap of
+‎en Bitcoin te pedí que dieras un salto de‎
 36:16
-faith with me earlier in assuming that
+‎fe conmigo antes en asumir que‎
 36:18
-we're able to pick a random node and
+‎podemos elegir un nodo aleatorio y‎
 36:20
-perhaps more problematically that at
+‎quizás más problemáticamente que en‎
 36:23
-least 50% of the time this process will
+‎al menos el 50% de las veces este proceso lo hará‎
 36:25
-pick an honest node but of course this
+‎elija un nodo honesto, pero por supuesto esto‎
 36:27
-assumption of honesty is quite
+‎la asunción de la honestidad es bastante‎
 36:28
-problematic especially if there are
+‎problemático especialmente si hay‎
 36:30
-financial incentives for participants to
+‎incentivos financieros para que los participantes‎
 36:32
-subvert this then why would we expect
+‎subvertir esto, entonces, ¿por qué esperaríamos‎
 36:34
-any node to be honest really so what we
+‎cualquier nodo para ser honestos realmente así que lo que nosotros‎
 36:36
-want to ask is can we give nodes an
+‎quiero preguntar es si podemos dar a los nodos un‎
 36:39
-incentive for behaving honestly let's
+‎incentivo para comportarse honestamente, hagamos‎
 36:41
-look at this with respect to the picture
+‎mira esto con respecto a la imagen‎
 36:43
-we've been looking at this is the
+‎hemos estado viendo que este es el‎
 36:45
-long-term consensus chain and this block
+‎cadena de consenso a largo plazo y este bloque‎
 36:47
-contains an attempt to double spend we
+‎contiene un intento de duplicar el gasto que tenemos‎
 36:50
-can ask can we penalize somehow the node
+‎¿podemos preguntar podemos penalizar de alguna manera el nodo?‎
 36:52
-that created this block but this is
+‎que creó este bloque pero esto es‎
 36:55
-problematic for a number of reasons
+‎problemático por varias razones‎
 36:56
-including the fact that nodes don't have
+‎incluyendo el hecho de que los nodos no tienen‎
 36:58
-identities and so there's no way to go
+‎identidades y por lo tanto no hay forma de ir‎
 37:00
-after them to penalize them so instead
+‎después de ellos para penalizarlos, así que en su lugar‎
 37:02
-let's flip the question around and ask
+‎demos la vuelta a la pregunta y preguntemos‎
 37:04
-can we reward the nodes that created all
+‎¿podemos recompensar a los nodos que crearon todo?‎
 37:07
-these blocks that did end up on the long
+‎estos bloques que terminaron en el largo‎
 37:09
-term consensus chain well again sort of
+‎cadena de consenso de términos bien de nuevo algo así como‎
 37:12
-the same problem we don't have no
+‎el mismo problema que no tenemos no‎
 37:13
-identities so we can't mail them cash to
+‎identidades para que no podamos enviarles dinero en efectivo‎
 37:16
-their home addresses if only there were
+‎sus domicilios si tan solo hubiera‎
 37:18
-some sort of digital currency than we
+‎algún tipo de moneda digital que nosotros‎
 37:20
-can use to incentivize them a
+‎puede utilizar para incentivarlos un‎
 37:21
-decentralized one perhaps you probably
+‎descentralizado tal vez usted probablemente‎
 37:24
-see where I'm getting at in other words
+‎ver a dónde estoy llegando, en otras palabras.‎
 37:26
-we're going to use bitcoins in order to
+‎vamos a usar bitcoins para‎
 37:29
-incentivize the nodes that created these
+‎incentivar los nodos que los crearon‎
 37:32
-blocks so how are we going to do that
+‎bloques entonces, ¿cómo vamos a hacer eso?‎
 37:33
-well so far everything that I've said is
+‎bueno hasta ahora todo lo que he dicho es‎
 37:36
-just an abstract algorithm for achieving
+‎solo un algoritmo abstracto para lograr‎
 37:39
-distributed consensus now we're going to
+‎consenso distribuido ahora vamos a‎
 37:41
-break out of that model what I'm going
+‎salir de ese modelo lo que voy‎
 37:42
-to say now is specific to the fact that
+‎decir ahora es específico del hecho de que‎
 37:44
-what we're achieving through this
+‎lo que estamos logrando a través de esto‎
 37:46
-distributed consensus process is in fact
+‎el proceso de consenso distribuido es, de hecho,‎
 37:48
-a currency and we're going to
+‎una moneda y vamos a‎
 37:49
-incentivize these nodes by paying them
+‎incentivar estos nodos pagándoles‎
 37:52
-in units of this currency so how do we
+‎en unidades de esta moneda, así que ¿cómo lo hacemos?‎
 37:56
-do that there are in fact two separate
+‎hacer que de hecho hay dos separados‎
 37:58
-incentive mechanisms in Bitcoin and the
+‎mecanismos de incentivos en Bitcoin y el‎
 38:00
-first one is
+‎la primera es‎
 38:01
-called the blocker ward so what is the
+‎llamado la sala de bloqueo, así que ¿cuál es el‎
 38:03
-block reward it's just this according to
+‎bloquear recompensa es solo esto de acuerdo con‎
 38:06
-the rules of Bitcoin the node that
+‎las reglas de Bitcoin el nodo que‎
 38:08
-creates each block gets to include a
+‎crea cada bloque, llega a incluir un‎
 38:11
-special transaction in that block and
+‎transacción especial en ese bloque y‎
 38:12
-that special transaction is a coin
+‎esa transacción especial es una moneda‎
 38:15
-creation transaction and this node can
+‎transacción de creación y este nodo puede‎
 38:18
-also choose the recipient address of
+‎elija también la dirección del destinatario de‎
 38:20
-this transaction so of course that node
+‎esta transacción, por supuesto, ese nodo‎
 38:22
-will typically choose an address
+‎normalmente elegirá una dirección‎
 38:24
-belonging to itself as the recipient of
+‎perteneciendo a sí mismo como receptor de‎
 38:26
-this coin creation transaction thereby
+‎esta transacción de creación de monedas por lo tanto‎
 38:28
-paying itself it's sort of you can think
+‎pagarse a sí mismo es algo que puedes pensar‎
 38:30
-of it as a payment in exchange for the
+‎de ella como pago a cambio de la‎
 38:32
-service of creating that block to go on
+‎servicio de crear ese bloque para continuar‎
 38:35
-to the Consensus chain in fact the value
+‎a la cadena de consenso de hecho el valor‎
 38:39
-of this coin creation transaction has an
+‎de esta transacción de creación de monedas tiene un‎
 38:42
-interesting property it's critics at 25
+‎propiedad interesante es crítica a los 25‎
 38:45
-bitcoins but it actually has every four
+‎bitcoins pero en realidad tiene cada cuatro‎
 38:48
-years we're now in the second period for
+‎años que ahora estamos en el segundo período para‎
 38:51
-the first four years of bitcoins
+‎los primeros cuatro años de bitcoins‎
 38:52
-existence it was 50 bitcoins now it's 25
+‎existencia era 50 bitcoins ahora son 25‎
 38:54
-and it's going to keep having this has
+‎y va a seguir teniendo esto tiene‎
 38:57
-some interesting consequences we'll come
+‎algunas consecuencias interesantes que vendremos‎
 38:58
-back to that in the next slide but let
+‎volver a eso en la siguiente diapositiva, pero dejemos‎
 39:00
-me ask you this it appears based on what
+‎te pregunto esto aparece en base a lo que‎
 39:02
-I've said here that this node gets the
+‎He dicho aquí que este nodo obtiene el‎
 39:05
-block reward regardless of whether it
+‎bloquear la recompensa independientemente de si‎
 39:08
-proposes a block with only valid
+‎propone un bloque con sólo válido‎
 39:10
-transactions or it behaves maliciously
+‎transacciones o se comporta maliciosamente‎
 39:12
-so how are we actually providing any
+‎entonces, ¿cómo estamos realmente proporcionando cualquier‎
 39:15
-incentives for honest behavior via this
+‎incentivos para un comportamiento honesto a través de esto‎
 39:17
-block reward but I thought think about
+‎bloquear recompensa pero pensé en pensar en‎
 39:20
-this well how will the snowed sort of
+‎así, ¿cómo será el tipo nevado de‎
 39:22
-get to collect its reward that will only
+‎conseguir recoger su recompensa que sólo‎
 39:25
-happen if this block ends up on the long
+‎suceder si este bloque termina en el largo‎
 39:28
-term consensus branch because that's the
+‎rama de consenso de términos porque esa es la‎
 39:30
-only case in which this coin creation
+‎único caso en el que esta creación de moneda‎
 39:34
-transaction will be considered valid
+‎la transacción se considerará válida‎
 39:35
-because the coin creation transaction is
+‎porque la transacción de creación de monedas es‎
 39:37
-not special it's just like every other
+‎no es especial, es como cualquier otro‎
 39:39
-transaction it's only valid if it ends
+‎transacción solo es válida si finaliza‎
 39:41
-up on the consensus chain so that's the
+‎arriba en la cadena de consenso, así que ese es el‎
 39:43
-incentive mechanism here it's very
+‎mecanismo de incentivos aquí es muy‎
 39:44
-subtle but it's a very neat trick and so
+‎sutil pero es un truco muy prolijo y así‎
 39:47
-it incentivizes nodes to behave honestly
+‎incentiva a los nodos a comportarse honestamente‎
 39:49
-or at the very minimum it incentivizes
+‎o como mínimo incentiva‎
 39:51
-nodes to behave in a way that they think
+‎nodos para comportarse de una manera que piensen‎
 39:54
-other nodes are going to agree with in
+‎otros nodos van a estar de acuerdo con en‎
 39:57
-creating the next blocks of the
+‎crear los siguientes bloques de la‎
 39:59
-blockchain so that's the first instead
+‎blockchain, así que ese es el primero en su lugar‎
 40:03
-of mechanism let's come back to this
+‎de mecanismo volvamos a esto‎
 40:04
-point now this weird sort of having
+‎punto ahora este extraño tipo de tener‎
 40:08
-phenomenon that we see here and this can
+‎fenómeno que vemos aquí y esto puede‎
 40:12
-be best illustrated graphically here I'm
+‎estar mejor ilustrado gráficamente aquí estoy‎
 40:14
-going to show you
+‎te lo mostraremos‎
 40:15
-graph of time on the x-axis versus the
+‎gráfico del tiempo en el eje x frente al‎
 40:19
-total number of bitcoins in circulation
+‎número total de bitcoins en circulación‎
 40:20
-and this over here was the first period
+‎y este aquí fue el primer período‎
 40:24
-where each block resulted in 50 new
+‎donde cada bloque resultó en 50 nuevos‎
 40:27
-bitcoins being created and roughly at
+‎bitcoins que se están creando y aproximadamente en‎
 40:30
-the end of last year that block reward
+‎a finales del año pasado esa recompensa en bloque‎
 40:31
-halves from 50 to 25 and you can see
+‎mitades de 50 a 25 y se puede ver‎
 40:34
-that every four years extending well
+‎que cada cuatro años se extiende bien‎
 40:36
-into the future the slope of this curve
+‎en el futuro la pendiente de esta curva‎
 40:38
-is going to keep having and this is a
+‎va a seguir teniendo y esto es un‎
 40:41
-geometric series and you might know that
+‎series geométricas y es posible que sepas que‎
 40:43
-it means that there is a finite sum and
+‎significa que hay una suma finita y‎
 40:45
-in fact there is a total finite supply
+‎de hecho, hay un suministro finito total‎
 40:47
-of bitcoins and if you add up all these
+‎de bitcoins y si sumas todos estos‎
 40:49
-numbers it works out to 21 million based
+‎números que calculan a 21 millones basados en‎
 40:52
-on the rate of new block creation which
+‎sobre la tasa de creación de nuevos bloques que‎
 40:54
-I'm going to get to in a second also
+‎Voy a llegar en un segundo también‎
 40:56
-worth noting is that this is the only
+‎vale la pena señalar que este es el único‎
 40:58
-way in which new bitcoins are created
+‎forma en que se crean nuevos bitcoins‎
 40:59
-there is no other coin generation
+‎no hay otra generación de monedas‎
 41:02
-mechanism and that's why this is a final
+‎y por eso este es un final‎
 41:04
-and total number as a rule Sandow at
+‎y número total como regla Sandow en‎
 41:06
-least
+‎menos‎
 41:06
-for how many bitcoins there can ever be
+‎por cuántos bitcoins puede haber‎
 41:09
-and this new block creation reward is
+‎y esta nueva recompensa de creación de bloques es‎
 41:12
-actually going to run out in 2040 as
+‎en realidad se va a agotar en 2040 como‎
 41:14
-things stand now so that sounds a bit
+‎las cosas se mantienen ahora, así que suena un poco‎
 41:17
-weird does that mean that the system
+‎extraño ¿eso significa que el sistema‎
 41:20
-will stop working in 2040 and become
+‎dejará de funcionar en 2040 y se convertirá en‎
 41:22
-insecure because nodes no longer have
+‎inseguro porque los nodos ya no tienen‎
 41:25
+‎el incentivo para comportarse honestamente bien‎
+41:27
+‎no del todo porque este es solo el primero‎
+41:29
+‎de dos mecanismos de incentivos existe‎
+41:31
+‎otro mecanismo de incentivo llamado‎
+41:33
+‎la tarifa de transacción y qué es un‎
+41:35
+‎tarifa de transacción para que el creador de cualquier‎
+41:38
+‎transacción no es el creador de un bloque‎
+41:40
+‎con el creador de una transacción cuando‎
+41:41
+‎Alice le está pagando a Bob lo que puede hacer es‎
+41:44
+‎puede elegir hacer el valor de salida‎
+41:46
+‎de esa moneda menor que el valor de entrada‎
+41:48
+‎y la forma en que todos los nodos interpretan‎
+41:52
+‎esta diferencia según las reglas‎
+41:53
+‎de Bitcoin es que es una transacción‎
+41:55
+‎y quien cree el bloque que‎
+41:58
+‎primero pone esa transacción en el‎
+42:00
+‎blockchain llega a recopilar eso‎
+42:02
+‎tarifa de transacción, así que si eres un nodo‎
+42:05
+‎es decir, crear un bloque que contenga‎
+42:06
+‎digamos 200 transacciones y luego la suma de todas‎
+42:10
+‎esas 200 comisiones de transacción se devengan a‎
+42:12
+‎usted y a la dirección que puso en‎
+42:14
+‎ese bloque, por supuesto, esta transacción‎
+42:17
+‎la tarifa es puramente voluntaria como una propina, pero‎
+42:19
+‎esperamos en base a nuestra comprensión‎
+42:22
+‎del sistema que como el bloque recompensa‎
+42:24
+‎comienza a agotarse, se volverá más‎
+42:27
+
+
+
 the incentive to behave honestly well
 41:27
 not quite because this is only the first
