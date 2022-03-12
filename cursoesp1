@@ -489,172 +489,175 @@ tx tx
 ‎transacción pendiente‎
 
 
-11:42
-outstanding transactions that it has
-heard about so recall that for these
-transactions consensus has not yet
-happened and so almost by definition
-each node might have a slightly
-different version of the outstanding transactions that it's heard about the peer-to-peer network is not perfect so
+‎transacciones pendientes que tiene‎
+‎oído hablar de así recordar que para estos‎
+‎el consenso de las transacciones aún no ha sido‎
+‎sucedió y así casi por definición‎
+‎cada nodo puede tener un‎
+‎la versión diferente de las transacciones pendientes que se escucha sobre la red punto a punto no es perfecta, por lo que‎
 
-some node may have heard about a transaction but not other nodes so given that we have the set up what could
-happen is that you have the sequence of blocks that everybody has agreed upon a
+‎es posible que algún nodo haya oído hablar de una transacción, pero no otros nodos, dado que tenemos la configuración, lo que podría‎
+‎lo que sucede es que tienes la secuencia de bloques que todo el mundo ha acordado un‎
 
-block is just a series of transactions
+‎bloque es sólo una serie de transacciones‎
 12:11
-and now there are these let's say these
+‎y ahora hay estos digamos estos‎
 12:14
-three nodes in the system each of whom
+‎tres nodos en el sistema, cada uno de los cuales‎
 12:16
-proposes each of whom has an input the
+‎propone que cada uno de los cuales tiene una entrada el‎
 12:18
-set of outstanding transactions that
+‎conjunto de transacciones pendientes que‎
 12:20
-it's heard about and they execute
+‎se oye hablar de él y ejecutan‎
 12:22
-together some consensus protocol and for
+‎juntos algún protocolo de consenso y para‎
 12:26
-the consensus protocol to succeed you
+‎el protocolo de consenso para que le suceda‎
 12:28
-can select any valid block even if it's
+‎puede seleccionar cualquier bloque válido incluso si es‎
 12:31
-a block that was proposed by only one
+‎un bloque que fue propuesto por un solo‎
 12:32
-node and for a block to be valid all of
+‎y para que un bloque sea válido todo‎
 12:35
-these transactions have to have the
+‎estas transacciones tienen que tener el‎
 12:36
-right crypto signatures and so on so you
+‎firmas criptográficas correctas, etc., para que usted‎
 12:40
-could select any of these valid blocks
+‎podría seleccionar cualquiera de estos bloques válidos‎
 12:42
-and the consensus protocol would still
+‎y el protocolo de consenso seguiría siendo‎
 12:45
-be okay if some transactions somehow
+‎estar bien si algunas transacciones de alguna manera‎
 12:47
-didn't make it into this particular
+‎no llegó a este particular‎
 12:48
-block that gets chosen as the result of
+‎bloque que se elige como resultado de‎
 12:50
-a consensus protocol it could just wait
+‎un protocolo de consenso que podría esperar‎
 12:52
-and get into the next block so maybe
+‎y entrar en el siguiente bloque, así que tal vez‎
 12:54
-this green block get selected it now it
+‎este bloque verde se selecciona ahora que‎
 12:57
-gets added to the consensus blockchain
+‎se agrega a la cadena de bloques de consenso‎
 12:59
-and then the protocol proceeds and
+‎y luego el protocolo procede y‎
 13:00
-routes so if you took the traditional
+‎rutas así que si tomaste las tradicionales‎
 13:03
-theory of distributed consensus and
+‎teoría del consenso distribuido y‎
 13:05
-applied that to Bitcoin this is the sort
+‎aplicado que a Bitcoin este es el tipo‎
 13:07
-of system that you might end up with now
+‎del sistema con el que podría terminar ahora‎
 13:10
-this has some similarities to how
+‎esto tiene algunas similitudes con cómo‎
 13:12
-Bitcoin works but it's not exactly how
+‎Bitcoin funciona, pero no es exactamente cómo‎
 13:14
-Bitcoin works and why is that and the
+‎Bitcoin funciona y por qué es eso y el‎
 13:16
-reason for this is simple doing things
+‎la razón de esto es simple hacer cosas‎
 13:18
-this way is a really hard technical
+‎de esta manera es una técnica realmente difícil‎
 13:20
-problem for a variety of reasons there
+‎problema por una variedad de razones allí‎
 13:22
-are some obvious ones nodes might crash
+‎son algunos obvios, los nodos podrían bloquearse‎
 13:25
-and nodes might outright be malicious
+‎y los nodos pueden ser totalmente maliciosos‎
 13:27
-but also because the network is highly
+‎pero también porque la red es altamente‎
 13:30
-imperfect it's a peer-to-peer system not
+‎imperfecto es un sistema peer-to-peer no‎
 13:32
-all pairs of nodes are connected to each
+‎todos los pares de nodos están conectados a cada uno‎
 13:34
-other
+‎otro‎
 13:35
-there could be faults in the network
+‎podría haber errores en la red‎
 13:36
-because of poor internet connectivity
+‎debido a la mala conectividad a internet‎
 13:38
-and so on and finally there's going to
+‎y así sucesivamente y finalmente va a‎
 13:41
-be a lot of latency in the system
+‎tener mucha latencia en el sistema‎
 13:43
-because all of these things happen over
+‎porque todas estas cosas suceden‎
 13:45
-the internet they're not even within a
+‎internet ni siquiera están dentro de un‎
 13:46
-single data center or something like
+‎un solo centro de datos o algo así como‎
 13:48
-that and one particular consequence of
+‎eso y una consecuencia particular de‎
 13:52
-this high latency is that there is no
+‎esta latencia alta es que no hay‎
 13:54
-notion of global time what does this
+‎noción de tiempo global ¿qué hace esto?‎
 13:56
-mean and why is this important it means
+‎significa y por qué es esto importante que significa‎
 13:58
-that not all nodes can agree to a common
+‎que no todos los nodos pueden estar de acuerdo con un‎
 14:02
-ordering of events simply based on
+‎ordenación de eventos simplemente basada en‎
 14:04
-observing timestamps it just doesn't
+‎observar marcas de tiempo simplemente no lo hace‎
 14:06
-work like that so you can't possibly
+‎trabajar así, así que no es posible‎
 14:08
-design your protocol by saying things
+‎diseña tu protocolo diciendo cosas‎
 14:10
-like take the node that sent the first
+‎como tomar el nodo que envió el primero‎
 14:13
-message in step one and have that node
+‎en el paso uno y tener ese nodo‎
 14:15
-do something in step two you just can't
+‎haz algo en el paso dos que simplemente no puedes‎
 14:17
-work like that
+‎trabajo así‎
 14:17
-because not all nodes will agree on
+‎porque no todos los nodos estarán de acuerdo‎
 14:20
-which message was sent first in the
+‎qué mensaje se envió primero en el cuadro de diálogo‎
 14:22
-first step of the protocol so this
+‎primer paso del protocolo por lo que este‎
 14:24
-really puts serious constraints on what
+‎realmente pone serias limitaciones a lo que‎
 14:27
-sorts of algorithms you can really put
+‎tipos de algoritmos que realmente puedes poner‎
 14:29
-into your consensus protocols and in
+‎en sus protocolos de consenso y en‎
 14:31
-fact because of these constraints a lot
+‎hecho debido a estas limitaciones mucho‎
 14:34
-of the literature on distributed
+‎de la literatura distribuida‎
 14:35
-consensus is somewhat pessimistic and
+‎el consenso es algo pesimista y‎
 14:37
-many impossibility results have been
+‎muchos resultados de imposibilidad han sido‎
 14:39
-proved I'm just going to name a couple
+‎probado que solo voy a nombrar un par‎
 14:41
-of these in case you want to look them
+‎de estos en caso de que quieras mirarlos‎
 14:43
-up but I won't go into too much detail
+‎arriba pero no voy a entrar en demasiados detalles‎
 14:45
-one impossibility result that's very
+‎un resultado de imposibilidad que es muy‎
 14:47
-well known and pretty simple to
+‎bien conocido y bastante simple de‎
 14:48
-understand is called the Byzantine
+‎entender se llama el bizantino‎
 14:50
-generals problem and a much more subtle
+‎problema general y mucho más sutil‎
 14:52
-one known for the names of the authors
+‎uno conocido por los nombres de los autores‎
 14:55
-who first proved it is called the Fisher
+‎quien lo demostró por primera vez se llama el Pescador‎
+14:57
+
+
+
 14:57
 Lynch Patterson and possibility results
 14:59
