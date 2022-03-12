@@ -2110,69 +2110,7 @@ general
 
 
 
-the incentive to behave honestly well
-41:27
-not quite because this is only the first
-41:29
-of two incentive mechanisms there is
-41:31
-quite another incentive mechanism called
-41:33
-the transaction fee and what is a
-41:35
-transaction fee so the creator of any
-41:38
-transaction not the creator of a block
-41:40
-with the creator of a transaction when
-41:41
-Alice is paying Bob what she can do is
-41:44
-she can choose to make the output value
-41:46
-of that coin less than the input value
-41:48
-and the way that all the nodes interpret
-41:52
-this difference according to the rules
-41:53
-of Bitcoin is that it's a transaction
-41:55
-fee and whoever creates the block that
-41:58
-first puts that transaction into the
-42:00
-blockchain gets to collect that
-42:02
-transaction fee so if you're a node
-42:05
-that's creating a block that contains
-42:06
-say 200 transactions then the sum of all
-42:10
-those 200 transaction fees accrues to
-42:12
-you and to the address that you put into
-42:14
-that block of course this transaction
-42:17
-fee is purely voluntary like a tip but
-42:19
-it we expect based on our understanding
-42:22
-of the system that as the block reward
-42:24
-starts to run out it will become more
-42:27
-and more important
-42:28
-most mandatory four nodes to put a
-42:31
-transaction fee into their transactions
-42:33
-in order to get a reasonable quality of
-42:35
-service and to a certain degree this is
+
 42:37
 already starting to happen now
 42:39
