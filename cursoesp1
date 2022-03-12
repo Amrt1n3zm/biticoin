@@ -970,531 +970,526 @@ tx tx
 ‎dándoles identidades y verificando‎
 20:34
 
-
-
-
-20:34
-those identities is pretty hard and so
+‎esas identidades son bastante difíciles y por lo tanto‎
 20:36
-what we do in those contexts is we might
+‎lo que hacemos en esos contextos es que podríamos‎
 20:37
-give them tokens or tickets or something
+‎darles tokens o boletos o algo así‎
 20:40
-of that sort and that then enables us to
+‎de ese tipo y que luego nos permite‎
 20:42
-later pick a random token ID and call
+‎Más tarde, elija un ID de token aleatorio y llame‎
 20:44
-upon that person so we're going to do
+‎sobre esa persona, así que vamos a hacer‎
 20:47
-something similar with respect to these
+‎algo similar con respecto a estos‎
 20:48
-Bitcoin notes and further assume for the
+‎Bitcoin notas y asumir aún más para el‎
 20:51
-moment that this token generation and
+‎momento que esta generación de tokens y‎
 20:53
-distribution algorithm has enough smarts
+‎el algoritmo de distribución tiene suficiente inteligencia‎
 20:55
-so that if the adversary is going to try
+‎para que si el adversario lo va a intentar‎
 20:58
-to create a lot of Sybil nodes together
+‎para crear muchos nodos Sybil juntos‎
 21:00
-all of those symbols just get one token
+‎todos esos símbolos solo obtienen un token‎
 21:02
-so the adversary is not able to multiply
+‎por lo que el adversario no es capaz de multiplicarse‎
 21:04
-his power that way so let's make this
+‎su poder de esa manera, así que hagamos esto‎
 21:07
-assumption for now and let's see what
+‎suposición por ahora y veamos qué‎
 21:09
-becomes possible if we make this
+‎se hace posible si hacemos esto‎
 21:11
-assumption here's the key idea what
+‎suposición aquí está la idea clave de lo que‎
 21:14
-becomes possible under this assumption
+‎se hace posible bajo este supuesto‎
 21:16
-of random node selection is something
+‎de selección aleatoria de nodos es algo‎
 21:19
-called implicit consensus so what is
+‎llamado consenso implícito por lo que es‎
 21:22
-implicit consensus in each round and
+‎consenso implícito en cada ronda y‎
 21:24
-there are going to be multiple rounds
+‎va a haber varias rondas‎
 21:26
-each run corresponding to a different
+‎cada ejecución corresponde a una‎
 21:27
-Block in the blockchain in each round a
+‎Bloque en la cadena de bloques en cada ronda a‎
 21:30
-random node is somehow selected
+‎el nodo aleatorio está seleccionado de alguna manera‎
 21:31
-magically for the moment and this node
+‎mágicamente por el momento y este nodo‎
 21:34
-gets to propose the next block in the
+‎llega a proponer el siguiente bloque en el‎
 21:35
-chain there is no consensus algorithm
+‎cadena no hay algoritmo de consenso‎
 21:37
-there is no voting this node simply
+‎no hay votación este nodo simplemente‎
 21:39
-unilaterally proposes what the next
+‎propone unilateralmente lo que el próximo‎
 21:41
-block and the blockchain is going to be
+‎bloque y la cadena de bloques va a ser‎
 21:43
-but what if that node is malicious well
+‎pero ¿qué pasa si ese nodo es malicioso bien?‎
 21:46
-there is a process for this but it is an
+‎hay un proceso para esto, pero es un‎
 21:49
-implicit one other nodes will implicitly
+‎implícito uno otro nodo implícitamente‎
 21:51
-accept or reject that block and how will
+‎aceptar o rechazar ese bloqueo y cómo‎
 21:54
-they do that if they accept that block
+‎lo hacen si aceptan ese bloque‎
 21:56
-they will signal signal that acceptance
+‎señalarán que la aceptación‎
 21:58
-by extending the blockchain starting
+‎extendiendo el inicio de la cadena de bloques‎
 22:01
-from that block or if they reject that
+‎de ese bloque o si lo rechazan‎
 22:03
-block they will extend the chain by
+‎bloquearán extenderán la cadena por‎
 22:05
-ignoring that block and starting from
+‎ignorar ese bloque y comenzar desde‎
 22:07
-whatever was the previous latest block
+‎cualquiera que fuera el último bloque anterior‎
 22:10
-in the blockchain and technically how is
+‎en la cadena de bloques y técnicamente cómo es‎
 22:13
-that implemented recall that each block
+‎que implementado recuerda que cada bloque‎
 22:15
-contains a hash of the block that it
+‎contiene un hash del bloque que‎
 22:18
-and this is the technical mechanism that
+‎y este es el mecanismo técnico que‎
 22:21
-allows needs to signal which block it is
+‎permite necesidades para indicar qué bloque es‎
 22:23
-that they're extending so given this
+‎que se están extendiendo así dado esto‎
 22:27
-this is what the overall consensus
+‎esto es lo que el consenso general‎
 22:29
-algorithm in Bitcoin is going to look
+‎Algoritmo en Bitcoin va a mirar‎
 22:31
-like now this is a little bit simplified
+‎como ahora, esto está un poco simplificado‎
 22:33
-and the reason it's simplified is again
+‎y la razón por la que se simplifica es de nuevo‎
 22:35
-that I'm assuming sort of this magic
+‎que estoy asumiendo una especie de magia‎
 22:37
-random node selection process but except
+‎proceso de selección de nodos aleatorios, pero excepto‎
 22:40
-for that simplification this is pretty
+‎para esa simplificación esto es bonito‎
 22:42
-close to how Bitcoin actually works
+‎cerca de cómo funciona realmente Bitcoin‎
 22:44
-so whenever Alice wants to pay Bob she
+‎así que cada vez que Alice quiere pagarle a Bob ella‎
 22:47
-will create a transaction and she will
+‎creará una transacción y ella‎
 22:49
-broadcast it to all of the nodes and any
+‎difundirlo a todos los nodos y a cualquier‎
 22:52
-one of these nodes is constantly
+‎uno de estos nodos está constantemente‎
 22:53
-listening to the network and collecting
+‎escuchar la red y recopilar‎
 22:55
-a list of outstanding transactions that
+‎una lista de transacciones pendientes que‎
 22:57
-have not yet made it into the blockchain
+‎aún no han llegado a la cadena de bloques‎
 22:59
-at some point one of these nodes is
+‎en algún momento uno de estos nodos es‎
 23:02
-going to be randomly called upon to
+‎va a ser llamado al azar a‎
 23:03
-propose the next block it's going to
+‎proponer el siguiente bloque al que va a‎
 23:05
-round up all of the outstanding
+‎redondea todos los destacados‎
 23:07
-transactions that it's heard about and
+‎transacciones de las que se ha oído hablar y‎
 23:08
-propose that block now presumably that
+‎proponer que bloque ahora presumiblemente que‎
 23:12
-node was honest but it could also be a
+‎node fue honesto, pero también podría ser un‎
 23:14
-malicious node or a faulty node and
+‎nodo malicioso o un nodo defectuoso y‎
 23:16
-propose a block that contains some
+‎proponer un bloque que contenga algunos‎
 23:18
-invalid transactions invalid
+‎transacciones no válidas no válidas‎
 23:20
-transactions are those that don't have
+‎las transacciones son aquellas que no tienen‎
 23:23
-the right crypto signature or where the
+‎la firma criptográfica correcta o donde el‎
 23:26
-transaction is already spent in other
+‎la transacción ya se ha gastado en otros‎
 23:27
-words an attempt to double spend so if
+‎palabras un intento de doble gasto por lo que si‎
 23:30
-that happens other nodes are going to
+‎que sucede otros nodos van a‎
 23:33
-signal their acceptance or rejection of
+‎señalar su aceptación o rechazo de‎
 23:35
-the block as we saw on the last slide by
+‎el bloque como vimos en la última diapositiva por‎
 23:37
-either including the hash of this latest
+‎ya sea incluyendo el hash de este último‎
 23:39
-block in their next block or ignoring
+‎bloquear en su siguiente bloque o ignorar‎
 23:42
-this block and including the hash of
+‎este bloque e incluyendo el hash de‎
 23:44
-whatever was the previous block that
+‎cualquiera que fuera el bloque anterior que‎
 23:46
-they consider it to be valid all right
+‎consideran que es válido todo bien‎
 23:49
-so now let's try to understand why this
+‎así que ahora tratemos de entender por qué esto‎
 23:51
-consensus algorithm works and the way I
+‎El algoritmo de consenso funciona y la forma en que‎
 23:53
-like to understand this is instead of
+‎me gusta entender que esto es en lugar de‎
 23:55
-asking why this works let's try to ask
+‎preguntando por qué funciona esto, tratemos de preguntar‎
 23:57
-how can a malicious adversary try to
+‎¿cómo puede un adversario malintencionado intentar‎
 24:00
-subvert this process so let's look at
+‎subvertir este proceso, así que veamos‎
 24:03
-that for a second so here we have a
+‎que por un segundo así que aquí tenemos un‎
 24:05
-couple of blocks in the blockchain
+‎par de bloques en la cadena de bloques‎
 24:07
-assume that this extends to the left a
+‎supongamos que esto se extiende a la izquierda a‎
 24:09
-long way back all the way to what is
+‎largo camino de regreso hasta lo que es‎
 24:11
-called the Genesis block but here I'm
+‎llamado el bloque Génesis pero aquí estoy‎
 24:13
-only showing you a couple of blocks in
+‎solo te muestra un par de bloques en‎
 24:15
-the blockchain and that pointer that you
+‎la cadena de bloques y ese puntero que tú‎
 24:16
-see over there is a block referring to
+‎ver por encima hay un bloque que hace referencia a‎
 24:20
-what is the previous block that it
+‎¿cuál es el bloque anterior que es?‎
 24:21
-extends by including a hash of that
+‎se extiende incluyendo un hash de que‎
 24:24
-previous block within its own contents
+‎bloque anterior dentro de su propio contenido‎
 24:26
-so let's Tamil Isha's attacker let's
+‎así que vamos a atacar a Tamil Isha‎
 24:29
-call her Alice what might she try to do
+‎llámala Alicia qué podría intentar hacer‎
 24:32
-can she simply steal bitcoins belonging
+‎¿puede simplemente robar bitcoins que pertenecen?‎
 24:35
-to another user at a different address
+‎a otro usuario en una dirección diferente‎
 24:36
-that she doesn't control now even if it
+‎que ella no controla ahora, incluso si es‎
 24:40
-is now Alice's turn to propose the next
+‎es ahora el turno de Alicia de proponer el próximo‎
 24:43
-block in this chain she cannot steal
+‎bloque en esta cadena que no puede robar‎
 24:45
-other users bitcoins why because she
+‎otros usuarios bitcoins por qué porque ella‎
 24:48
-cannot Forge their signatures so as long
+‎no pueden falsificar sus firmas por lo tanto tiempo‎
 24:50
-as the underlying crypto is solid she's
+‎como la criptografía subyacente es sólida, ella es‎
 24:52
-not able to simply steal bitcoins
+‎no puede simplemente robar bitcoins‎
 24:54
-another thing she might try to do is if
+‎otra cosa que podría tratar de hacer es si‎
 24:57
-she really really hates some other user
+‎ella realmente odia a algún otro usuario‎
 24:59
-Bob then she can look at Bob's address
+‎Bob entonces ella puede mirar la dirección de Bob‎
 25:01
-and she can decide that any transactions
+‎y ella puede decidir que cualquier transacción‎
 25:04
-originating from Bob's address she will
+‎originando la dirección de Bob ella‎
 25:06
-simply not include them in any block
+‎simplemente no incluirlos en ningún bloque‎
 25:08
-that she proposes to get onto the
+‎que ella propone subir al‎
 25:10
-blockchain in other words she's denying
+‎blockchain en otras palabras, ella está negando‎
 25:13
-service to Bob so this is a valid attack
+‎servicio a Bob por lo que este es un ataque válido‎
 25:15
-that she can try to mount but luckily
+‎que puede intentar montar pero por suerte‎
 25:18
-it's nothing more than a little
+‎no es más que un poco‎
 25:19
-annoyance because if Bob's block doesn't
+‎molestia porque si el bloqueo de Bob no‎
 25:22
-make it into the next block that alice
+‎conviértelo en el siguiente bloque que alicia‎
 25:23
-proposes he will just wait another block
+‎propone que solo esperará otra cuadra‎
 25:26
-until an honest node gets the chance to
+‎hasta que un nodo honesto tenga la oportunidad de‎
 25:28
-propose a block and then his transaction
+‎proponer un bloque y luego su transacción‎
 25:30
-will get into that block so that's not
+‎entrará en ese bloque, así que eso no es‎
 25:32
-really a good attack either so the only
+‎realmente un buen ataque tampoco, así que el único‎
 25:34
-one that were really left with for what
+‎uno que realmente se quedó con qué‎
 25:36
-a malicious node can try to do here is
+‎un nodo malintencionado puede intentar hacer aquí es‎
 25:38
-called a double spending attack so how
+‎llamado un ataque de doble gasto, así que cómo‎
 25:41
-might a double spending attack work to
+‎¿podría un ataque de doble gasto funcionar para‎
 25:43
-understand that let's assume that alice
+‎entender que supongamos que alicia‎
 25:45
-is a customer of some online merchant or
+‎es cliente de algún comerciante en línea o‎
 25:49
-a website run by bob who provides some
+‎un sitio web dirigido por bob que proporciona algunos‎
 25:52
-online service in exchange for payment
+‎servicio en línea a cambio de pago‎
 25:54
-in bitcoins let's say he allows us to
+‎en bitcoins digamos que nos permite‎
 25:56
-download of some software so here's how
+‎descargar de algún software, así que así es como‎
 25:58
-a double spending attack might work
+‎un ataque de doble gasto podría funcionar‎
 26:00
-Alice goes to Bob's website and decides
+‎Alice va al sitio web de Bob y decide‎
 26:04
-to buy this item pays for it with
+‎para comprar este artículo lo paga con‎
 26:06
-bitcoins and what that means in
+‎bitcoins y lo que eso significa en‎
 26:08
-technical terms is that she is going to
+‎términos técnicos es que ella va a‎
 26:10
-create a Bitcoin transaction from her
+‎crear una transacción de Bitcoin a partir de ella‎
 26:13
-address - Bob's address she broadcasts
+‎dirección - La dirección de Bob que ella transmite‎
 26:16
-it to the network and let's say that
+‎a la red y digamos que‎
 26:18
-some honest node creates the next block
+‎algún nodo honesto crea el siguiente bloque‎
 26:21
-listens to this transaction and includes
+‎escucha esta transacción e incluye‎
 26:24
-it in that block so what is going on
+‎está en ese bloque, así que lo que está pasando‎
 26:27
-here so there is this block that was
+‎aquí está este bloque que fue‎
 26:29
-created by an honest node that contains
+‎creado por un nodo honesto que contiene‎
 26:31
-a transaction that represents a payment
+‎una transacción que representa un pago‎
 26:34
-from Alice to the merchant Bob by C
+‎de Alicia al comerciante Bob por C‎
 26:36
-subscript a I mean a coin belonging to
+‎subíndice a Me refiero a una moneda que pertenece a‎
 26:39
-Alice and that is now being sent to
+‎Alice y eso ahora está siendo enviado a‎
 26:41
-Bob's address let's zoom into this and a
+‎La dirección de Bob vamos a acercarnos a esto y a un‎
 26:44
-little bit more technical
+‎un poco más técnico‎
 26:45
-Tail a transaction as we saw earlier as
+‎Cola de una transacción como vimos anteriormente como‎
 26:48
-a data structure that contains Alice's
+‎una estructura de datos que contiene Alice's‎
 26:51
-signature here and an instruction to pay
+‎firma aquí y una instrucción para pagar‎
 26:53
-to Bob's public key and also a hash
+‎a la clave pública de Bob y también a un hash‎
 26:56
-what is this hash this hash represents a
+‎¿qué es este hash, este hash representa un‎
 26:58
-pointer to the transaction where Alice
+‎puntero a la transacción donde Alice‎
 27:01
-in fact received that coin from somebody
+‎de hecho recibió esa moneda de alguien‎
 27:03
-else and that must be a pointer to a
+‎else y eso debe ser un puntero a un‎
 27:05
-transaction that was included in some
+‎transacción que se incluyó en algunos‎
 27:08
-previous block in the consensus chain so
+‎bloque anterior en la cadena de consenso por lo que‎
 27:10
-visually it's going to look something
+‎visualmente se va a ver algo‎
 27:11
-like this let's pause for a second here
+‎como este, hagamos una pausa por un segundo aquí‎
 27:15
-because there is something subtle going
+‎porque hay algo sutil en marcha‎
 27:17
-on there are at least two different
+‎en hay al menos dos diferentes‎
 27:19
-types of pointers in this diagram that
+‎tipos de punteros en este diagrama que‎
 27:21
-I've showed you there is in fact a third
+‎Te he demostrado que de hecho hay un tercero‎
 27:23
-one corresponding to Merkel trees but
+‎uno correspondiente a los árboles de Merkel, pero‎
 27:24
-we're not going to look at that at the
+‎no vamos a ver eso en el‎
 27:26
-present moment but these two types of
+‎momento presente pero estos dos tipos de‎
 27:29
-pointers that I refer to are blocks that
+‎los punteros a los que me refiero son bloques que‎
 27:33
-include a hash of the previous block
+‎incluir un hash del bloque anterior‎
 27:34
-that they're extending and transactions
+‎que están extendiendo y transacciones‎
 27:37
-that include a pointer to whatever the
+‎que incluyen un puntero a lo que sea el‎
 27:40
-previous transaction that where the coin
+‎transacción anterior que donde la moneda‎
 27:42
-came from right so this is the situation
+‎vino de derecha, así que esta es la situación‎
 27:45
-and this block was now generated by an
+‎y este bloque fue generado ahora por un‎
 27:50
-honest node and now let's assume that
+‎nodo honesto y ahora supongamos que‎
 27:52
-the next time a random note is called
+‎la próxima vez que se llame a una nota aleatoria‎
 27:55
-that node is a malicious node controlled
+‎ese nodo es un nodo malintencionado controlado‎
 27:59
-by Alice right so this is the blockchain
+‎por Alice derecho así que esta es la cadena de bloques‎
 28:01
-as it stands right now bob has already
+‎tal como está ahora mismo, bob ya lo ha hecho‎
 28:03
-looked at this blockchain decided that
+‎miré esta cadena de bloques decidí que‎
 28:05
-alice has paid him and has allowed Alice
+‎alice le ha pagado y ha permitido a Alice‎
 28:08
-to download the software or whatever it
+‎para descargar el software o lo que sea‎
 28:10
-is that she was buying on his website
+‎es que ella estaba comprando en su sitio web‎
 28:12
-right so as far as Bob is concerned he's
+‎Así que en lo que respecta a Bob, él es‎
 28:15
-satisfied the transaction is completed
+‎satisfecho de que la transacción se haya completado‎
 28:16
-Alice has now received her goods in
+‎Alice ahora ha recibido sus bienes en‎
 28:19
-exchange for the payment now what might
+‎cambiar por el pago ahora lo que podría‎
 28:21
-happen is if Alice now gets to propose
+‎Suceder es si Alicia ahora llega a proponer‎
 28:24
-the next block she could propose a block
+‎el siguiente bloque podría proponer un bloque‎
 28:26
-that looks like this ignores altogether
+‎que parece que esto ignora por completo‎
 28:29
-this valid block over here and instead
+‎este bloque válido aquí y en su lugar‎
 28:32
-contains a pointer to the previous block
+‎contiene un puntero al bloque anterior‎
 28:34
-and furthermore it's going to contain a
+‎y además va a contener un‎
 28:38
-transaction that contains a transfer of
+‎transacción que contiene una transferencia de‎
 28:41
-coins of Alice's coins to another
+‎monedas de las monedas de Alicia a otro‎
 28:43
-address a prime that's also controlled
+‎abordar un número primo que también está controlado‎
 28:45
-by Alice so this is a classic double
+‎por Alice por lo que este es un doble clásico‎
 28:49
-spend pattern what is going on here is
+‎patrón de gasto lo que está sucediendo aquí es‎
 28:51
-Alice now creates a new transaction that
+‎Alice ahora crea una nueva transacción que‎
 28:55
-transfers that coin instead of to Bob's
+‎transfiere esa moneda en lugar de a Bob's‎
 28:57
-address to another address
+‎dirección a otra dirección‎
 28:59
-by her and visually it's going to look
+‎por ella y visualmente se va a ver‎
 29:01
-like this this is a completely different
+‎como este, este es un lugar completamente diferente‎
 29:02
-transaction also with the hash pointer
+‎transacción también con el puntero hash‎
 29:04
-going back to the same transaction
+‎volver a la misma transacción‎
 29:06
-referred to earlier right so this is
+‎referido a derecho anterior, por lo que esto es‎
 29:09
-what an attempt at a double spend look
+‎qué intento de un doble gasto‎
 29:11
-like and how do we know if this double
+‎me gusta y cómo sabemos si este doble‎
 29:14
-spend attempt is going to succeed or not
+‎el intento de gasto va a tener éxito o no‎
 29:16
-well that depends on whether this green
+‎bueno, eso depende de si este verde‎
 29:19
-transaction here or this red transaction
+‎transacción aquí o esta transacción roja‎
 29:21
-is going to ultimately end up in the
+‎va a terminar finalmente en el‎
 29:23
-long term consensus chain so what
+‎cadena de consenso a largo plazo, así que qué‎
 29:26
-determines that that is determined by
+‎determina que eso está determinado por‎
 29:28
-the fact that honest nodes are always
+‎el hecho de que los nodos honestos son siempre‎
 29:31
-following the policy of extending the
+‎siguiendo la política de ampliación de la‎
 29:33
-longest valid branch so now which of
+‎rama válida más larga, así que ahora cuál de‎
 29:36
-these is the longest valid branch you
+‎esta es la rama válida más larga que tiene‎
 29:38
-might look at this and say AHA the first
+‎podría mirar esto y decir AHA el primero‎
 29:40
-one is the longest valid branch not the
+‎una es la rama válida más larga, no la‎
 29:42
-second one because it's a double spent
+‎segundo porque es un doble gastado‎
 29:43
-attempt but here's a very subtle point
+‎intento, pero aquí hay un punto muy sutil‎
 29:46
-that I want you to appreciate from sort
+‎que quiero que aprecies de sort‎
 29:48
-of a moral point of view this
+‎desde un punto de vista moral esto‎
 29:50
-transaction in green in the transaction
+‎transacción en verde en la transacción‎
 29:51
-red might look very different because
+‎el rojo puede verse muy diferente porque‎
 29:54
-based on the explanation that I've given
+‎basado en la explicación que he dado‎
 29:57
-you the first one is an attempt by Alice
+‎tú el primero es un intento de Alice‎
 29:59
-to pay Bob whereas the second one is an
+‎para pagarle a Bob, mientras que el segundo es un‎
 30:01
-attempt by Alice to defraud Bob and pay
+‎intento de Alice de defraudar a Bob y pagar‎
 30:04
-coins back to herself but from a
+‎monedas de vuelta a sí misma pero de un‎
 30:06
-technological point of view these two
+‎punto de vista tecnológico estos dos‎
 30:08
-transactions are completely identical
+‎las transacciones son completamente idénticas‎
 30:10
-the nodes that are looking at this
+‎los nodos que están analizando esto‎
 30:12
-really have no way to tell which one is
+‎realmente no tengo forma de saber cuál es‎
 30:14
-the legitimate transaction and putting
+‎la transacción legítima y el putting‎
 30:16
-legitimate in air quotes because it's a
+‎legítimo en las citas aéreas porque es un‎
 30:18
-moral judgement that we apply to it it's
+‎el juicio moral que le aplicamos es‎
 30:20
-not a technical distinction versus which
+‎no es una distinción técnica versus cuál‎
 30:23
-one is the attempt to double spend it
+‎uno es el intento de duplicarlo.‎
 30:24
-could easily be the other way around
+‎podría ser fácilmente al revés‎
 30:26
-now nodes often follow a heuristic of
+‎ahora los nodos a menudo siguen una heurística de‎
 30:30
-extending the block that they first
+‎extendiendo el bloque que primero‎
 30:31
-heard about on the peer-to-peer network
+‎oído hablar de la red peer-to-peer‎
 30:33
-but it's not a solid rule and in any
+‎pero no es una regla sólida y en cualquier‎
 30:35
-case because of network latency that
-30:37
-could easily be the other way around so
-30:41
-now there is at least some chance that
+‎caso debido a la red‎
+
+
+
 30:43
 the next node that gets to propose a
 30:45
