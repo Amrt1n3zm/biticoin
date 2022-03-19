@@ -25,6 +25,8 @@ the technical aspects  . los aspectos tecnicos de la descentralizacion de bitcoi
 
 5 como los bitcoins genreados son evaluados como adquieren su valor dentro del mercado de intercambio. 
 
+6 mas alla del protocolo estan las exchanges wasllet software, proveedores de servicio...
+
 
 estos son los COMPONENTES DE LA DESCENTRALIZACION.
 empecemos con las tres primeras, para entender lo que queremos definir como descentralizacion
@@ -53,11 +55,10 @@ empecemos con las tres primeras, para entender lo que queremos definir como desc
 
 
 a peer to peer network : abierta a todos y con requerimientos minimos
-   miles de nodos sincronizados donde cualquiera con un pc puede participar en los procesos de validacion y verificacion
-    de transaciones asi como minar por medio de la participacion en el concurso de prueba de trabajao que variara con el 
-    tiempo y que veremos mas adelante.
-
-
+   miles de nodos sincronizados donde cualquiera con un pc puede participar en los procesos de validacion y 
+   verificacion
+    de transaciones asi como minar por medio de la participacion en el concurso de prueba de trabajao que 
+    variara con el tiempo y que veremos mas adelante. https://es.wikipedia.org/wiki/Peer-to-peer 
 
 
 b minado: abierta a todos pero inevitables concentraciones de poder debido a la relacion directa con los recursos a
@@ -78,9 +79,10 @@ c actualizaciones del core o nucleo del sistema bitcoincore: los creadores del c
 2 consenso distribuido:
 
 composicion de las 3 primeras.
+
 bitcoin exchanges wallet service y correos servicos de desarrolo hibridos desdecntralizado centralizado.
 
-nivel tecnico consenso distribuido la clave de cambio es una clase de portocolos protocolos bases ya usados en 
+nivel tecnico consenso distribuido la clave de cambio es una clase de portocolos, protocolos bases ya usados en 
 decadas de investigacion para llegar a los protocolos de consenso.
 
 
