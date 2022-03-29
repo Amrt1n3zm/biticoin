@@ -41,7 +41,9 @@ agregar una firma a una entrada y calcular y almacenar el hash de la transacció
 
 
 También se le proporcionará una clase UTXO que representa una salida de transacción no utilizada o no gastada.
+
  Un UTXO contiene el hash de la transacción desde la que se origina, así como su índice dentro de esa transacción. 
+ 
 Hemos incluido iguales, hashCode, y compareTo funciones en UTXO que permiten la prueba de igualdad y la comparación entre dos UTXOs sobre la base de sus índices y el contenido de sus arrays txHash.
 
 
