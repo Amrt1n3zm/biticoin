@@ -1,6 +1,4 @@
-existen dos protocolos de cifrado uno para claves publicas y privadas cuera ecliptica y por otro lado las de hash sha256
-
-
+existen dos protocolos de cifrado uno para firmas digitales (claves publicas y privadas cuerva ecliptica) y por otro lado las de hash sha256
 
 En el segmento 1.1 vamos a hablar de funciones de hash criptográficas.
  1 Vamos a hablar de lo que son, 
@@ -82,13 +80,12 @@ Y luego cuando vimos otro archivo más tarde, sólo compararlos. Pero debido a q
 eficiente sólo recordar el hash del archivo original. Entonces, si alguien nos muestra un nuevo archivo y afirma que es el mismo, podemos
 calcular el hash de ese nuevo archivo y comparar los hashes.
 
-Si los hashes son los mismos, entonces concluimos que los archivos deben haber
-sido los mismos. Y eso nos da una manera muy eficiente de recordar cosas que hemos visto antes y reconocerlas de nuevo. Y, por supuesto, 
-esto es útil porque el hash es pequeño, es sólo 256 bits, mientras que el archivo original puede ser muy grande. Así que hash es útil
-como un resumen de mensajes. Y veremos, más adelante en esta conferencia, y en conferencias posteriores, por qué es útil usar el hash 
-como un resumen de mensaje.
+Si los hashes son los mismos, entonces concluimos que los archivos deben haber sido los mismos. Y eso nos da una manera muy eficiente de recordar 
+cosas que hemos visto antes y reconocerlas de nuevo. Y, por supuesto,esto es útil porque el hash es pequeño, es sólo 256 bits, mientras que el archivo 
+original puede ser muy grande. Así que hash es útil como un resumen de mensajes. Y veremos, más adelante en esta conferencia, y en conferencias 
+posteriores, por qué es útil usar el hash como un resumen de mensaje.
 
-6:49 Por lo tanto, la segunda propiedad que queremos de nuestra función hash es que se está escondiendo.
+6:49 Por lo tanto, la segunda propiedad que queremos de nuestra función hash es que se está escondido ofuscado. 
 Y la propiedad que queremos es algo como esto. Que si se nos da la salida de la función hash, que no hay forma factible de averiguar 
 cuál fue la entrada x.
 El problema es que esta propiedad no se sostiene exactamente. Y para entender por qué ese es el caso, veamos este ejemplo.
@@ -103,8 +100,8 @@ el hash de la cadena "cabezas" y el hash de la cadena "colas", y verá cuál ust
 averiguar qué x era. Así que la razón de este ejemplo fracasó, que es la razón por la que un adversario fue capaz de adivinar lo que la cadena 
 era, era que había sólo un par de posibles valores de x. 8:01 
 
-Y así, si vamos a tener una propiedad oculta como esta, tiene que ser el caso de
-que no hay valor de x que es particularmente probable. Es decir, x tiene que ser elegido de un conjunto que es, en cierto sentido, muy disperso. 
+Y así, si necesitamos tener una propiedad oculta como esta, tiene que ser el caso de que no haya valor de x que sea particularmente probable. Es decir, 
+x tiene que ser elegido de un conjunto que es, en cierto sentido, muy disperso. 
 
 De modo que este método para el adversario de probar todos los valores posibles de x, o simplemente probar unos pocos valores de x que son
 especialmente probables, no va a funcionar. Así que la propiedad escondida que vamos a tener que configurar es un poco más complicada. Y
