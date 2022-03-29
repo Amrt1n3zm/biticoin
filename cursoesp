@@ -1,4 +1,4 @@
-existen dos protocolos de cifrado uno para firmas digitales (claves publicas y privadas cuerva ecliptica) y por otro lado las de hash sha256
+existen dos protocolos de cifrado uno para firmas digitales (claves publicas privadas cuerva ecliptica) y por otro lado las de funcion de hash,sha256
 
 En el segmento 1.1 vamos a hablar de funciones de hash criptográficas.
  1 Vamos a hablar de lo que son, 
