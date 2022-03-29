@@ -29,44 +29,34 @@ x e y son diferentes,  el hash de x es igual al hash de y.
 
 1:25 Por lo tanto, si observamos el funcionamiento de la función 
 representada por una de estas flechas rojas. Aquí tenemos x y H (x), y aquí tenemos y y H (y). Entonces nadie puede encontrar una situación
-como esta. Que usted tiene una xey que están separados, y sin embargo, cuando hash ellos, hash al mismo valor. Ahora una cosa a notar es que dije,
-nadie puede encontrar.
-
-
-
-
+como esta. Que usted tiene una x e y que están separados, y sin embargo, cuando les hasheas ellos, sale el mismo valor. Ahora una cosa a notar es que
+dije, nadie puede encontrar.
 No he dicho que no hay colisión, porque si piensas en ello tiene que haber una colisión. Las colisiones existen, y
 para entender por qué es así, podemos usar este diagrama. Aquí a la izquierda, estoy representando todas las posibles entradas a esta función,
-que puede ser una cadena de cualquier tamaño. Y aquí, tengo todas las salidas posibles, que tiene que ser cadena de 256 bits de tamaño. 
+que puede ser una cadena de cualquier tamaño. Y aquí, tengo todas las salidas posibles, que tienen que ser cadenas de 256 bits de tamaño. 
 Así que el lado derecho aquí, las salidas, sólo hay 2 a las 256 posibilidades. 
-Aquí hay más posibilidades. Y así, si piensas que cada punto aquí 
+Aquí hay más posibilidades. Y así, si piensas que cada punto aquí a la izquierda va a ser mapeado por una flecha, a algún punto a la derecha.
+Usted puede ver que a medida que vaya desde todos los puntos de aquí a la izquierda hacia la derecha, tiene que estar lleno . Y de hecho,
+que tiene que haber varios valores aquí a la izquierda que el mapa a la misma salida aquí. De hecho, en general, habrá un gran número de entradas posibles
+que se asignarán a cualquier salida en particular. Así que existen colisiones.
 
-a la izquierda va a ser mapeado por una flecha, a algún punto a la derecha.
-Usted puede ver que a medida que vaya desde todos los puntos de aquí
-a la izquierda en la derecha, tiene que estar lleno de gente. Y de hecho,
-que tiene que haber varios valores aquí a la izquierda que el mapa a la
-misma salida aquí. De hecho, en general, habrá un gran número de entradas posibles
-que se asignarán a cualquier salida en particular. Así que
-existen colisiones. Dije antes que nadie pueda encontrar una colisión. Y esa es la pregunta clave. Sabemos que existen colisiones. 
-La pregunta es si hay alguna colisión que se pueden encontrar por personas regulares que usan computadoras normales?
+Dije antes que nadie pueda encontrar una colisión. Y esa es la pregunta clave. Sabemos que existen colisiones.
 
-
-
+La pregunta es si hay alguna colisión que se puede encontrar por personas regulares que usan computadoras normales?
 2:50
-
 Bueno, ahora para empeorar las cosas, dije que tiene que ser imposible encontrar una colisión. Déjeme decirle cómo encontrar una colisión, 
+porque hay un método que está garantizado . Y el método funciona así. 
+vamos a elegir 2 a las 130 entradas elegidas al azar,sobre la nube izquierda de ese diagrama anterior. 
+Y si seleccionamos esas 2 a las 130 entradas elegidas aleatoriamente, resulta que hay un 99.8% de probabilidad de que al menos dos de ellas se 
+colisionen. Y este es un método sencillo para encontrar una colisión.
 
-porque hay un método que está garantizado para trabajar. Y el método funciona así. Que vamos a elegir 2 a las 130 entradas elegidas al azar,
-sobre la nube izquierda de ese diagrama anterior. Y si seleccionamos esas 2 a las 130 entradas elegidas aleatoriamente, resulta que 
-hay un 99.8% de probabilidad de que al menos dos de ellas se colisionen. Y este es un método sencillo para encontrar una colisión.
 Funciona sin importar cuál sea la función hash, pero por supuesto, el problema es que esto toma un tiempo muy, muy largo de hacer.
 Tienes que calcular la función hash 2 a las 130 veces. Y eso es, por supuesto, un número astronómico. Este método funciona sin importar
-la función de hash que estamos utilizando. Todavía hay un 99.8% de probabilidad de que esto funcione. Y si no funciona, sólo intentarlo
-de nuevo, probablemente funcionará la próxima vez. Pero, esto realmente no importa. Y la razón de que realmente no importa, es que este 
-procedimiento toma 2 a los 130 pasos, para llegar a esa alta probabilidad.
+la función de hash que estamos utilizando. Todavía hay un 99.8% de probabilidad de que esto funcione. Y si no funciona, sólo con intentarlo
+de nuevo, probablemente funcionará. Pero esto realmente no importa. Y la razón, es que este procedimiento toma 2 a los 130 pasos para llegar a esa 
+alta probabilidad.
 
-Así, podemos decir algo como esto. Podemos decir que si cada
-computadora hecha por la humanidad estaba computando desde el principio de todo el universo hasta ahora, las probabilidades de que hubieran
+Así, podemos decir algo como esto. Podemos decir que si cada computadora hecha por la humanidad estaba computando desde el principio de todo el universo hasta ahora, las probabilidades de que hubieran
 encontrado una colisión son todavía infinitesimalmente pequeñas. Tan pequeño que es mucho menos que la probabilidad de que la Tierra sea
 destruida por un meteorito gigante en los próximos dos segundos, lo que no ocurrió. 4:14 Bien, así que sabemos cómo encontrar una colisión.
 Pero este método tarda demasiado en importar. La pregunta es, ¿hay algún otro método que se podría utilizar en una función hash particular,
@@ -80,12 +70,11 @@ encontrar una colisión. Para otros, no lo sabemos. 5:01 Ahora, una cosa que nec
 demostrado ser libre de colisión. Hay sólo algunos que la gente ha intentado realmente, realmente difícil de encontrar colisiones y no han
 tenido éxito. Y por eso elegimos creer que no tienen colisión. Bien, ahora, ¿de qué sirve la libertad de colisión?
 
-Si podemos asumir que
-tenemos una función hash que es libre de colisión, entonces podemos usar esa función de hash como mensaje digerir. Y lo que quiero decir
-con eso es lo siguiente. Que si sabemos que xey tienen el mismo hash, entonces es seguro asumir que xey son los mismos. Porque si alguien
-sabía que una xyy que eran diferentes, que tenía el mismo hash, por supuesto, que sería una colisión. Puesto que no hay una colisión que 
-sepamos de, después saber los hashes son iguales, podemos asumir que los valores son iguales. Y esto nos permite usar el hash como una especie
-de resumen de mensajes. 
+Si podemos asumir que tenemos una función hash que es libre de colisión, entonces podemos usar esa función de hash como mensaje digerir. 
+Y lo que quiero decir con eso es lo siguiente. Que si sabemos que x e y tienen el mismo hash, entonces es seguro asumir que x e y son los mismos.
+Porque si había solucion con una x y  que siendo  diferentes, tenían el mismo hash, por supuesto, que sería una colisión. Puesto que no hay una 
+colisión que sepamos de, después saber los hashes son iguales, podemos asumir que los valores son iguales. Y esto nos permite usar el hash como una 
+especie de resumen de mensajes. 
 
 Supongamos, por ejemplo, que teníamos un archivo, un archivo muy grande. Y queríamos ser capaces de reconocer después si 
 otro archivo era el mismo que el archivo que vimos la primera vez, ¿verdad? Así que una manera de hacerlo sería guardar todo el archivo grande.
