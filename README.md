@@ -11,14 +11,11 @@ Esto significa que las transacciones no pueden ser validadas aisladamente;  Es u
 Una salida de transacción consiste en un valor y una clave pública a la que se está pagando. 
 Para las claves públicas, utilizamos la clase Java PublicKey incorporada.
 
-Una entrada de transacción consiste en el hash de la transacción que contiene la salida correspondiente, 
+Una entrada de transacción consiste en el hash de la transacción que contiene la salida correspondiente,y una firma digital.  
+[el índice de esta salida en esa transacción (los índices son simplemente números enteros a partir de 0)]
+ 
 
-el índice de esta salida en esa transacción
- (los índices son simplemente números enteros a partir de 0) y
-
- una firma digital. 
-
-Para que la entrada sea válida, la firma que contiene debe ser una firma válida sobre la transacción actual con la clave pública en la salida agotada. 
+Para que la entrada sea válida, la firma que contiene debe ser una firma válida sobre la transacción actual con la clave pública en la salida asociada. 
 
 Más específicamente, los datos en bruto que se firman se obtiene a partir del método getRawDataToSign (int index).
 
@@ -27,11 +24,6 @@ Más específicamente, los datos en bruto que se firman se obtiene a partir del 
 public static boolean verifySignature (PublicKey pubKey, byte [] message, byte [] signature) 
 
 Este método toma una clave pública, un mensaje y Una firma y devuelve true si y sólo si la firma verifica correctamente el mensaje con la clave pública pubKey.
-
-
-
-
-
 
  Tenga en cuenta que sólo se le da código para verificar las firmas, y esto es todo lo que necesitará para esta asignación.
  El cálculo de las firmas se realiza fuera de la clase Transaction por una entidad que conoce las claves privadas apropiadas.
