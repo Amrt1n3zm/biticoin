@@ -1,4 +1,4 @@
-existen dos protocolos de cifrado uno para firmas digitales (claves publicas privadas cuerva ecliptica) y por otro lado las de funcion de hash,sha256
+existen dos protocolos de cryto, uno para firmas digitales (claves publicas privadas cuerva ecliptica) y por otro lado las de funcion de hash,sha256
 
 En el segmento 1.1 vamos a hablar de funciones de hash criptográficas.
  1 Vamos a hablar de lo que son, 
@@ -54,9 +54,11 @@ la función de hash que estamos utilizando. Todavía hay un 99.8% de probabilida
 de nuevo, probablemente funcionará. Pero esto realmente no importa. Y la razón, es que este procedimiento toma 2 a los 130 pasos para llegar a esa 
 alta probabilidad.
 
-Así, podemos decir algo como esto. Podemos decir que si cada computadora hecha por la humanidad estaba computando desde el principio de todo el universo hasta ahora, las probabilidades de que hubieran
-encontrado una colisión son todavía infinitesimalmente pequeñas. Tan pequeño que es mucho menos que la probabilidad de que la Tierra sea
-destruida por un meteorito gigante en los próximos dos segundos, lo que no ocurrió. 4:14 Bien, así que sabemos cómo encontrar una colisión.
+Así, podemos decir algo como esto. Podemos decir que si cada computadora hecha por la humanidad estaba computando desde el principio de todo el universo hasta ahora, 
+las probabilidades de que hubieran encontrado una colisión son todavía infinitesimalmente pequeñas. Tan pequeño que es mucho menos que la probabilidad de que la Tierra
+sea destruida por un meteorito gigante en los próximos dos segundos.
+
+4:14 Bien, así que sabemos cómo encontrar una colisión.
 Pero este método tarda demasiado en importar. La pregunta es, ¿hay algún otro método que se podría utilizar en una función hash particular,
 con el fin de encontrar una colisión? Y esa es la pregunta que es más difícil de responder. ¿Hay una manera más rápida de encontrar colisiones?
 Bueno, para algunos posibles valores de las funciones hash, por supuesto que sí. Por ejemplo, si nuestra función hash simplemente tomar la entrada
@@ -93,23 +95,38 @@ El problema es que esta propiedad no se sostiene exactamente. Y para entender po
 7:10 Así que aquí, lo que vamos a hacer es un experimento donde volteamos una moneda. 
 Y si el resultado de la moneda flip era cabezas,
 vamos a devolver el hash de la cadena "cabezas". Y si el resultado fue cola, vamos a devolver el hash de la cadena "colas". 
+
 7:24 Y ahora
 vamos a preguntar a alguien que no vio la moneda voltear, pero sólo vio esta salida de hash, para averiguar lo que la cadena fue que fue hash. 
 Eso, por supuesto, va a ser fácil. En este escenario es fácil encontrar la cadena de entrada, es fácil encontrar x. Usted simplemente calcular
 el hash de la cadena "cabezas" y el hash de la cadena "colas", y verá cuál usted consiguió. 7:45 Y así, en sólo un par de pasos, usted puede 
 averiguar qué x era. Así que la razón de este ejemplo fracasó, que es la razón por la que un adversario fue capaz de adivinar lo que la cadena 
-era, era que había sólo un par de posibles valores de x. 8:01 
+era, era que había sólo un par de posibles valores de x
 
-Y así, si necesitamos tener una propiedad oculta como esta, tiene que ser el caso de que no haya valor de x que sea particularmente probable. Es decir, 
-x tiene que ser elegido de un conjunto que es, en cierto sentido, muy disperso. 
+8:01 , si necesitamos tener una propiedad escondidante que ofusque o oculte, como esta, tiene que ser el caso de que no haya valor de x que sea particularmente probable. Es decir, 
+x tiene que ser elegido de un conjunto que es, en cierto sentido, muy disperso,cuanto mas mejor. 
+De modo que este método para el adversario de ir probando todos los valores posibles de x, o simplemente probar unos pocos valores de x que son
+especialmente probables, no va a funcionar. 
 
-De modo que este método para el adversario de probar todos los valores posibles de x, o simplemente probar unos pocos valores de x que son
-especialmente probables, no va a funcionar. Así que la propiedad escondida que vamos a tener que configurar es un poco más complicada. Y
+Así que la propiedad escondida ofuscada que vamos a tener que configurar es un poco más complicada. Y
 la forma en que vamos a arreglar este problema con el valor común x, como cabezas y colas, es que vamos a tomar la x. Y vamos a poner al lado 
-de él, vamos a concatenar con él, un valor, r, que se elige de una distribución que es realmente extendido. 8:43 Y así este H (r | x), que 
-significa tomar todos los bits de r, y poner después de ellos todos los bits de x. Y así lo que vamos a decir se da el hash de r junto con x, 
-que es imposible encontrar x. Y que esto será cierto en la propiedad formalmente declarada que, si r es un valor aleatorio elegido de una
-distribución que tiene alta min-entropía, entonces, dado H (r | x), es inviable encontrar x. ¿Y qué significa alta min-entropía? Bueno, 
+de él, vamos a concatenar con él, un valor, r, que se elige de una distribución que es realmente extendido.
+
+8:43 Y así este H (r | x), que 
+
+significa tomar todos los bits de r, y poner después de ellos todos los bits de x. 
+
+Y así lo que vamos a decir se da el hash de r junto con x, 
+
+que es imposible encontrar x.
+Y que esto será cierto en la propiedad formalmente declarada que, si r es un valor aleatorio elegido de una
+distribución que tiene alta min-entropía, entonces,
+dado H (r | x), es inviable encontrar x. ¿Y qué significa alta min-entropía?
+
+
+
+
+Bueno, 
 captura esta idea intuitiva de que r se elige de una distribución que está realmente extendida. Y lo que esto significa específicamente es 
 que no hay un valor particular que r pudiera haber tenido, que ocurriría con más de una probabilidad insignificante. Así, por ejemplo, si r 
 se elige de manera uniforme entre todas las cadenas de 256 bits de largo, entonces cualquier cadena particular se eligió con probabilidad 1 en 2 
