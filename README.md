@@ -1,21 +1,17 @@
 ﻿# biticoin
-simple moneda cripto
-En ScroogeCoin (Conferencia 1), la autoridad central Scrooge recibe transacciones de usuarios.
+simple moneda criptografica ScroogeCoin (1), la autoridad central Scrooge recibe transacciones de usuarios.
  Implementará la lógica utilizada por Scrooge para procesar las transacciones y producir el libro mayor. 
-Scrooge organiza transacciones en períodos de tiempo o bloques.
+Scrooge organiza transacciones en períodos de tiempo o bloques.En cada bloque, Scrooge recibirá una lista de transacciones, validará las transacciones que recibe y publicará una lista de transacciones validadas.
 
- En cada bloque, Scrooge recibirá una lista de transacciones, validará las transacciones que recibe y publicará una lista de transacciones validadas. 
-Tenga en cuenta que una transacción puede hacer referencia a otra en el mismo bloque. 
-Además, entre las transacciones recibidas por Scrooge en un solo bloque, más de una transacción puede pasar la misma salida. 
-Esto, por supuesto, sería un doble gasto y, por tanto, inválido.
- Esto significa que las transacciones no pueden ser validadas aisladamente; 
-Es un problema difícil elegir un subconjunto de transacciones que son válidas en conjunto.
+Tenga en cuenta que una transacción puede hacer referencia a otra en el mismo bloque. Además, entre las transacciones recibidas por Scrooge en un solo bloque, si más de una transacción pasa la misma salida Esto,sería un doble gasto y, por tanto, inválido.
+
+Esto significa que las transacciones no pueden ser validadas aisladamente;  Es un problema difícil elegir un subconjunto de transacciones que son válidas en conjunto.
  Se le proporcionará una clase Transaction que representa una transacción ScroogeCoin y que tiene clases internas Transaction.Output y Transaction.Input. 
+ 
 Una salida de transacción consiste en un valor y una clave pública a la que se está pagando. 
 Para las claves públicas, utilizamos la clase Java PublicKey incorporada.
 
- Una entrada de transacción consiste en
- el hash de la transacción que contiene la salida correspondiente, 
+Una entrada de transacción consiste en el hash de la transacción que contiene la salida correspondiente, 
 
 el índice de esta salida en esa transacción
  (los índices son simplemente números enteros a partir de 0) y
@@ -23,14 +19,14 @@ el índice de esta salida en esa transacción
  una firma digital. 
 
 Para que la entrada sea válida, la firma que contiene debe ser una firma válida sobre la transacción actual con la clave pública en la salida agotada. 
+
 Más específicamente, los datos en bruto que se firman se obtiene a partir del método getRawDataToSign (int index).
 
-
-
-
  Para verificar una firma, se utilizará el método verifySignature () incluido en el archivo proporcionado Crypto.java:
- public static boolean verifySignature (PublicKey pubKey, byte [] message, byte [] signature) 
-Este método toma una clave pública, un mensaje y Una firma y devuelve true si y sólo la firma verifica correctamente el mensaje con la clave pública pubKey.
+
+public static boolean verifySignature (PublicKey pubKey, byte [] message, byte [] signature) 
+
+Este método toma una clave pública, un mensaje y Una firma y devuelve true si y sólo si la firma verifica correctamente el mensaje con la clave pública pubKey.
 
 
 
