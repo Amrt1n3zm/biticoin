@@ -372,7 +372,8 @@ en la generación de claves o incluso en la firma, probablemente se filtró su c
 generación de una clave que la clave que genera no es segura. Pero es un capricho de ECDSA que incluso si se utiliza mala aleatoriedad sólo en 
 la toma de una firma con su clave perfectamente bien, que también se filtra su clave privada y, a continuación, es el juego más. Por lo tanto, 
 debemos tener especial cuidado con esto en la práctica. Este es un error común. De modo que completa la discusión de las firmas digitales como
-una primitiva criptográfica. Y en el siguiente segmento, vamos a seguir adelante y hablar de algunas aplicaciones de firmas digitales que 
+una primitiva criptográfica. Y en el siguiente segmento,
+vamos a seguir adelante y hablar de algunas aplicaciones de firmas digitales que 
 
 resultarán ser útiles en la construcción de cripto-monedas.
 
