@@ -1,4 +1,4 @@
-existen dos protocolos de cryto, uno para firmas digitales (claves publicas privadas cuerva ecliptica) y por otro lado las de funcion de hash,sha256
+existen dos protocolos de cryto,primitivas criptograficas uno para firmas digitales (claves publicas privadas cuerva ecliptica) y por otro lado las de funcion de hash,sha256
 
 En el segmento 1.1 vamos a hablar de funciones de hash criptográficas.
  1 Vamos a hablar de lo que son, 
@@ -302,6 +302,9 @@ Así por ejemplo, un gráfico acíclico dirigido, a partir de punteros hash y po
 Y será fácil de calcular. Así que este es un truco general que verá una y otra vez a través de las estructuras de datos distribuidos ya través 
 de los algoritmos de los que hablaremos más adelante en esta conferencia y en conferencias posteriores.
 
+
+
+
 En el segmento 1.3, vamos a hablar de firmas digitales. Esta es la segunda primitiva criptográfica junto con las funciones de hash que 
 necesitamos como bloques de construcción para la discusión de la criptocurrencia más adelante. Así que una firma digital se supone que es
 como una firma en papel sólo en forma digital. Y lo que esto significa es que lo que queremos de las firmas es dos cosas. En primer lugar, 
@@ -376,4 +379,5 @@ una primitiva criptográfica. Y en el siguiente segmento,
 vamos a seguir adelante y hablar de algunas aplicaciones de firmas digitales que 
 
 resultarán ser útiles en la construcción de cripto-monedas.
+
 
