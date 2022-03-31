@@ -1,6 +1,6 @@
 existen dos protocolos de cryto,primitivas criptograficas uno para firmas digitales (claves publicas privadas cuerva ecliptica) y por otro lado las de funcion de hash,sha256
 
-En el segmento 1.1 vamos a hablar de funciones de hash criptográficas.
+En el segmen 1.1 vamos a hablar de hash criptográficas.
  1 Vamos a hablar de lo que son, 
  2 y cuáles son sus propiedades 
 3 vamos a  hablar sobre cuáles son sus aplicaciones.
@@ -63,10 +63,10 @@ Pero este método tarda demasiado en importar. La pregunta es, ¿hay algún otro
 con el fin de encontrar una colisión? Y esa es la pregunta que es más difícil de responder. ¿Hay una manera más rápida de encontrar colisiones?
 Bueno, para algunos posibles valores de las funciones hash, por supuesto que sí. Por ejemplo, si nuestra función hash simplemente tomar la entrada
 , módulo 2 a la 256, es decir, acaba de seleccionar los últimos 256 bits de la entrada. Entonces conoceríamos una manera fácil de encontrar una
-colisión. Una colisión sería los valores 3 y 3 más 2 a los 256. 
+colisión. Una colisión sería los valores 3 y 3 más 2 a los 256. Por lo tanto, para algunos posibles valores de la función hash, es muy fácil 
+encontrar una colisión. Para otros, no lo sabemos.
 
-Por lo tanto, para algunos posibles valores de la función hash, es muy fácil 
-encontrar una colisión. Para otros, no lo sabemos. 5:01 Ahora, una cosa que necesito anotar es que no hay ninguna función hash que se ha
+5:01 Ahora, una cosa que necesito anotar es que no hay ninguna función hash que se ha
 demostrado ser libre de colisión. Hay sólo algunos que la gente ha intentado realmente, realmente difícil de encontrar colisiones y no han
 tenido éxito. Y por eso elegimos creer que no tienen colisión. Bien, ahora, ¿de qué sirve la libertad de colisión?
 
