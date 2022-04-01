@@ -18,6 +18,7 @@ Y explicaré en un minuto cuáles son.
 
 0:53 En particular, que la función es libre de colisiones, que tiene una propiedad oculta, y que es amigable 
 con el rompecabezas.
+
 Así que, primero, sin colisiones. Por lo tanto, la primera propiedad que necesitamos de una función de
 hash criptográfica es que es libre de colisión. Y lo que esto significa es que es imposible, nadie puede encontrar los valores x e y, de modo que 
 x e y son diferentes,  el hash de x es igual al hash de y.
@@ -111,33 +112,33 @@ Y así lo que vamos a decir se da el hash de r junto con x,
 que es imposible encontrar x.
 Y que esto será cierto en la propiedad formalmente declarada que, si r es un valor aleatorio elegido de una
 distribución que tiene alta min-entropía, entonces,
-dado H (r | x), es inviable encontrar x. ¿Y qué significa alta min-entropía?
-
-
-
-
-Bueno, 
-captura esta idea intuitiva de que r se elige de una distribución que está realmente extendida. Y lo que esto significa específicamente es 
-que no hay un valor particular que r pudiera haber tenido, que ocurriría con más de una probabilidad insignificante. Así, por ejemplo, si r 
+dado H (r | x), es inviable encontrar x. ¿Y qué significa alta min-entropía? Bueno, captura esta idea intuitiva de que r se elige de una 
+distribución que está realmente extendida. Y lo que esto significa específicamente es que no hay un valor particular que r pudiera haber tenido
+,que ocurriría con más de una probabilidad insignificante. Así, por ejemplo, si r 
 se elige de manera uniforme entre todas las cadenas de 256 bits de largo, entonces cualquier cadena particular se eligió con probabilidad 1 en 2 
 a la 256, que es realmente un valor insignificante. Por lo tanto, siempre y cuando r fue elegido de esa manera, entonces el hash de r concatenado
 con x va a ocultar x. Y esa es la propiedad oculta que se considerará que tiene la función hash. Bueno, ahora veamos una aplicación de esa 
 propiedad oculta. Y, en particular, lo que queremos hacer es algo llamado un compromiso. 
 
 Y esto es algo así como la analogía digital de tomar un valor, un número, y sellarlo en un sobre, y poner ese sobre en la mesa, donde todos pueden verlo. 
-Ahora, cuando haces eso, te has comprometido con lo que hay en el sobre. 10:09 Pero no lo has abierto, es secreto de todos los demás. Más tarde, puede abrir el sobre
-y sacar el valor, pero está cerrado. Así que comprometerse con un valor y revelarlo más tarde. Queremos hacer eso en un sentido digital. Por lo tanto, para ser más
-específico sobre lo que es la API que vamos a proporcionar aquí, la API de compromiso se ve así, que hay dos cosas que puede hacer. En primer
-lugar, puede comprometerse con un mensaje. Y eso va a devolver dos valores, un compromiso y una clave. Piense en el compromiso como el sobre que 
-va a poner en la mesa, y la clave como clave secreta para desbloquear el sobre. Luego, usted permite que alguien más lo verifique, dado el 
-compromiso y una clave, que usted les ha dicho mientras tanto, y el mensaje. Para que puedan verificar que ese compromiso, clave y mensaje
-realmente van juntos. Y esto devolverá un verdadero o falso. Bueno, ahora para sellar un msg en un sobre, lo que hacemos es nos comprometemos
-con el mensaje. Y eso devuelve un compromiso y una clave, y luego publicamos el compromiso. Eso es poner el sobre en la mesa. Ahora, más tarde, 
-para abrir el sobre, lo que vamos a hacer es publicar la clave y el mensaje que nos comprometimos a. Y entonces cualquiera puede usar esta 
-llamada de verificación, con el compromiso que hemos publicado anteriormente, la clave y el mensaje que acabamos de anunciar, para comprobar 
+Ahora, cuando haces eso, te has comprometido con lo que hay en el sobre.
+
+10:09 Pero no lo has abierto, es secreto a todos los demás. Más tarde, puede abrir el sobre
+y sacar el valor, pero está cerrado. Así que sirve como la accion de comprometerse con un valor y revelarlo más tarde.
+Queremos hacer eso en un sentido digital. Por lo tanto, para ser más específico sobre lo que es la API que vamos a proporcionar aquí, la API de compromiso 
+se ve así, que hay dos cosas que puede hacer. En primer lugar, puede comprometerse con un mensaje. Y eso va a devolver dos valores, un compromiso y una clave.
+Piense en el compromiso como el sobre que va a poner en la mesa, y la clave como clave secreta para desbloquear el sobre. Luego, usted permite que alguien
+más lo verifique, dado el compromiso y una clave, que usted les ha dicho mientras tanto, y el mensaje. 
+Para que puedan verificar que ese compromiso, clave y mensaje realmente van juntos. Y esto devolverá un verdadero o falso.
+Bueno, ahora para sellar un msg en un sobre, lo que hacemos es nos comprometemos con el mensaje. Y eso devuelve un compromiso y una clave, y luego 
+publicamos el compromiso. Eso es poner el sobre en la mesa.
+Ahora, más tarde, para abrir el sobre, lo que vamos a hacer es publicar la clave y el mensaje que nos comprometimos a. Y entonces cualquiera puede usar 
+esta llamada de verificación, con el compromiso que hemos publicado anteriormente, la clave y el mensaje que acabamos de anunciar, para comprobar 
 la validez de nuestra apertura del sobre. Bueno, y la propiedad, por supuesto, queremos de esto, es que se comporta como un sello de un sobre.
 Y, en particular, las dos propiedades de seguridad son estas. En primer lugar, dado com, el compromiso, el sobre en la mesa, que alguien mirando 
-el sobre no puede averiguar cuál es el mensaje. 11:39 La segunda propiedad es que es vinculante, que cuando te comprometas con lo que hay en el 
+el sobre no puede averiguar cuál es el mensaje.
+
+11:39 La segunda propiedad es que es vinculante, que cuando te comprometas con lo que hay en el 
 sobre, no puedes cambiar de opinión más tarde. Es decir, es imposible encontrar dos mensajes diferentes, de tal manera que pueda comprometerse 
 con un mensaje, y luego afirmar que se comprometió con otro, y todo se verificará.
 
@@ -190,7 +191,9 @@ se nos da una ID de rompecabezas, que se elige de alguna distribución de alta m
 Y se nos da un conjunto de objetivos, Y, que alguien quiere hacer caer la función hash. Entonces queremos tratar de encontrar una solución, x. De
 modo que si tenemos el identificador del rompecabezas junto con la solución X, obtenemos un resultado que está en el conjunto Y. Así que la idea 
 es Y es un rango objetivo o un conjunto de resultados hash que queremos. ID especifica un rompecabezas en particular, y x es una solución al 
-rompecabezas. 15:57 Y la propiedad rompecabezas aquí implica que no hay una estrategia de solución para este rompecabezas, que es mucho mejor
+rompecabezas.
+
+c15:57 Y la propiedad rompecabezas aquí implica que no hay una estrategia de solución para este rompecabezas, que es mucho mejor
 que simplemente intentar valores aleatorios de x. Y así si queremos plantear un rompecabezas que es difícil de resolver, que podemos hacerlo 
 de esta manera, siempre y cuando se puede generar ID de rompecabezas de una manera adecuada al azar.
 
