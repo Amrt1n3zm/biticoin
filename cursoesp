@@ -1,6 +1,6 @@
 existen dos protocolos de cryto,primitivas criptograficas uno para firmas digitales (claves publicas privadas cuerva ecliptica) y por otro lado las de funcion de hash,sha256
 
-En el segmen 1.1 vamos a hablar de hash criptográficas.
+En el punto 1.1 vamos a hablar de hash criptográficas.
  1 Vamos a hablar de lo que son, 
  2 y cuáles son sus propiedades 
 3 vamos a  hablar sobre cuáles son sus aplicaciones.
@@ -9,38 +9,31 @@ En el segmen 1.1 vamos a hablar de hash criptográficas.
 una función de hash criptográfica es una función matemática.
 
 Y tiene tres atributos que tenemos . En primer lugar, una función hash puede tomar cualquier cadena como entrada, absolutamente 
-cualquier cadena de cualquier tamaño. Produce una salida de tamaño fijo, usaremos 256 bits en esta serie de conferencias, 
-porque eso es lo que hace bitcoin.
-Y tiene que ser eficientemente computable, es decir, dado una cadena, en un período de tiempo razonable,
-puede averiguar cuál es la salida. Así que esa es una función hash, 
+cualquier cadena de cualquier tamaño. Produce una salida de tamaño fijo, usaremos 256 bits en este caso, porque eso es lo que hace bitcoin.
+Y tiene que ser eficientemente computable, es decir, dado una cadena, en un período de tiempo razonabble ,puede averiguar cuál es la salida. 
+Así que esa es una función hash,  pero vamos a necesitar funciones hash que sean criptográficamente seguras. 
 
-pero vamos a necesitar funciones hash que sean criptográficamente seguras. 
-Las propiedades criptográficas de las funciones hash son un tema complicado en general. 
-
-Pero nos centraremos aquí en tres propiedades particulares.
+Las propiedades criptográficas de las funciones hash son un problema en general. Pero nos centraremos aquí en tres propiedades particulares.
 Y explicaré en un minuto cuáles son. 
+
 0:53 En particular, que la función es libre de colisiones, que tiene una propiedad oculta, y que es amigable 
 con el rompecabezas.
 Así que, primero, sin colisiones. Por lo tanto, la primera propiedad que necesitamos de una función de
 hash criptográfica es que es libre de colisión. Y lo que esto significa es que es imposible, nadie puede encontrar los valores x e y, de modo que 
 x e y son diferentes,  el hash de x es igual al hash de y.
 
-1:25 Por lo tanto, si observamos el funcionamiento de la función 
-representada por una de estas flechas rojas. Aquí tenemos x y H (x), y aquí tenemos y y H (y). Entonces nadie puede encontrar una situación
-como esta. Que usted tiene una x e y que están separados, y sin embargo, cuando les hasheas ellos, sale el mismo valor. Ahora una cosa a notar es que
-dije, nadie puede encontrar.
-No he dicho que no hay colisión, porque si piensas en ello tiene que haber una colisión. Las colisiones existen, y
-para entender por qué es así, podemos usar este diagrama. Aquí a la izquierda, estoy representando todas las posibles entradas a esta función,
+1:25 Por lo tanto, si observamos el funcionamiento de la función representada por una de estas flechas rojas. Aquí tenemos x y H (x), y aquí tenemos y y H (y).
+Entonces nadie puede encontrar una situación como esta. Que usted tiene una x e y que están separados, y sin embargo, cuando les hasheas ellos, sale el mismo valor. 
+Ahora una cosa a notar es que dije, nadie puede encontrar.No he dicho que no hay colisión, porque si piensas en ello tiene que haber una colisión. 
+Las colisiones existen, y para entender por qué es así, podemos usar este diagrama. Aquí a la izquierda, estoy representando todas las posibles entradas a esta función,
 que puede ser una cadena de cualquier tamaño. Y aquí, tengo todas las salidas posibles, que tienen que ser cadenas de 256 bits de tamaño. 
 Así que el lado derecho aquí, las salidas, sólo hay 2 a las 256 posibilidades. 
 Aquí hay más posibilidades. Y así, si piensas que cada punto aquí a la izquierda va a ser mapeado por una flecha, a algún punto a la derecha.
 Usted puede ver que a medida que vaya desde todos los puntos de aquí a la izquierda hacia la derecha, tiene que estar lleno . Y de hecho,
 que tiene que haber varios valores aquí a la izquierda que el mapa a la misma salida aquí. De hecho, en general, habrá un gran número de entradas posibles
-que se asignarán a cualquier salida en particular. Así que existen colisiones.
+que se asignarán a cualquier salida en particular. Así que existen colisiones .Dije antes que nadie pueda encontrar una colisión. Y esa es la pregunta clave. 
+Sabemos que existen colisiones. La pregunta es si hay alguna colisión que se puede encontrar por personas regulares que usan computadoras normales?
 
-Dije antes que nadie pueda encontrar una colisión. Y esa es la pregunta clave. Sabemos que existen colisiones.
-
-La pregunta es si hay alguna colisión que se puede encontrar por personas regulares que usan computadoras normales?
 2:50
 Bueno, ahora para empeorar las cosas, dije que tiene que ser imposible encontrar una colisión. Déjeme decirle cómo encontrar una colisión, 
 porque hay un método que está garantizado . Y el método funciona así. 
@@ -66,22 +59,19 @@ Bueno, para algunos posibles valores de las funciones hash, por supuesto que sí
 colisión. Una colisión sería los valores 3 y 3 más 2 a los 256. Por lo tanto, para algunos posibles valores de la función hash, es muy fácil 
 encontrar una colisión. Para otros, no lo sabemos.
 
-5:01 Ahora, una cosa que necesito anotar es que no hay ninguna función hash que se ha
-demostrado ser libre de colisión. Hay sólo algunos que la gente ha intentado realmente, realmente difícil de encontrar colisiones y no han
-tenido éxito. Y por eso elegimos creer que no tienen colisión. Bien, ahora, ¿de qué sirve la libertad de colisión?
-
-Si podemos asumir que tenemos una función hash que es libre de colisión, entonces podemos usar esa función de hash como mensaje digerir. 
+5:01 Ahora, una cosa  es que no hay ninguna función hash que se ha demostrado ser libre de colisión. 
+Hay sólo algunos intentado ,lo realmente difícil de encontrar colisiones y no han tenido éxito. Y por eso elegimos creer que no tienen colisión.
+Bien, ahora, ¿de qué sirve la libertad de colisión?
+Si podemos asumir que tenemos una función hash que es libre de colisión, entonces podemos usar esa función de hash como un digestor de mensajes. 
 Y lo que quiero decir con eso es lo siguiente. Que si sabemos que x e y tienen el mismo hash, entonces es seguro asumir que x e y son los mismos.
 Porque si había solucion con una x y  que siendo  diferentes, tenían el mismo hash, por supuesto, que sería una colisión. Puesto que no hay una 
 colisión que sepamos de, después saber los hashes son iguales, podemos asumir que los valores son iguales. Y esto nos permite usar el hash como una 
 especie de resumen de mensajes. 
-
 Supongamos, por ejemplo, que teníamos un archivo, un archivo muy grande. Y queríamos ser capaces de reconocer después si 
 otro archivo era el mismo que el archivo que vimos la primera vez, ¿verdad? Así que una manera de hacerlo sería guardar todo el archivo grande.
 Y luego cuando vimos otro archivo más tarde, sólo compararlos. Pero debido a que tenemos hashes que creemos que son libres de colisiones, es más
 eficiente sólo recordar el hash del archivo original. Entonces, si alguien nos muestra un nuevo archivo y afirma que es el mismo, podemos
 calcular el hash de ese nuevo archivo y comparar los hashes.
-
 Si los hashes son los mismos, entonces concluimos que los archivos deben haber sido los mismos. Y eso nos da una manera muy eficiente de recordar 
 cosas que hemos visto antes y reconocerlas de nuevo. Y, por supuesto,esto es útil porque el hash es pequeño, es sólo 256 bits, mientras que el archivo 
 original puede ser muy grande. Así que hash es útil como un resumen de mensajes. Y veremos, más adelante en esta conferencia, y en conferencias 
@@ -103,8 +93,8 @@ el hash de la cadena "cabezas" y el hash de la cadena "colas", y verá cuál ust
 averiguar qué x era. Así que la razón de este ejemplo fracasó, que es la razón por la que un adversario fue capaz de adivinar lo que la cadena 
 era, era que había sólo un par de posibles valores de x
 
-8:01 , si necesitamos tener una propiedad escondidante que ofusque o oculte, como esta, tiene que ser el caso de que no haya valor de x que sea particularmente probable. Es decir, 
-x tiene que ser elegido de un conjunto que es, en cierto sentido, muy disperso,cuanto mas mejor. 
+8:01 , si necesitamos tener una propiedad escondidante que ofusque o oculte, como esta, tiene que ser el caso de que no haya valor de x que sea particularmente probable.
+Es decir, x tiene que ser elegido de un conjunto que es, en cierto sentido, muy disperso,cuanto mas mejor. 
 De modo que este método para el adversario de ir probando todos los valores posibles de x, o simplemente probar unos pocos valores de x que son
 especialmente probables, no va a funcionar. 
 
@@ -132,10 +122,11 @@ que no hay un valor particular que r pudiera haber tenido, que ocurriría con m�
 se elige de manera uniforme entre todas las cadenas de 256 bits de largo, entonces cualquier cadena particular se eligió con probabilidad 1 en 2 
 a la 256, que es realmente un valor insignificante. Por lo tanto, siempre y cuando r fue elegido de esa manera, entonces el hash de r concatenado
 con x va a ocultar x. Y esa es la propiedad oculta que se considerará que tiene la función hash. Bueno, ahora veamos una aplicación de esa 
-propiedad oculta. Y, en particular, lo que queremos hacer es algo llamado un compromiso. Y esto es algo así como la analogía digital de tomar
-un valor, un número, y sellarlo en un sobre, y poner ese sobre en la mesa, donde todos pueden verlo. Ahora, cuando haces eso, te has comprometido 
-con lo que hay en el sobre. 10:09 Pero no lo has abierto, es secreto de todos los demás. Más tarde, puede abrir el sobre y sacar el valor, pero
-está cerrado. Así que comprometerse con un valor y revelarlo más tarde. Queremos hacer eso en un sentido digital. Por lo tanto, para ser más
+propiedad oculta. Y, en particular, lo que queremos hacer es algo llamado un compromiso. 
+
+Y esto es algo así como la analogía digital de tomar un valor, un número, y sellarlo en un sobre, y poner ese sobre en la mesa, donde todos pueden verlo. 
+Ahora, cuando haces eso, te has comprometido con lo que hay en el sobre. 10:09 Pero no lo has abierto, es secreto de todos los demás. Más tarde, puede abrir el sobre
+y sacar el valor, pero está cerrado. Así que comprometerse con un valor y revelarlo más tarde. Queremos hacer eso en un sentido digital. Por lo tanto, para ser más
 específico sobre lo que es la API que vamos a proporcionar aquí, la API de compromiso se ve así, que hay dos cosas que puede hacer. En primer
 lugar, puede comprometerse con un mensaje. Y eso va a devolver dos valores, un compromiso y una clave. Piense en el compromiso como el sobre que 
 va a poner en la mesa, y la clave como clave secreta para desbloquear el sobre. Luego, usted permite que alguien más lo verifique, dado el 
