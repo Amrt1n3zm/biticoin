@@ -1,0 +1,157 @@
+Lo primero que debe hacer antes de comenzar la tarea es comprender la tarea. Por razones obvias, no puedo escribir aquí un "procedimiento paso a paso" de la tarea, pero puedo repasar las clases y tal vez aclarar las instrucciones un poco mejor para usted y cualquier otra persona que tenga dificultades.
+
+Su trabajo para esta tarea es escribir la clase TxHandler, que significa Transactions Handler. Esta clase tiene tres funciones en las que debes escribirla tú mismo; TxHandler, isValidTx y handleTxs. Como sugieren los nombres, uno iniciará la clase, uno verificará las transacciones y el otro manejará las transacciones. Ahora voy a suponer que tiene un conocimiento básico de Java y comprende la idea de clases y funciones.
+
+Estos son los archivos que nos entregaron para la tarea:
+
+Cripto.java
+Transacción.java
+TxHandler.java
+UTXO.java
+UTXOPool.java
+Y el archivo en el que escribiremos es TxHandler.java. Comencemos nuestra investigación:
+
+clase pública TxHandler {
+
+    /**
+     * Crea un libro mayor público cuyo UTXOPool actual (recopilación de salidas de transacciones no gastadas) es
+     * {@code utxoPool}. Esto debería hacer una copia de utxoPool usando UTXOPool (UTXOPool uPool)
+     * constructor.
+     */
+    TxHandler público (UTXOPool utxoPool) {
+        // IMPLEMENTAR ESTO
+    }
+
+    /**
+     * @return verdadero si:
+     * (1) todas las salidas reclamadas por {@code tx} están en el grupo UTXO actual,
+     * (2) las firmas en cada entrada de {@code tx} son válidas,
+     * (3) {@code tx} no reclama UTXO varias veces,
+     * (4) todos los valores de salida de {@code tx} no son negativos, y
+     * (5) la suma de los valores de entrada de {@code tx} es mayor o igual que la suma de su salida
+     *     valores; y falso en caso contrario.
+     */
+    public boolean isValidTx(Transacción tx) {
+        // IMPLEMENTAR ESTO
+    }
+
+    /**
+     * Maneja cada época al recibir una matriz desordenada de transacciones propuestas, verificando cada
+     * transacción para la corrección, devolviendo una matriz mutuamente válida de transacciones aceptadas, y
+     * actualizar el grupo UTXO actual según corresponda.
+     */
+    Transacción pública[] handleTxs(Transacción[] posiblesTxs) {
+        // IMPLEMENTAR ESTO
+    }
+
+}
+Esta es la clase en la que escribiremos. Claramente, nuestra función TxHandler inicia la clase, la función isValid se asegura de que la transacción sea válida y la función handleTxs maneja múltiples transacciones. No voy a entrar en más detalles dentro de esta clase porque de eso se trata la tarea.
+
+En aras de la explicación, estoy empezando desde arriba, explicando las clases más pequeñas que componen las clases más grandes. Para eso, debemos comenzar con la clase Entrada y Salida dentro de la clase Transacción:
+
+Transacción de clase pública {
+
+    Entrada de clase pública {
+        /** hash de la Transacción cuya salida se está utilizando */
+        byte público[] anteriorTxHash;
+        /** utilizó el índice de salida en la transacción anterior */
+        índice de salida public int;
+        /** la firma producida para verificar la validez */
+        byte público[] firma;
+
+        Entrada pública (byte [] prevHash, índice int) {
+            si (prevHash == nulo)
+                prevTxHash = nulo;
+            demás
+                prevTxHash = Arrays.copyOf(prevHash, prevHash.length);
+            índicedesalida = índice;
+        }
+
+        addSignature public void (byte [] firma) {
+            ...
+        }
+    }
+
+    Salida de clase pública {
+        /** valor en bitcoins de la salida */
+        doble valor público;
+        /** la dirección o clave pública del destinatario */
+        dirección pública PublicKey;
+
+        salida pública (doble v, PublicKey addr) {
+            valor = v;
+            dirección = dirección;
+        }
+    }
+
+    ...
+}
+Podría decirse que las clases de entrada y salida son el concepto más importante para comprender dentro de toda esta tarea. Debe comprender que una entrada es la recepción de BTC (BitcCoin) y una salida es un envío de BTC. Cada transacción tiene una Entrada y una Salida, y cada transacción requiere una entrada y una salida. La razón por la que se crea una Transacción es para enviar una cantidad de BTC, pero esa salida debe haber sido recibida por una entrada de una fecha anterior. Las transacciones realizan un seguimiento de la Salida y la Entrada. Para esto, debe comprender un concepto dentro de Bitcoin llamado UTXO, que expliqué en una respuesta anterior a otra pregunta:
+
+UTXO significa salida de transacción no gastada. En la jerga de las criptomonedas, eso simplemente significa la salida. La forma en que funcionan las criptomonedas, específicamente Bitcoins, cada vez que envía una cantidad de dinero a otra dirección, utiliza transacciones pasadas (entradas) enviadas a su dirección.
+
+Estas entradas en realidad nunca se destruyen cuando llegan a su dirección,
+lo que significa que su total de Bitcoins depende de la suma de todas las entradas 
+independientes a su dirección. Si recibe tres transacciones de 0,5 BTC, 1,0 BTC y 0,2 BTC,
+su suma sería 1,7 BTC... pero sus entradas seguirían siendo 0,5, 1,0 y 0,2 BTC. 
+En ningún momento las transacciones independientes (entradas) de
+destruirse a sí mismos y convertirse en el 1.7 BTC exclusivamente.
+
+Con eso en mente, el grupo UTXO realiza un seguimiento de todos sus BTC (UTXO) no gastados. En el ejemplo anterior, serían 0,5 BTC, 1,0 BTC y 0,2 BTC, que es el resultado de su transacción no gastada. Cuando decida gastar una cantidad de BTC, su billetera Bitcoin utilizará sus UTXO como entradas para otra transacción. Aquí hay un ejemplo de estas transacciones:
+
+Alice envió 0,5 BTC a Bob.
+Steve envió 1.0 BTC a Bob.
+Craig envió 0.2 BTC a Bob.
+
+Bob recibe una entrada de 0,5 BTC de Alice.
+Bob recibe una entrada de 1.0 BTC de Steve.
+Bob recibe una entrada de 0,2 BTC de Craig.
+
+Estas entradas a la billetera de Bob se convierten en UTXO (salidas de transacciones no gastadas) porque Bob aún no las ha usado.
+
+Bob UTXOPool: [0.5, 1.0, 0.2]
+Este es un punto fundamental a entender. La entrada y salida de una cantidad específica de BTC siempre se guarda para fines de verificación, y esta asignación es básicamente que nosotros escribamos ese concepto en código. La clase Transacción simplemente almacena cuánto estamos enviando (salida) y de dónde vino exactamente ese dinero para empezar (entrada). Con eso en mente, vamos a la clase UTXO:
+
+La clase UTXO se explicó básicamente anteriormente, por lo que no voy a entrar en muchos más detalles de lo que es básicamente el ahorro de una cantidad actual de BTC. Rumbo de UTXO a UTXOPool, que también se explicó anteriormente:
+
+clase pública UTXOPool {
+
+    /**
+     * La colección actual de UTXO, con cada uno asignado a su salida de transacción correspondiente
+     */
+    HashMap privado <UTXO, Transaction.Output> H;
+
+    ...
+}
+La clase UTXOPool simplemente realiza un seguimiento de los UTXO. La clase final, antes de terminar todo, es la clase Crypto, que utilizaremos dentro de la clase TxHandler para verificar las transacciones:
+
+criptografía de clase pública {
+
+    /**
+     * @return true is {@code signature} es una firma digital válida de {@code message} bajo el
+     * tecla {@code pubKey}. Internamente, esto usa la firma RSA, pero el estudiante no
+     * tiene que lidiar con cualquiera de los detalles de implementación de la firma específica
+     * algoritmo
+     */
+    booleano estático público verificar firma (PublicKey pubKey, byte [] mensaje, byte [] firma) {
+        ...
+    }
+}
+Para comprender la tarea, debemos tener un conocimiento mínimo de algo de criptografía básica. La idea de verificar una firma sigue la lógica de que queremos que solo la persona que posee el Bitcoin pueda gastarlo. Hacemos esto haciendo que la persona firme su transacción, y así en el futuro podemos verificar si la transacción es válida.
+
+En el mundo de Bitcoin, esto se hace utilizando el cifrado ECDSA (algoritmo de firma digital de curva elíptica). En ECDSA tenemos una clave pública y una privada, y ambas se utilizan para firmar y verificar nuestras transacciones por separado. Su clave privada (como sugiere el nombre) es suya y solo suya, y la utiliza para firmar su mensaje. Su clave pública se utiliza para verificar el mensaje y, como sugiere el nombre, se puede entregar a cualquier persona.
+
+Aquí hay un ejemplo de esto que se usa:
+
+Clave privada: 1a56ee1521e09f89814524342df0aaa3838a6b7d69d7fc7296a0b7fe45aeec7a
+Clave pública: 046df9a102a81a27b701dd9c50faf096413fa2fbf05c5c43108ffb292592cfa2723d73ad2b9da6ce7d3a2354e27010eed42001667e920a2baf358828f8a8796310
+
+Mensaje: Hola, esto es un ejemplo!
+Valor de firma: 3045022026c9e94ad512060a4b4f8b19fc42d2f08c0749de493afdd8fcce157b8b05bb74022100e2c9d301f4559edb075fc5b399e371cbfa704b49a10a648245ff55c
+Si tuviera que ir aquí e ingresar la clave pública, el mensaje y el valor de la firma, notará que recibimos un resultado verificado. Cambie el mensaje, la clave pública o el valor de la firma, y ​​ahora obtenemos una salida no válida. La idea detrás de ECDSA es que para generar el valor de la firma de un mensaje específico, necesita una clave privada. Esta interacción de clave privada/pública es extremadamente importante para garantizar que solo usted tenga acceso a sus Bitcoins y que nadie más pueda crear transacciones falsas bajo su identidad.
+
+La función verificarSignature toma una clave pública, el mensaje sin formato y el valor de firma de ese mensaje sin formato. Con las tres entradas, puede verificar si la firma corresponde a la clave pública y al mensaje, y valida o invalida la transacción.
+
+Así que para terminar todo, esto es lo que está pasando:
+
+Soy dueño de un UTXOPool lleno de entradas de BTC de transacciones pasadas. Cuando quiero enviar algo de BTC a Bob, creo una nueva transacción, completando sus detalles de entrada y salida, firmándola para verificar mi identidad y enviándola a la red para su procesamiento. Su trabajo es escribir la clase TxHandler que validará la transacción y procesará las transacciones (actualizando el UTXOPool del usuario que crea la transacción).
